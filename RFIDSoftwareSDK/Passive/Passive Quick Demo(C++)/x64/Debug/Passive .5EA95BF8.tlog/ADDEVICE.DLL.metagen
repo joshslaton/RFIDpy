@@ -1,0 +1,754 @@
+ImageRuntimeVersion: v2.0.50727
+Assembly ADDevice, Version=1.1.*, Culture=固定语言(固定国家/地区): 
+	hash=SHA1, flags=PublicKey
+Assembly mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Class ADSDK.Device.ActiveXControl: AutoLayout, AnsiClass, Class, Public, Abstract, BeforeFieldInit
+  Interfaces:
+    ADSDK.Device.IObjectSafety
+  Methods:
+    GetInterfaceSafetyOptions(Guid&, Int32&, Int32&): PrivateScope, Public, Final, Virtual, HideBySig, VtableLayoutMask
+    SetInterfaceSafetyOptions(Guid&, Int32, Int32): PrivateScope, Public, Final, Virtual, HideBySig, VtableLayoutMask
+Class ADSDK.Device.ADRcpImp: AutoLayout, AnsiClass, Class, Public, Abstract, BeforeFieldInit
+  :ADSDK.Device.ActiveXControl
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(ADSDK.Device.ADSio): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Interfaces:
+    System.IDisposable
+  Fields:
+    Int32 Address : Public
+    System.String Mode : Public
+    System.String Type : Public
+    System.String Version : Public
+    ADSDK.Device.CommMode CommMode : Public
+    Boolean IsConnect : Public
+  Properties:
+    Int32 VersionNumber 'get ' : 
+    Boolean bConnected 'get ' : 
+    ADSDK.Device.ADSio Sio 'get set' : 
+  Events:
+    ADSDK.Device.StringEventHandler RcpLogEventReceived: 
+    ADSDK.Device.ProtocolEventHandler RxRspParsed: 
+    ADSDK.Device.ConnectEventHandler StatusConnected: 
+  Methods:
+    add_RcpLogEventReceived(StringEventHandler): PrivateScope, Public, HideBySig, SpecialName
+    remove_RcpLogEventReceived(StringEventHandler): PrivateScope, Public, HideBySig, SpecialName
+    add_RxRspParsed(ProtocolEventHandler): PrivateScope, Public, HideBySig, SpecialName
+    remove_RxRspParsed(ProtocolEventHandler): PrivateScope, Public, HideBySig, SpecialName
+    add_StatusConnected(ConnectEventHandler): PrivateScope, Public, HideBySig, SpecialName
+    remove_StatusConnected(ConnectEventHandler): PrivateScope, Public, HideBySig, SpecialName
+    get_VersionNumber(): PrivateScope, Public, HideBySig, SpecialName
+    GetVersion(): PrivateScope, Public, HideBySig
+    get_bConnected(): PrivateScope, Public, HideBySig, SpecialName
+    get_Sio(): PrivateScope, Public, HideBySig, SpecialName
+    set_Sio(ADSio): PrivateScope, Public, HideBySig, SpecialName
+    Connect(String, Int32, Int32): PrivateScope, Public, HideBySig
+    DisConnect(): PrivateScope, Public, HideBySig
+    Send(Byte[]): PrivateScope, Public, HideBySig
+    Send(String): PrivateScope, Public, HideBySig
+    ReciveBytePkt(Byte[]): PrivateScope, Public, HideBySig
+    BuildCmdPacketByte(Byte, Byte[]): PrivateScope, Public, HideBySig
+    BuildCmdPacketByte(Int32, Byte, Byte[]): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    BuildCmdPacketByte(Byte, Int32, Byte, Byte[]): PrivateScope, Public, HideBySig
+    SendBytePkt(Byte[]): PrivateScope, Public, HideBySig
+    SendBytePkt(Byte[], Int32): PrivateScope, Public, HideBySig
+    SendBytePktNoMsg(Byte[]): PrivateScope, Public, HideBySig
+    GetErrorCodeString(Int32, Byte): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    GetCodeString(Int32, Byte): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    Dispose(): PrivateScope, Public, Final, Virtual, HideBySig, VtableLayoutMask
+Class ADSDK.Device.ADCom: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :ADSDK.Device.ADSio
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(Int32): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    Connect(String, Int32): PrivateScope, Public, Virtual, HideBySig
+    Send(Byte[]): PrivateScope, Public, Virtual, HideBySig
+    Send(String): PrivateScope, Public, Virtual, HideBySig
+    Receive(Byte[]&(Out)): PrivateScope, Public, Virtual, HideBySig
+    DisConnect(): PrivateScope, Public, Virtual, HideBySig
+    ToString(): PrivateScope, Public, Virtual, HideBySig
+    ComDataReceived(Object, SerialDataReceivedEventArgs): PrivateScope, Public, HideBySig
+Class ADSDK.Device.ADNet: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :ADSDK.Device.ADSio
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    System.Net.Sockets.TcpClient mTcpClient : Public
+    System.Net.Sockets.NetworkStream serverStream : Public
+    Int32 DefaultBufferSize = 16384 : Public, Static, Literal, HasDefault
+  Methods:
+    Connect(String, Int32): PrivateScope, Public, Virtual, HideBySig
+    Send(Byte[]): PrivateScope, Public, Virtual, HideBySig
+    Send(String): PrivateScope, Public, Virtual, HideBySig
+    Receive(Byte[]&(Out)): PrivateScope, Public, Virtual, HideBySig
+    DisConnect(): PrivateScope, Public, Virtual, HideBySig
+    ToString(): PrivateScope, Public, Virtual, HideBySig
+Class ADSDK.Device.ADRcp: AutoLayout, AnsiClass, Class, Public, Abstract, BeforeFieldInit
+  :ADSDK.Device.ActiveXControl
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(ADSDK.Device.ADSio): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Interfaces:
+    System.IDisposable
+  Fields:
+    Int32 Address : Public
+    System.String Mode : Public
+    System.String Type : Public
+    System.String Version : Public
+    ADSDK.Device.CommMode CommMode : Public
+    Boolean IsConnect : Public
+  Properties:
+    Int32 VersionNumber 'get ' : 
+    Boolean bConnected 'get ' : 
+    ADSDK.Device.ADSio Sio 'get set' : 
+  Events:
+    ADSDK.Device.StringEventHandler RcpLogEventReceived: 
+    ADSDK.Device.ProtocolEventHandler RxRspParsed: 
+    ADSDK.Device.ConnectEventHandler StatusConnected: 
+  Methods:
+    add_RcpLogEventReceived(StringEventHandler): PrivateScope, Public, HideBySig, SpecialName
+    remove_RcpLogEventReceived(StringEventHandler): PrivateScope, Public, HideBySig, SpecialName
+    add_RxRspParsed(ProtocolEventHandler): PrivateScope, Public, HideBySig, SpecialName
+    remove_RxRspParsed(ProtocolEventHandler): PrivateScope, Public, HideBySig, SpecialName
+    add_StatusConnected(ConnectEventHandler): PrivateScope, Public, HideBySig, SpecialName
+    remove_StatusConnected(ConnectEventHandler): PrivateScope, Public, HideBySig, SpecialName
+    get_VersionNumber(): PrivateScope, Public, HideBySig, SpecialName
+    GetVersion(): PrivateScope, Public, HideBySig
+    get_bConnected(): PrivateScope, Public, HideBySig, SpecialName
+    get_Sio(): PrivateScope, Public, HideBySig, SpecialName
+    set_Sio(ADSio): PrivateScope, Public, HideBySig, SpecialName
+    Connect(String, Int32, Int32): PrivateScope, Public, HideBySig
+    DisConnect(): PrivateScope, Public, HideBySig
+    Send(Byte[]): PrivateScope, Public, HideBySig
+    Send(String): PrivateScope, Public, HideBySig
+    ReciveBytePkt(Byte[]): PrivateScope, Public, HideBySig
+    BuildCmdPacketByte(Byte, Byte, Byte[]): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    BuildCmdPacketByte(Int32, Byte, Byte, Byte[]): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    BuildCmdPacketByte(Byte, Int32, Byte, Byte, Byte[]): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    BuildCmdPacketByte(Byte, Byte[]): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    BuildCmdPacketByte(Int32, Byte, Byte[]): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    BuildCmdPacketByte(Byte, Int32, Byte, Byte[]): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    SendBytePkt(Byte[]): PrivateScope, Public, HideBySig
+    SendBytePkt(Byte[], Int32): PrivateScope, Public, HideBySig
+    SendBytePktNoMsg(Byte[]): PrivateScope, Public, HideBySig
+    GetErrorCodeString(Int32, Byte): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    GetCodeString(Int32, Byte): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    Dispose(): PrivateScope, Public, Final, Virtual, HideBySig, VtableLayoutMask
+Class ADSDK.Device.ADSio: AutoLayout, AnsiClass, Class, Public, Abstract, BeforeFieldInit
+  :ADSDK.Device.ActiveXControl
+  Interfaces:
+    System.IDisposable
+  Fields:
+    Boolean bConnected : Public
+    Boolean bDevConnected : Public
+    Int32 USBVerNum : Public
+    Int32 DevMode : Public
+    Int32 DevAddress : Public
+    System.String DevVersion : Public
+    System.String DevType : Public
+  Properties:
+    System.String DevInfoEn 'get ' : 
+    System.String DevInfoCh 'get ' : 
+  Events:
+    ADSDK.Device.ByteEventHandler DataReceived: 
+    ADSDK.Device.ConnectEventHandler StatusConnected: 
+  Methods:
+    add_DataReceived(ByteEventHandler): PrivateScope, Public, HideBySig, SpecialName
+    remove_DataReceived(ByteEventHandler): PrivateScope, Public, HideBySig, SpecialName
+    add_StatusConnected(ConnectEventHandler): PrivateScope, Public, HideBySig, SpecialName
+    remove_StatusConnected(ConnectEventHandler): PrivateScope, Public, HideBySig, SpecialName
+    get_DevInfoEn(): PrivateScope, Public, HideBySig, SpecialName
+    get_DevInfoCh(): PrivateScope, Public, HideBySig, SpecialName
+    LogOpen(String): PrivateScope, Public, Static, HideBySig
+    LogClose(): PrivateScope, Public, Static, HideBySig
+    Connect(String, Int32): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    Send(Byte[]): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    Send(String): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    Receive(Byte[]&(Out)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    DisConnect(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    SynStart(): PrivateScope, Public, HideBySig
+    SynDev(): PrivateScope, Public, HideBySig
+    Dispose(): PrivateScope, Public, Final, Virtual, HideBySig, VtableLayoutMask
+Class ADSDK.Device.ADServer: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :ADSDK.Device.ADSio
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    System.Net.Sockets.TcpClient oSp : Public
+  Methods:
+    Connect(String, Int32): PrivateScope, Public, Virtual, HideBySig
+    Send(Byte[]): PrivateScope, Public, Virtual, HideBySig
+    Send(String): PrivateScope, Public, Virtual, HideBySig
+    Receive(Byte[]&(Out)): PrivateScope, Public, Virtual, HideBySig
+    DisConnect(): PrivateScope, Public, Virtual, HideBySig
+Class ADSDK.Device.ADUsb: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :ADSDK.Device.ADSio
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    ExitKeyboard(): PrivateScope, Public, Static, HideBySig
+    Connect(String, Int32): PrivateScope, Public, Virtual, HideBySig
+    Send(Byte[]): PrivateScope, Public, Virtual, HideBySig
+    Send(String): PrivateScope, Public, Virtual, HideBySig
+    Receive(Byte[]&(Out)): PrivateScope, Public, Virtual, HideBySig
+    DisConnect(): PrivateScope, Public, Virtual, HideBySig
+    ToString(): PrivateScope, Public, Virtual, HideBySig
+    GetHidDeviceList(List`1&): PrivateScope, Public, Static, HideBySig
+    GetKeyBoardDeviceList(List`1&): PrivateScope, Public, Static, HideBySig
+Class ADSDK.Device.ByteBuilder: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(Int32): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(Byte[]): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Properties:
+    Int32 Length 'get ' : 
+    Int32 Capacity 'get set' : 
+  Methods:
+    BytesToStruct(Byte[]): PrivateScope, Public, HideBySig
+    StructToBytes(T): PrivateScope, Public, HideBySig
+    ByteArrayCompare(Byte[], Byte[]): PrivateScope, Public, HideBySig
+    Append(SByte): PrivateScope, Public, HideBySig
+    Append(Byte): PrivateScope, Public, HideBySig
+    Append(Byte[]): PrivateScope, Public, HideBySig
+    Append(Byte[], Int32): PrivateScope, Public, HideBySig
+    Append(Byte[], Int32, Int32): PrivateScope, Public, HideBySig
+    Append(UInt16): PrivateScope, Public, HideBySig
+    Append(UInt32): PrivateScope, Public, HideBySig
+    get_Length(): PrivateScope, Public, HideBySig, SpecialName
+    get_Capacity(): PrivateScope, Public, HideBySig, SpecialName
+    set_Capacity(Int32): PrivateScope, Public, HideBySig, SpecialName
+    Clear(): PrivateScope, Public, HideBySig
+    ToString(): PrivateScope, Public, Virtual, HideBySig
+    ToString(String): PrivateScope, Public, HideBySig
+    GetByteArray(): PrivateScope, Public, HideBySig
+    GetStruct(): PrivateScope, Public, HideBySig
+    GetByteArray(Int32, Int32): PrivateScope, Public, HideBySig
+    GetAt(Int32): PrivateScope, Public, HideBySig
+    SetAt(Int32, Byte): PrivateScope, Public, HideBySig
+    ByteArrayToHexString(Byte[]): PrivateScope, Public, Static, HideBySig
+    ByteArrayToHexString(Char[]): PrivateScope, Public, Static, HideBySig
+    ByteArrayToHexString(Byte[], Int32, Int32): PrivateScope, Public, Static, HideBySig
+    HexStringToByteArray(String): PrivateScope, Public, Static, HideBySig
+    XOR(Byte[], Int32, Int32): PrivateScope, Public, Static, HideBySig
+    XOR(List`1, Int32, Int32): PrivateScope, Public, Static, HideBySig
+    XOR(List`1, Int32): PrivateScope, Public, Static, HideBySig
+    CRC(Byte[]): PrivateScope, Public, Static, HideBySig
+    CRC(Byte[], Int32, Int32): PrivateScope, Public, Static, HideBySig
+    CRC(List`1): PrivateScope, Public, Static, HideBySig
+    CRC(List`1, Int32, Int32): PrivateScope, Public, Static, HideBySig
+    GetData(List`1, Int32, Int32): PrivateScope, Public, Static, HideBySig
+    GetData(Byte[], Int32, Int32): PrivateScope, Public, Static, HideBySig
+Struct ADSDK.Device.PadType: AutoLayout, AnsiClass, Class, Public, Sealed
+  :System.Enum
+  Fields:
+    Int32 value__ : Public, SpecialName, RTSpecialName
+    ADSDK.Device.PadType PAD_LEFT = 0 : Public, Static, Literal, HasDefault
+    ADSDK.Device.PadType PAD_RIGHT = 1 : Public, Static, Literal, HasDefault
+Class ADSDK.Device.StringHelper: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    ArgByteToStringByte(Byte[]): PrivateScope, Public, HideBySig
+    ArgStringHexToByte(String): PrivateScope, Public, HideBySig
+    ArgStringBinaryToByte(String, PadType): PrivateScope, Public, HideBySig
+    ArgByteToStringBinary(Byte[], Int32): PrivateScope, Public, HideBySig
+Class ADSDK.Device.Coder: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(EncodingMothord): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    GetEncodingString(Byte[], Int32, Int32): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    GetEncodingBytes(String): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    ByteArrayToHexString(Byte[]): PrivateScope, Public, Static, HideBySig
+    ByteArrayToHexString(Char[]): PrivateScope, Public, Static, HideBySig
+    ByteArrayToHexString(Byte[], Int32, Int32): PrivateScope, Public, Static, HideBySig
+    HexStringToByteArray(String): PrivateScope, Public, Static, HideBySig
+    GetData(List`1, Int32, Int32): PrivateScope, Public, Static, HideBySig
+    GetData(Byte[], Int32, Int32): PrivateScope, Public, Static, HideBySig
+    XOR(Byte[], Int32, Int32): PrivateScope, Public, Static, HideBySig
+    XOR(List`1, Int32, Int32): PrivateScope, Public, Static, HideBySig
+    XOR(ByteBuilder, Int32, Int32): PrivateScope, Public, Static, HideBySig
+    XOR(List`1, Int32): PrivateScope, Public, Static, HideBySig
+    CRC(Byte[]): PrivateScope, Public, Static, HideBySig
+    CRC(Byte[], Int32, Int32): PrivateScope, Public, Static, HideBySig
+    CRC(List`1): PrivateScope, Public, Static, HideBySig
+    CRC(List`1, Int32, Int32): PrivateScope, Public, Static, HideBySig
+    CRC(ByteBuilder, Int32, Int32): PrivateScope, Public, Static, HideBySig
+Struct ADSDK.Device.CommState: AutoLayout, AnsiClass, Class, Public, Sealed
+  :System.Enum
+  Fields:
+    Int32 value__ : Public, SpecialName, RTSpecialName
+    ADSDK.Device.CommState CONNECT_OK = 0 : Public, Static, Literal, HasDefault
+    ADSDK.Device.CommState CONNECT_FAIL = 1 : Public, Static, Literal, HasDefault
+    ADSDK.Device.CommState DISCONNECT_OK = 2 : Public, Static, Literal, HasDefault
+    ADSDK.Device.CommState DISCONNECT_FAIL = 3 : Public, Static, Literal, HasDefault
+    ADSDK.Device.CommState DISCONNECT_EXCEPT = 4 : Public, Static, Literal, HasDefault
+    ADSDK.Device.CommState CONNECTING_DEV = 5 : Public, Static, Literal, HasDefault
+    ADSDK.Device.CommState CONNECT_DEV_OK = 6 : Public, Static, Literal, HasDefault
+    ADSDK.Device.CommState OTHER = 7 : Public, Static, Literal, HasDefault
+Struct ADSDK.Device.CommEquip: AutoLayout, AnsiClass, Class, Public, Sealed
+  :System.Enum
+  Fields:
+    Int32 value__ : Public, SpecialName, RTSpecialName
+    ADSDK.Device.CommEquip PASSIVE = 0 : Public, Static, Literal, HasDefault
+    ADSDK.Device.CommEquip PHYCHIPS = 1 : Public, Static, Literal, HasDefault
+    ADSDK.Device.CommEquip ACTIVE = 2 : Public, Static, Literal, HasDefault
+    ADSDK.Device.CommEquip PARKING = 3 : Public, Static, Literal, HasDefault
+Struct ADSDK.Device.CommRtn: AutoLayout, AnsiClass, Class, Public, Sealed
+  :System.Enum
+  Fields:
+    Int32 value__ : Public, SpecialName, RTSpecialName
+    ADSDK.Device.CommRtn SUCCEED = 0 : Public, Static, Literal, HasDefault
+    ADSDK.Device.CommRtn FAIL = 1 : Public, Static, Literal, HasDefault
+    ADSDK.Device.CommRtn SUCCEED_NON = 10 : Public, Static, Literal, HasDefault
+    ADSDK.Device.CommRtn ERROR_CARD = 100 : Public, Static, Literal, HasDefault
+    ADSDK.Device.CommRtn ERROR_ACTION = 101 : Public, Static, Literal, HasDefault
+    ADSDK.Device.CommRtn ERROR_CONNECT = 201 : Public, Static, Literal, HasDefault
+    ADSDK.Device.CommRtn ERROR_GET = 202 : Public, Static, Literal, HasDefault
+    ADSDK.Device.CommRtn ERROR_SET = 203 : Public, Static, Literal, HasDefault
+    ADSDK.Device.CommRtn TIMEOUT_SET = 204 : Public, Static, Literal, HasDefault
+    ADSDK.Device.CommRtn ERROR_SEND = 205 : Public, Static, Literal, HasDefault
+    ADSDK.Device.CommRtn ERROR_RECIVE = 206 : Public, Static, Literal, HasDefault
+    ADSDK.Device.CommRtn ERROR_DISCONNECT = 207 : Public, Static, Literal, HasDefault
+    ADSDK.Device.CommRtn TIMEOUT_SEND = 208 : Public, Static, Literal, HasDefault
+    ADSDK.Device.CommRtn TIMEOUT_RECIVE = 209 : Public, Static, Literal, HasDefault
+Class ADSDK.Device.ByteEventArg: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.EventArgs
+    Void .ctor(Byte[]): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Properties:
+    Byte[] Data 'get ' : 
+  Methods:
+    get_Data(): PrivateScope, Public, HideBySig, SpecialName
+Class ADSDK.Device.ByteEventHandler: AutoLayout, AnsiClass, Class, Public, Sealed
+  :System.MulticastDelegate
+    Void .ctor(System.Object, IntPtr): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    Invoke(Object, ByteEventArg): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    BeginInvoke(Object, ByteEventArg, AsyncCallback, Object): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    EndInvoke(IAsyncResult): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+Struct ADSDK.Device.CommMode: AutoLayout, AnsiClass, Class, Public, Sealed
+  :System.Enum
+  Fields:
+    Int32 value__ : Public, SpecialName, RTSpecialName
+    ADSDK.Device.CommMode COMMAND = 0 : Public, Static, Literal, HasDefault
+    ADSDK.Device.CommMode ACTIVE = 1 : Public, Static, Literal, HasDefault
+    ADSDK.Device.CommMode PASSIVE = 2 : Public, Static, Literal, HasDefault
+Class ADSDK.Device.ConnectEventArg: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.EventArgs
+    Void .ctor(ADSDK.Device.CommState, System.String): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Properties:
+    ADSDK.Device.CommState Status 'get ' : 
+    System.String Msg 'get ' : 
+  Methods:
+    get_Status(): PrivateScope, Public, HideBySig, SpecialName
+    get_Msg(): PrivateScope, Public, HideBySig, SpecialName
+Class ADSDK.Device.ConnectEventHandler: AutoLayout, AnsiClass, Class, Public, Sealed
+  :System.MulticastDelegate
+    Void .ctor(System.Object, IntPtr): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    Invoke(Object, ConnectEventArg): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    BeginInvoke(Object, ConnectEventArg, AsyncCallback, Object): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    EndInvoke(IAsyncResult): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+Class ADSDK.Device.DataReceivedEventArgs: AutoLayout, AnsiClass, Class, Public, Sealed, BeforeFieldInit
+  :System.EventArgs
+    Void .ctor(Byte[]): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Properties:
+    Byte[] Data 'get set' : 
+  Methods:
+    set_Data(Byte[]): PrivateScope, Public, HideBySig, SpecialName
+    get_Data(): PrivateScope, Public, HideBySig, SpecialName
+Class ADSDK.Device.DataReceivedEventHandler: AutoLayout, AnsiClass, Class, Public, Sealed
+  :System.MulticastDelegate
+    Void .ctor(System.Object, IntPtr): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    Invoke(Object, DataReceivedEventArgs): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    BeginInvoke(Object, DataReceivedEventArgs, AsyncCallback, Object): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    EndInvoke(IAsyncResult): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+Class ADSDK.Device.ProtocolEventArg: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.EventArgs
+    Void .ctor(Byte[]): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Properties:
+    Byte[] Data 'get ' : 
+    ADSDK.Device.ProtocolStruct Protocol 'get ' : 
+    ADSDK.Device.ProtocolStructImp R2000Protocol 'get ' : 
+  Methods:
+    get_Data(): PrivateScope, Public, HideBySig, SpecialName
+    get_Protocol(): PrivateScope, Public, HideBySig, SpecialName
+    get_R2000Protocol(): PrivateScope, Public, HideBySig, SpecialName
+    BytesToStruct(Byte[]): PrivateScope, Public, HideBySig
+Class ADSDK.Device.ProtocolEventHandler: AutoLayout, AnsiClass, Class, Public, Sealed
+  :System.MulticastDelegate
+    Void .ctor(System.Object, IntPtr): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    Invoke(Object, ProtocolEventArg): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    BeginInvoke(Object, ProtocolEventArg, AsyncCallback, Object): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    EndInvoke(IAsyncResult): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+Struct ADSDK.Device.PacketType: AutoLayout, AnsiClass, Class, Public, Sealed
+  :System.Enum
+  Fields:
+    Int32 value__ : Public, SpecialName, RTSpecialName
+    ADSDK.Device.PacketType ACTIVE = 0 : Public, Static, Literal, HasDefault
+    ADSDK.Device.PacketType PASSIVE = 1 : Public, Static, Literal, HasDefault
+    ADSDK.Device.PacketType PHYCHIPS = 2 : Public, Static, Literal, HasDefault
+    ADSDK.Device.PacketType IMPINJ = 3 : Public, Static, Literal, HasDefault
+    ADSDK.Device.PacketType CONTROLLER = 4 : Public, Static, Literal, HasDefault
+Class ADSDK.Device.ProtocolPacket: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(Int32, Byte): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(Int32, Byte, Byte[]): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(Int32, Byte, Byte): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(Int32, Byte, Byte, Byte[]): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Properties:
+    Byte[] Packet 'get ' : 
+    Byte Checksum 'get ' : 
+    Byte[] Payload 'get ' : 
+    Byte Length 'get ' : 
+    Byte DataLength 'get ' : 
+    Int32 Address 'get ' : 
+    Byte Code  'get ' : 
+    Byte Type  'get ' : 
+    Byte Preamble 'get ' : 
+    ADSDK.Device.PacketType PacketType 'get set' : 
+  Methods:
+    get_Packet(): PrivateScope, Public, HideBySig, SpecialName
+    get_Checksum(): PrivateScope, Public, HideBySig, SpecialName
+    get_Payload(): PrivateScope, Public, HideBySig, SpecialName
+    get_Length(): PrivateScope, Public, HideBySig, SpecialName
+    get_DataLength(): PrivateScope, Public, HideBySig, SpecialName
+    get_Address(): PrivateScope, Public, HideBySig, SpecialName
+    get_Code(): PrivateScope, Public, HideBySig, SpecialName
+    get_Type(): PrivateScope, Public, HideBySig, SpecialName
+    get_Preamble(): PrivateScope, Public, HideBySig, SpecialName
+    get_PacketType(): PrivateScope, Public, HideBySig, SpecialName
+    set_PacketType(PacketType): PrivateScope, Public, HideBySig, SpecialName
+    CheckSum(Byte[], Int32, Int32): PrivateScope, Public, HideBySig
+    Append(Byte[]): PrivateScope, Public, HideBySig
+Struct ADSDK.Device.ProtocolStructImp: AutoLayout, AnsiClass, Class, Public, SequentialLayout, Sealed, BeforeFieldInit
+  :System.ValueType
+  Fields:
+    Byte Preamble : Public
+    Byte Length : Public
+    Byte Address : Public
+    Byte Code : Public
+    Byte[] Payload : Public, HasFieldMarshal
+  Methods:
+    ToArray(): PrivateScope, Public, HideBySig
+Struct ADSDK.Device.ProtocolStruct: AutoLayout, AnsiClass, Class, Public, SequentialLayout, Sealed, BeforeFieldInit
+  :System.ValueType
+  Fields:
+    Byte Preamble : Public
+    Byte[] Address : Public, HasFieldMarshal
+    Byte Code : Public
+    Byte Type : Public
+    Byte Length : Public
+    Byte[] Payload : Public, HasFieldMarshal
+  Methods:
+    ToArray(): PrivateScope, Public, HideBySig
+Class ADSDK.Device.StringEventArg: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.EventArgs
+    Void .ctor(System.String): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Properties:
+    System.String Data 'get ' : 
+  Methods:
+    get_Data(): PrivateScope, Public, HideBySig, SpecialName
+Class ADSDK.Device.StringEventHandler: AutoLayout, AnsiClass, Class, Public, Sealed
+  :System.MulticastDelegate
+    Void .ctor(System.Object, IntPtr): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    Invoke(Object, StringEventArg): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    BeginInvoke(Object, StringEventArg, AsyncCallback, Object): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    EndInvoke(IAsyncResult): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+Interface ADSDK.Device.IObjectSafety: AutoLayout, AnsiClass, Class, Public, ClassSemanticsMask, Abstract, Import
+  Methods:
+    GetInterfaceSafetyOptions(Guid&, Int32&(HasFieldMarshal), Int32&(HasFieldMarshal)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    SetInterfaceSafetyOptions(Guid&, Int32(HasFieldMarshal), Int32(HasFieldMarshal)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+Struct ADSDK.Device.HID_RETURN: AutoLayout, AnsiClass, Class, Public, Sealed
+  :System.Enum
+  Fields:
+    Int32 value__ : Public, SpecialName, RTSpecialName
+    ADSDK.Device.HID_RETURN SUCCESS = 0 : Public, Static, Literal, HasDefault
+    ADSDK.Device.HID_RETURN NO_DEVICE_CONECTED = 1 : Public, Static, Literal, HasDefault
+    ADSDK.Device.HID_RETURN DEVICE_NOT_FIND = 2 : Public, Static, Literal, HasDefault
+    ADSDK.Device.HID_RETURN DEVICE_OPENED = 3 : Public, Static, Literal, HasDefault
+    ADSDK.Device.HID_RETURN WRITE_FAILD = 4 : Public, Static, Literal, HasDefault
+    ADSDK.Device.HID_RETURN READ_FAILD = 5 : Public, Static, Literal, HasDefault
+Class ADSDK.Device.HidReportEventArgs: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.EventArgs
+    Void .ctor(Byte, Byte[]): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    Byte reportID : Public, InitOnly
+    Byte[] reportBuff : Public, InitOnly
+Class ADSDK.Device.HidReportEventHandler: AutoLayout, AnsiClass, Class, Public, Sealed
+  :System.MulticastDelegate
+    Void .ctor(System.Object, IntPtr): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    Invoke(Object, HidReportEventArgs): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    BeginInvoke(Object, HidReportEventArgs, AsyncCallback, Object): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    EndInvoke(IAsyncResult): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+Class ADSDK.Device.Hid: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    UInt16 VersionNumber : Public
+    UInt32 FILE_SHARE_READ = 1 : Public, Static, Literal, HasDefault
+    UInt32 FILE_SHARE_WRITE = 2 : Public, Static, Literal, HasDefault
+  Properties:
+    Int32 OutputReportLength 'get ' : 
+    Int32 InputReportLength 'get ' : 
+  Events:
+    ADSDK.Device.HidReportEventHandler HidReport: 
+    System.EventHandler HidDeviceRemoved: 
+    System.EventHandler HidDeviceArrived: 
+  Methods:
+    get_OutputReportLength(): PrivateScope, Public, HideBySig, SpecialName
+    get_InputReportLength(): PrivateScope, Public, HideBySig, SpecialName
+    add_HidReport(HidReportEventHandler): PrivateScope, Public, HideBySig, SpecialName
+    remove_HidReport(HidReportEventHandler): PrivateScope, Public, HideBySig, SpecialName
+    add_HidDeviceRemoved(EventHandler): PrivateScope, Public, HideBySig, SpecialName
+    remove_HidDeviceRemoved(EventHandler): PrivateScope, Public, HideBySig, SpecialName
+    add_HidDeviceArrived(EventHandler): PrivateScope, Public, HideBySig, SpecialName
+    remove_HidDeviceArrived(EventHandler): PrivateScope, Public, HideBySig, SpecialName
+    OpenDevice(UInt16, UInt16, String): PrivateScope, Public, HideBySig
+    OpenDevice(String, String): PrivateScope, Public, HideBySig
+    CloseDevice(): PrivateScope, Public, HideBySig
+    Write(HidReportEventArgs): PrivateScope, Public, HideBySig
+    GetHidDeviceList(List`1&, String[], String[]): PrivateScope, Public, Static, HideBySig
+    GetHidDeviceList(List`1&): PrivateScope, Public, Static, HideBySig
+Struct ADSDK.Device.SP_DEVICE_INTERFACE_DATA: AutoLayout, AnsiClass, Class, Public, SequentialLayout, Sealed, BeforeFieldInit
+  :System.ValueType
+  Fields:
+    Int32 cbSize : Public
+    System.Guid interfaceClassGuid : Public
+    Int32 flags : Public
+    Int32 reserved : Public
+Struct ADSDK.Device.SP_DEVINFO_DATA: AutoLayout, AnsiClass, Class, Public, SequentialLayout, Sealed, BeforeFieldInit
+  :System.ValueType
+  Fields:
+    Int32 cbSize : Public
+    System.Guid classGuid : Public
+    Int32 devInst : Public
+    Int32 reserved : Public
+Struct ADSDK.Device.DIGCF: AutoLayout, AnsiClass, Class, Public, Sealed
+  :System.Enum
+  Fields:
+    Int32 value__ : Public, SpecialName, RTSpecialName
+    ADSDK.Device.DIGCF DIGCF_DEFAULT = 1 : Public, Static, Literal, HasDefault
+    ADSDK.Device.DIGCF DIGCF_PRESENT = 2 : Public, Static, Literal, HasDefault
+    ADSDK.Device.DIGCF DIGCF_ALLCLASSES = 4 : Public, Static, Literal, HasDefault
+    ADSDK.Device.DIGCF DIGCF_PROFILE = 8 : Public, Static, Literal, HasDefault
+    ADSDK.Device.DIGCF DIGCF_DEVICEINTERFACE = 16 : Public, Static, Literal, HasDefault
+Struct ADSDK.Device.HIDD_ATTRIBUTES: AutoLayout, AnsiClass, Class, Public, SequentialLayout, Sealed, BeforeFieldInit
+  :System.ValueType
+  Fields:
+    Int32 Size : Public
+    UInt16 VendorID : Public
+    UInt16 ProductID : Public
+    UInt16 VersionNumber : Public
+Struct ADSDK.Device.HIDP_CAPS: AutoLayout, AnsiClass, Class, Public, SequentialLayout, Sealed, BeforeFieldInit
+  :System.ValueType
+  Fields:
+    UInt16 Usage : Public
+    UInt16 UsagePage : Public
+    UInt16 InputReportByteLength : Public
+    UInt16 OutputReportByteLength : Public
+    UInt16[] Reserved : Public, HasFieldMarshal
+    UInt16 NumberLinkCollectionNodes : Public
+    UInt16 NumberInputButtonCaps : Public
+    UInt16 NumberInputValueCaps : Public
+    UInt16 NumberInputDataIndices : Public
+    UInt16 NumberOutputButtonCaps : Public
+    UInt16 NumberOutputValueCaps : Public
+    UInt16 NumberOutputDataIndices : Public
+    UInt16 NumberFeatureButtonCaps : Public
+    UInt16 NumberFeatureValueCaps : Public
+    UInt16 NumberFeatureDataIndices : Public
+Class ADSDK.Device.FLAGSANDATTRIBUTES: AutoLayout, AnsiClass, Class, Public, Abstract, Sealed, BeforeFieldInit
+  Fields:
+    UInt32 FILE_FLAG_WRITE_THROUGH = 2147483648 : Public, Static, Literal, HasDefault
+    UInt32 FILE_FLAG_OVERLAPPED = 1073741824 : Public, Static, Literal, HasDefault
+    UInt32 FILE_FLAG_NO_BUFFERING = 536870912 : Public, Static, Literal, HasDefault
+    UInt32 FILE_FLAG_RANDOM_ACCESS = 268435456 : Public, Static, Literal, HasDefault
+    UInt32 FILE_FLAG_SEQUENTIAL_SCAN = 134217728 : Public, Static, Literal, HasDefault
+    UInt32 FILE_FLAG_DELETE_ON_CLOSE = 67108864 : Public, Static, Literal, HasDefault
+    UInt32 FILE_FLAG_BACKUP_SEMANTICS = 33554432 : Public, Static, Literal, HasDefault
+    UInt32 FILE_FLAG_POSIX_SEMANTICS = 16777216 : Public, Static, Literal, HasDefault
+    UInt32 FILE_FLAG_OPEN_REPARSE_POINT = 2097152 : Public, Static, Literal, HasDefault
+    UInt32 FILE_FLAG_OPEN_NO_RECALL = 1048576 : Public, Static, Literal, HasDefault
+    UInt32 FILE_FLAG_FIRST_PIPE_INSTANCE = 524288 : Public, Static, Literal, HasDefault
+Struct ADSDK.Device.DEV_BROADCAST_HDR: AutoLayout, AnsiClass, Class, Public, SequentialLayout, Sealed, BeforeFieldInit
+  :System.ValueType
+  Fields:
+    Int32 dbcc_size : Public
+    Int32 dbcc_devicetype : Public
+    Int32 dbcc_reserved : Public
+Struct ADSDK.Device.DEV_BROADCAST_DEVICEINTERFACE: AutoLayout, AnsiClass, Class, Public, SequentialLayout, Sealed, BeforeFieldInit
+  :System.ValueType
+  Fields:
+    Int32 dbcc_size : Public
+    Int32 dbcc_devicetype : Public
+    Int32 dbcc_reserved : Public
+    System.Guid dbcc_classguid : Public
+    System.String dbcc_name : Public, HasFieldMarshal
+Class ADSDK.Device.CanbusParameters: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Interfaces:
+    System.ICloneable
+  Properties:
+    Byte[] RemoteID 'get set' : 
+    Byte[] LocalID 'get set' : 
+    Byte[] MaskID 'get set' : 
+  Methods:
+    set_RemoteID(Byte[]): PrivateScope, Public, HideBySig, SpecialName
+    get_RemoteID(): PrivateScope, Public, HideBySig, SpecialName
+    set_LocalID(Byte[]): PrivateScope, Public, HideBySig, SpecialName
+    get_LocalID(): PrivateScope, Public, HideBySig, SpecialName
+    set_MaskID(Byte[]): PrivateScope, Public, HideBySig, SpecialName
+    get_MaskID(): PrivateScope, Public, HideBySig, SpecialName
+    ToArray(): PrivateScope, Public, HideBySig
+    AddRange(Byte[]): PrivateScope, Public, HideBySig
+    RemoteIDToString(): PrivateScope, Public, HideBySig
+    SetRemoteID(String): PrivateScope, Public, HideBySig
+    LocalIDToString(): PrivateScope, Public, HideBySig
+    SetLocalID(String): PrivateScope, Public, HideBySig
+    MaskIDToString(): PrivateScope, Public, HideBySig
+    SetMaskID(String): PrivateScope, Public, HideBySig
+    ToString(): PrivateScope, Public, Virtual, HideBySig
+    Clone(): PrivateScope, Public, Final, Virtual, HideBySig, VtableLayoutMask
+Class ADSDK.Device.TcpipParameters: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Interfaces:
+    System.ICloneable
+  Properties:
+    Byte[] IP  'get set' : 
+    Byte[] Mask 'get set' : 
+    Byte[] GateWay 'get set' : 
+    Int32 Port 'get set' : 
+    Byte[] Mac 'get set' : 
+    Byte[] RemoteIP 'get set' : 
+    Int32 RemotePort 'get set' : 
+    Int32 Server 'get set' : 
+    Int32 Protocol 'get set' : 
+  Methods:
+    set_IP(Byte[]): PrivateScope, Public, HideBySig, SpecialName
+    get_IP(): PrivateScope, Public, HideBySig, SpecialName
+    set_Mask(Byte[]): PrivateScope, Public, HideBySig, SpecialName
+    get_Mask(): PrivateScope, Public, HideBySig, SpecialName
+    set_GateWay(Byte[]): PrivateScope, Public, HideBySig, SpecialName
+    get_GateWay(): PrivateScope, Public, HideBySig, SpecialName
+    set_Port(Int32): PrivateScope, Public, HideBySig, SpecialName
+    get_Port(): PrivateScope, Public, HideBySig, SpecialName
+    set_Mac(Byte[]): PrivateScope, Public, HideBySig, SpecialName
+    get_Mac(): PrivateScope, Public, HideBySig, SpecialName
+    set_RemoteIP(Byte[]): PrivateScope, Public, HideBySig, SpecialName
+    get_RemoteIP(): PrivateScope, Public, HideBySig, SpecialName
+    set_RemotePort(Int32): PrivateScope, Public, HideBySig, SpecialName
+    get_RemotePort(): PrivateScope, Public, HideBySig, SpecialName
+    set_Server(Int32): PrivateScope, Public, HideBySig, SpecialName
+    get_Server(): PrivateScope, Public, HideBySig, SpecialName
+    set_Protocol(Int32): PrivateScope, Public, HideBySig, SpecialName
+    get_Protocol(): PrivateScope, Public, HideBySig, SpecialName
+    ToArray(): PrivateScope, Public, HideBySig
+    AddRange(Byte[]): PrivateScope, Public, HideBySig
+    IPToString(): PrivateScope, Public, HideBySig
+    SetIP(String): PrivateScope, Public, HideBySig
+    MaskToString(): PrivateScope, Public, HideBySig
+    SetMask(String): PrivateScope, Public, HideBySig
+    GateWayToString(): PrivateScope, Public, HideBySig
+    SetGateWay(String): PrivateScope, Public, HideBySig
+    MacToString(): PrivateScope, Public, HideBySig
+    SetMac(String): PrivateScope, Public, HideBySig
+    RemoteIPToString(): PrivateScope, Public, HideBySig
+    SetRemoteIP(String): PrivateScope, Public, HideBySig
+    ToString(): PrivateScope, Public, Virtual, HideBySig
+    Clone(): PrivateScope, Public, Final, Virtual, HideBySig, VtableLayoutMask
+Class ADSDK.Device.WifiPubParameters: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Interfaces:
+    System.ICloneable
+  Properties:
+    Int32 Type 'get set' : 
+    Int32 Mode 'get set' : 
+    Int32 Hide 'get set' : 
+    Int32 Tcpto 'get set' : 
+    Int32 Maxsk 'get set' : 
+    Int32 Server 'get set' : 
+    Int32 Protocol 'get set' : 
+    Int32 RemotePort 'get set' : 
+    System.String RemoteIP 'get set' : 
+    System.String Mac 'get set' : 
+  Methods:
+    set_Type(Int32): PrivateScope, Public, HideBySig, SpecialName
+    get_Type(): PrivateScope, Public, HideBySig, SpecialName
+    set_Mode(Int32): PrivateScope, Public, HideBySig, SpecialName
+    get_Mode(): PrivateScope, Public, HideBySig, SpecialName
+    set_Hide(Int32): PrivateScope, Public, HideBySig, SpecialName
+    get_Hide(): PrivateScope, Public, HideBySig, SpecialName
+    set_Tcpto(Int32): PrivateScope, Public, HideBySig, SpecialName
+    get_Tcpto(): PrivateScope, Public, HideBySig, SpecialName
+    set_Maxsk(Int32): PrivateScope, Public, HideBySig, SpecialName
+    get_Maxsk(): PrivateScope, Public, HideBySig, SpecialName
+    set_Server(Int32): PrivateScope, Public, HideBySig, SpecialName
+    get_Server(): PrivateScope, Public, HideBySig, SpecialName
+    set_Protocol(Int32): PrivateScope, Public, HideBySig, SpecialName
+    get_Protocol(): PrivateScope, Public, HideBySig, SpecialName
+    set_RemotePort(Int32): PrivateScope, Public, HideBySig, SpecialName
+    get_RemotePort(): PrivateScope, Public, HideBySig, SpecialName
+    set_RemoteIP(String): PrivateScope, Public, HideBySig, SpecialName
+    get_RemoteIP(): PrivateScope, Public, HideBySig, SpecialName
+    set_Mac(String): PrivateScope, Public, HideBySig, SpecialName
+    get_Mac(): PrivateScope, Public, HideBySig, SpecialName
+    ToArray(): PrivateScope, Public, HideBySig
+    AddRange(Byte[]): PrivateScope, Public, HideBySig
+    ToString(): PrivateScope, Public, Virtual, HideBySig
+    Clone(): PrivateScope, Public, Final, Virtual, HideBySig, VtableLayoutMask
+Class ADSDK.Device.WifiSsidParameters: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Interfaces:
+    System.ICloneable
+  Properties:
+    Int32 Mode 'get set' : 
+    Int32 Channel 'get set' : 
+    Int32 Auth 'get set' : 
+    Int32 Encry 'get set' : 
+    System.String Key 'get set' : 
+    System.String SSID 'get set' : 
+    Int32 DHCP 'get set' : 
+    System.String Ip 'get set' : 
+    System.String Mask 'get set' : 
+    System.String Gateway 'get set' : 
+  Methods:
+    set_Mode(Int32): PrivateScope, Public, HideBySig, SpecialName
+    get_Mode(): PrivateScope, Public, HideBySig, SpecialName
+    set_Channel(Int32): PrivateScope, Public, HideBySig, SpecialName
+    get_Channel(): PrivateScope, Public, HideBySig, SpecialName
+    set_Auth(Int32): PrivateScope, Public, HideBySig, SpecialName
+    get_Auth(): PrivateScope, Public, HideBySig, SpecialName
+    set_Encry(Int32): PrivateScope, Public, HideBySig, SpecialName
+    get_Encry(): PrivateScope, Public, HideBySig, SpecialName
+    set_Key(String): PrivateScope, Public, HideBySig, SpecialName
+    get_Key(): PrivateScope, Public, HideBySig, SpecialName
+    set_SSID(String): PrivateScope, Public, HideBySig, SpecialName
+    get_SSID(): PrivateScope, Public, HideBySig, SpecialName
+    set_DHCP(Int32): PrivateScope, Public, HideBySig, SpecialName
+    get_DHCP(): PrivateScope, Public, HideBySig, SpecialName
+    set_Ip(String): PrivateScope, Public, HideBySig, SpecialName
+    get_Ip(): PrivateScope, Public, HideBySig, SpecialName
+    set_Mask(String): PrivateScope, Public, HideBySig, SpecialName
+    get_Mask(): PrivateScope, Public, HideBySig, SpecialName
+    set_Gateway(String): PrivateScope, Public, HideBySig, SpecialName
+    get_Gateway(): PrivateScope, Public, HideBySig, SpecialName
+    ToArray(): PrivateScope, Public, HideBySig
+    AddRange(Byte[]): PrivateScope, Public, HideBySig
+    ToString(): PrivateScope, Public, Virtual, HideBySig
+    Clone(): PrivateScope, Public, Final, Virtual, HideBySig, VtableLayoutMask
+Struct ADSDK.Device.ADUsb+VirtualKeys: AutoLayout, AnsiClass, Class, NestedPublic, Sealed
+  :System.Enum
+  Fields:
+    Byte value__ : Public, SpecialName, RTSpecialName
+    VirtualKeys VK_NUMLOCK = 144 : Public, Static, Literal, HasDefault
+    VirtualKeys VK_SCROLL = 145 : Public, Static, Literal, HasDefault
+    VirtualKeys VK_CAPITAL = 20 : Public, Static, Literal, HasDefault
+    VirtualKeys VK_A = 62 : Public, Static, Literal, HasDefault
+Struct ADSDK.Device.Coder+EncodingMothord: AutoLayout, AnsiClass, Class, NestedPublic, Sealed
+  :System.Enum
+  Fields:
+    Int32 value__ : Public, SpecialName, RTSpecialName
+    EncodingMothord Default = 0 : Public, Static, Literal, HasDefault
+    EncodingMothord Unicode = 1 : Public, Static, Literal, HasDefault
+    EncodingMothord UTF8 = 2 : Public, Static, Literal, HasDefault
+    EncodingMothord ASCII = 3 : Public, Static, Literal, HasDefault
+    EncodingMothord HEX = 4 : Public, Static, Literal, HasDefault
+    EncodingMothord GB2312 = 5 : Public, Static, Literal, HasDefault

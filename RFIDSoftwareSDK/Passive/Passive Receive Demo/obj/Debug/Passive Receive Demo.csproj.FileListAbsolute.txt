@@ -1,0 +1,9 @@
+E:\VS2012\ApplicationSolution\Reader\RFID\SDK\Passive\Passive Receive Demo\bin\Debug\Passive Receive Demo.exe
+E:\VS2012\ApplicationSolution\Reader\RFID\SDK\Passive\Passive Receive Demo\bin\Debug\Passive Receive Demo.pdb
+E:\VS2012\ApplicationSolution\Reader\RFID\SDK\Passive\Passive Receive Demo\obj\Debug\ADSDKDemo.frmMain.resources
+E:\VS2012\ApplicationSolution\Reader\RFID\SDK\Passive\Passive Receive Demo\obj\Debug\ADSDKDemo.Properties.Resources.resources
+E:\VS2012\ApplicationSolution\Reader\RFID\SDK\Passive\Passive Receive Demo\obj\Debug\Passive Receive Demo.csproj.GenerateResource.Cache
+E:\VS2012\ApplicationSolution\Reader\RFID\SDK\Passive\Passive Receive Demo\obj\Debug\Passive Receive Demo.exe
+E:\VS2012\ApplicationSolution\Reader\RFID\SDK\Passive\Passive Receive Demo\obj\Debug\Passive Receive Demo.pdb
+E:\VS2012\ApplicationSolution\Reader\RFID\SDK\Passive\Passive Receive Demo\obj\Debug\Passive Receive Demo.csproj.CoreCompileInputs.cache
+E:\VS2012\ApplicationSolution\Reader\RFID\SDK\Passive\Passive Receive Demo\obj\Debug\Passive Receive Demo.csprojAssemblyReference.cache

@@ -1,0 +1,26 @@
+E:\VS2012\ApplicationSolution\Reader\RFID\SDK\Passive\Passive Demo\bin\Debug\Passive Demo.exe
+E:\VS2012\ApplicationSolution\Reader\RFID\SDK\Passive\Passive Demo\bin\Debug\Passive Demo.pdb
+E:\VS2012\ApplicationSolution\Reader\RFID\SDK\Passive\Passive Demo\bin\Debug\ADBases.dll
+E:\VS2012\ApplicationSolution\Reader\RFID\SDK\Passive\Passive Demo\bin\Debug\ADDevice.dll
+E:\VS2012\ApplicationSolution\Reader\RFID\SDK\Passive\Passive Demo\bin\Debug\ADDeviceReader.dll
+E:\VS2012\ApplicationSolution\Reader\RFID\SDK\Passive\Passive Demo\bin\Debug\ADInitializer.dll
+E:\VS2012\ApplicationSolution\Reader\RFID\SDK\Passive\Passive Demo\bin\Debug\ADWifi.dll
+E:\VS2012\ApplicationSolution\Reader\RFID\SDK\Passive\Passive Demo\bin\Debug\ADInitializer.xml
+E:\VS2012\ApplicationSolution\Reader\RFID\SDK\Passive\Passive Demo\bin\Debug\ADDeviceReader.xml
+E:\VS2012\ApplicationSolution\Reader\RFID\SDK\Passive\Passive Demo\bin\Debug\ADDevice.xml
+E:\VS2012\ApplicationSolution\Reader\RFID\SDK\Passive\Passive Demo\obj\x86\Debug\ADSDK.Device.Reader.CardsDataGridView.resources
+E:\VS2012\ApplicationSolution\Reader\RFID\SDK\Passive\Passive Demo\obj\x86\Debug\ADSDKDemo.frmConnect.resources
+E:\VS2012\ApplicationSolution\Reader\RFID\SDK\Passive\Passive Demo\obj\x86\Debug\ADSDK.Bases.Components.LimitTextBox.resources
+E:\VS2012\ApplicationSolution\Reader\RFID\SDK\Passive\Passive Demo\obj\x86\Debug\ADSDKDemo.frmMain.resources
+E:\VS2012\ApplicationSolution\Reader\RFID\SDK\Passive\Passive Demo\obj\x86\Debug\ADSDKDemo.ucPBaseSettings.resources
+E:\VS2012\ApplicationSolution\Reader\RFID\SDK\Passive\Passive Demo\obj\x86\Debug\ADSDKDemo.ucPReadDemo.resources
+E:\VS2012\ApplicationSolution\Reader\RFID\SDK\Passive\Passive Demo\obj\x86\Debug\ADSDKDemo.ucPSeniorSettings.resources
+E:\VS2012\ApplicationSolution\Reader\RFID\SDK\Passive\Passive Demo\obj\x86\Debug\ADSDKDemo.ucPWriteEPC.resources
+E:\VS2012\ApplicationSolution\Reader\RFID\SDK\Passive\Passive Demo\obj\x86\Debug\ADSDKDemo.ucPWriteISO.resources
+E:\VS2012\ApplicationSolution\Reader\RFID\SDK\Passive\Passive Demo\obj\x86\Debug\ADSDKDemo.Properties.Resources.resources
+E:\VS2012\ApplicationSolution\Reader\RFID\SDK\Passive\Passive Demo\obj\x86\Debug\ADSDKDemo.ucPassive.resources
+E:\VS2012\ApplicationSolution\Reader\RFID\SDK\Passive\Passive Demo\obj\x86\Debug\Passive Demo.csproj.GenerateResource.Cache
+E:\VS2012\ApplicationSolution\Reader\RFID\SDK\Passive\Passive Demo\obj\x86\Debug\Passive Demo.exe
+E:\VS2012\ApplicationSolution\Reader\RFID\SDK\Passive\Passive Demo\obj\x86\Debug\Passive Demo.pdb
+E:\VS2012\ApplicationSolution\Reader\RFID\SDK\Passive\Passive Demo\obj\x86\Debug\Passive Demo.csproj.CoreCompileInputs.cache
+E:\VS2012\ApplicationSolution\Reader\RFID\SDK\Passive\Passive Demo\obj\x86\Debug\Passive Demo.csproj.CopyComplete

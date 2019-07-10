@@ -1,0 +1,17 @@
+E:\VS2012\ApplicationSolution\Reader\RFID\SDK\Passive\Passive Quick Demo\bin\Debug\Document\PassiveCmdList.doc
+E:\VS2012\ApplicationSolution\Reader\RFID\SDK\Passive\Passive Quick Demo\bin\Debug\Passive Quick Demo.exe
+E:\VS2012\ApplicationSolution\Reader\RFID\SDK\Passive\Passive Quick Demo\bin\Debug\Passive Quick Demo.pdb
+E:\VS2012\ApplicationSolution\Reader\RFID\SDK\Passive\Passive Quick Demo\bin\Debug\ADActiveX.dll
+E:\VS2012\ApplicationSolution\Reader\RFID\SDK\Passive\Passive Quick Demo\bin\Debug\ADDevice.dll
+E:\VS2012\ApplicationSolution\Reader\RFID\SDK\Passive\Passive Quick Demo\bin\Debug\ADDeviceReader.dll
+E:\VS2012\ApplicationSolution\Reader\RFID\SDK\Passive\Passive Quick Demo\bin\Debug\ADActiveX.xml
+E:\VS2012\ApplicationSolution\Reader\RFID\SDK\Passive\Passive Quick Demo\bin\Debug\ADDevice.xml
+E:\VS2012\ApplicationSolution\Reader\RFID\SDK\Passive\Passive Quick Demo\bin\Debug\ADDeviceReader.xml
+E:\VS2012\ApplicationSolution\Reader\RFID\SDK\Passive\Passive Quick Demo\obj\Debug\ADSDKDemo.frmMain.resources
+E:\VS2012\ApplicationSolution\Reader\RFID\SDK\Passive\Passive Quick Demo\obj\Debug\ADSDKDemo.Properties.Resources.resources
+E:\VS2012\ApplicationSolution\Reader\RFID\SDK\Passive\Passive Quick Demo\obj\Debug\Passive Quick Demo.csproj.GenerateResource.cache
+E:\VS2012\ApplicationSolution\Reader\RFID\SDK\Passive\Passive Quick Demo\obj\Debug\Passive Quick Demo.csproj.CoreCompileInputs.cache
+E:\VS2012\ApplicationSolution\Reader\RFID\SDK\Passive\Passive Quick Demo\obj\Debug\Passive Quick Demo.csproj.CopyComplete
+E:\VS2012\ApplicationSolution\Reader\RFID\SDK\Passive\Passive Quick Demo\obj\Debug\Passive Quick Demo.exe
+E:\VS2012\ApplicationSolution\Reader\RFID\SDK\Passive\Passive Quick Demo\obj\Debug\Passive Quick Demo.pdb
+E:\VS2012\ApplicationSolution\Reader\RFID\SDK\Passive\Passive Quick Demo\obj\Debug\Passive Quick Demo.csprojAssemblyReference.cache

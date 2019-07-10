@@ -1,0 +1,3325 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ADDevice</name>
+    </assembly>
+    <members>
+        <member name="T:ADSDK.Device.ActiveXControl">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:ADSDK.Device.ActiveXControl.GetInterfaceSafetyOptions(System.Guid@,System.Int32@,System.Int32@)">
+            <summary>
+            <para>Get Interface Safety Options</para>  
+            <para>获取接口安全选项</para> 
+            </summary>
+            <param name="riid"></param>
+            <param name="pdwSupportedOptions"></param>
+            <param name="pdwEnabledOptions"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.ActiveXControl.SetInterfaceSafetyOptions(System.Guid@,System.Int32,System.Int32)">
+            <summary>
+            <para>Set Interface Safety Options</para>  
+            <para>设置接口安全选项</para> 
+            </summary>
+            <param name="riid"></param>
+            <param name="dwOptionSetMask"></param>
+            <param name="dwEnabledOptions"></param>
+            <returns></returns>
+        </member>
+        <member name="T:ADSDK.Device.ADRcpImp">
+            <summary>
+            Communication Data Managed Base Class(通讯数据处理基类)
+            </summary>
+        </member>
+        <member name="E:ADSDK.Device.ADRcpImp.RcpLogEventReceived">
+            <summary>
+            Communication log 通讯日志
+            </summary>
+        </member>
+        <member name="E:ADSDK.Device.ADRcpImp.RxRspParsed">
+            <summary>
+            Asynchronous receive data(Hex)异步接收数据
+            </summary>
+        </member>
+        <member name="E:ADSDK.Device.ADRcpImp.StatusConnected">
+            <summary>
+            Communication status 通讯状态事件
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.ADRcpImp.m_oByteRxPkt">
+            <summary>
+            Receive data Buffer(数据接收缓存)
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.ADRcpImp.m_bRcpReceivedPacket">
+            <summary>
+            Receive data Mark(数据接收标志)
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.ADRcpImp.m_bRcpReceivedPacketCrcError">
+            <summary>
+            Receive data error Mark(数据接收异常标志)
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.ADRcpImp.m_Delay">
+            <summary>
+            Receive data delay Mark(数据接收超时标志)
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.ADRcpImp.Address">
+            <summary>
+            Communication address(通讯地址)
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.ADRcpImp.Mode">
+            <summary>
+            Communication device mode(通讯设备类型)
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.ADRcpImp.Type">
+            <summary>
+            Communication device type(通讯设备型号)
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.ADRcpImp.Version">
+            <summary>
+            device version(设备版本号)
+            </summary>
+        </member>
+        <member name="P:ADSDK.Device.ADRcpImp.VersionNumber">
+            <summary>
+            device version Number(设备版本号)
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.ADRcpImp.CommMode">
+            <summary>
+            Communication Mode(通讯方式)
+            </summary>
+        </member>
+        <member name="M:ADSDK.Device.ADRcpImp.GetVersion">
+            <summary>
+            Get Current Version
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="F:ADSDK.Device.ADRcpImp.IsConnect">
+            <summary>
+            Communication status flag of card reader(与读卡器通讯成功标志)
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.ADRcpImp.mSio">
+            <summary>
+            Communication base class
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.ADRcpImp.mSioType">
+            <summary>
+            Type of the Communication 0-232,1-NET,2-USB
+            </summary>
+        </member>
+        <member name="P:ADSDK.Device.ADRcpImp.bConnected">
+            <summary>
+            Communication status flag 通讯连接标志,非与读卡器通讯成功标志
+            </summary>
+        </member>
+        <member name="P:ADSDK.Device.ADRcpImp.Sio">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:ADSDK.Device.ADRcpImp.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:ADSDK.Device.ADRcpImp.#ctor(ADSDK.Device.ADSio)">
+            <summary>
+            
+            </summary>
+            <param name="sio"></param>
+        </member>
+        <member name="M:ADSDK.Device.ADRcpImp.Finalize">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:ADSDK.Device.ADRcpImp.Connect(System.String,System.Int32,System.Int32)">
+            <summary>
+            <para>Create a communication connection</para>  
+            <para>创建一个通信连接</para>  
+            </summary>
+            <param name="hostOrPort">
+            <para>IP Address or Comport</para>  
+            <para>COM TYPE:"COM1"</para>  
+            <para>NET TYPE:"192.168.2.115"</para>  
+            <para>USB TYPE:"AD"</para>  
+            </param>
+            <param name="portOrBaud">
+            <para>IP Port or Baudrate</para> 
+            <para>COM TYPE:"9600"</para> 
+            <para>NET TYPE:"49152"</para> 
+            <para>USB TYPE:"0"</para> 
+            </param>
+            <param name="type">
+            <para>Communication Type</para> 
+            <para>0 - COM,1 - NET,2 - USB</para>  
+            <para>读卡器类型</para> 
+            <para>0 - 232通讯或者485通讯,1 - 网络通讯或者WiFi通讯,2 - HID通讯</para> 
+            </param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.ADRcpImp.DisConnect">
+            <summary>
+            <para>DisConnect communication connection</para>  
+            <para>断开通信</para>  
+            </summary>
+        </member>
+        <member name="M:ADSDK.Device.ADRcpImp.Send(System.Byte[])">
+            <summary>
+            Send Data(数据发送)
+            </summary>
+            <param name="byData">数据数组</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.ADRcpImp.Send(System.String)">
+            <summary>
+            Send Data(数据发送)
+            </summary>
+            <param name="strData">数据字符串</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.ADRcpImp.DealPacketByte(ADSDK.Device.ByteEventArg)">
+            <summary>
+            
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:ADSDK.Device.ADRcpImp.ReciveBytePkt(System.Byte[])">
+            <summary>
+            数据接收处理
+            </summary>
+            <param name="data"></param>
+        </member>
+        <member name="M:ADSDK.Device.ADRcpImp.BuildCmdPacketByte(System.Byte,System.Byte[])">
+            <summary>
+            packet command data (打包命令数据)
+            </summary>
+            <param name="nCmd">命令类型</param>
+            <param name="ArgByte">数据</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.ADRcpImp.BuildCmdPacketByte(System.Int32,System.Byte,System.Byte[])">
+            <summary>
+            packet command data (打包命令数据)
+            </summary>
+            <param name="nAddr">通讯地址</param>
+            <param name="nCmd">命令类型</param>
+            <param name="ArgByte">数据</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.ADRcpImp.BuildCmdPacketByte(System.Byte,System.Int32,System.Byte,System.Byte[])">
+            <summary>
+            packet command data (打包命令数据)
+            </summary>
+            <param name="nHead">命令头</param>
+            <param name="nAddr">通讯地址</param>
+            <param name="nCmd">命令类型</param>
+            <param name="ArgByte">数据</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.ADRcpImp.SendBytePkt(System.Byte[])">
+            <summary>
+            send packet data (发送数据包)
+            </summary>
+            <param name="pkt">packet data(数据包)</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.ADRcpImp.SendBytePkt(System.Byte[],System.Int32)">
+            <summary>
+            send packet data (发送数据包)
+            </summary>
+            <param name="pkt">packet data(数据包)</param>
+            <param name="delay">send to recive delay (发送转接收超时间隔ms)</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.ADRcpImp.SendBytePktNoMsg(System.Byte[])">
+            <summary>
+            send packet data and not recive data
+            </summary>
+            <param name="pkt">packet data(数据包)</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.ADRcpImp.GetErrorCodeString(System.Int32,System.Byte)">
+            <summary>
+            Get Error Code 获取错误代码释义
+            </summary>
+            <param name="language">Language(语言选择)</param>
+            <param name="code">error code(错误代码)</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.ADRcpImp.GetCodeString(System.Int32,System.Byte)">
+            <summary>
+            Get Code 获取代码释义
+            </summary>
+            <param name="language">Language(语言选择)</param>
+            <param name="code">code(错代码)</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.ADRcpImp.ParseMsgRspType(ADSDK.Device.ProtocolStructImp)">
+            <summary>
+            
+            </summary>
+            <param name="pst"></param>
+        </member>
+        <member name="M:ADSDK.Device.ADRcpImp.RcpLog(ADSDK.Device.ProtocolStructImp,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="pst"></param>
+            <param name="type"></param>
+        </member>
+        <member name="M:ADSDK.Device.ADRcpImp.ParseMsgRspInfo(ADSDK.Device.ProtocolStructImp)">
+            <summary>
+            
+            </summary>
+            <param name="pst"></param>
+        </member>
+        <member name="M:ADSDK.Device.ADRcpImp.Dispose(System.Boolean)">
+            <summary>
+            
+            </summary>
+            <param name="disposing"></param>
+        </member>
+        <member name="M:ADSDK.Device.ADRcpImp.Dispose">
+            <summary>
+            TODO: 仅当以上 Dispose(bool disposing) 拥有用于释放未托管资源的代码时才替代终结器。
+            ~ADRcp() {
+              // 请勿更改此代码。将清理代码放入以上 Dispose(bool disposing) 中。
+              Dispose(false);
+            }
+            添加此代码以正确实现可处置模式。
+            </summary>
+        </member>
+        <member name="T:ADSDK.Device.ADCom">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:ADSDK.Device.ADCom.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:ADSDK.Device.ADCom.#ctor(System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="parity"></param>
+        </member>
+        <member name="M:ADSDK.Device.ADCom.Finalize">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:ADSDK.Device.ADCom.Connect(System.String,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="hostname"></param>
+            <param name="baudorport"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.ADCom.Send(System.Byte[])">
+            <summary>
+            
+            </summary>
+            <param name="byData"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.ADCom.Send(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="strData"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.ADCom.Receive(System.Byte[]@)">
+            <summary>
+            
+            </summary>
+            <param name="byData"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.ADCom.DisConnect">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:ADSDK.Device.ADCom.ToString">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.ADCom.ComDataReceived(System.Object,System.IO.Ports.SerialDataReceivedEventArgs)">
+            <summary>
+            
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:ADSDK.Device.ADCom.Dispose(System.Boolean)">
+            <summary>
+            
+            </summary>
+            <param name="disposing"></param>
+        </member>
+        <member name="T:ADSDK.Device.ADNet">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.ADNet.mTcpClient">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.ADNet.serverStream">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.ADNet.mIslogout">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:ADSDK.Device.ADNet.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:ADSDK.Device.ADNet.Finalize">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:ADSDK.Device.ADNet.Connect(System.String,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="hostname"></param>
+            <param name="baudorport"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.ADNet.Send(System.Byte[])">
+            <summary>
+            
+            </summary>
+            <param name="byData"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.ADNet.Send(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="strData"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.ADNet.Receive(System.Byte[]@)">
+            <summary>
+            
+            </summary>
+            <param name="byData"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.ADNet.DisConnect">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:ADSDK.Device.ADNet.ToString">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="F:ADSDK.Device.ADNet.DefaultBufferSize">
+            <summary>
+            接收数据缓冲区大小16K
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.ADNet._recvDataBuffer">
+            <summary>
+            接收数据缓冲区
+            </summary>
+        </member>
+        <member name="M:ADSDK.Device.ADNet.tcConnectAsync(System.String,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="ip"></param>
+            <param name="ipport"></param>
+        </member>
+        <member name="M:ADSDK.Device.ADNet.tcConnected(System.IAsyncResult)">
+            <summary>
+            建立Tcp连接后处理过程
+            </summary>
+            <param name="iar">异步Socket</param>
+        </member>
+        <member name="M:ADSDK.Device.ADNet.tcBeginSend(System.Byte[])">
+            <summary>
+            发送数据报文
+            </summary>
+            <param name="datagram"></param>
+        </member>
+        <member name="M:ADSDK.Device.ADNet.tcSendDataEnd(System.IAsyncResult)">
+            <summary>
+            数据发送完成处理函数
+            </summary>
+            <param name="iar"></param>
+        </member>
+        <member name="M:ADSDK.Device.ADNet.tcRecvData(System.IAsyncResult)">
+            <summary>
+            数据接收处理函数
+            </summary>
+            <param name="iar">异步Socket</param>
+        </member>
+        <member name="M:ADSDK.Device.ADNet.Dispose(System.Boolean)">
+            <summary>
+            
+            </summary>
+            <param name="disposing"></param>
+        </member>
+        <member name="T:ADSDK.Device.ADRcp">
+            <summary>
+            Communication Data Managed Base Class(通讯数据处理基类)
+            </summary>
+        </member>
+        <member name="E:ADSDK.Device.ADRcp.RcpLogEventReceived">
+            <summary>
+            Communication log 通讯日志
+            </summary>
+        </member>
+        <member name="E:ADSDK.Device.ADRcp.RxRspParsed">
+            <summary>
+            Asynchronous receive data(Hex)异步接收数据
+            </summary>
+        </member>
+        <member name="E:ADSDK.Device.ADRcp.StatusConnected">
+            <summary>
+            Communication status 通讯状态事件
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.ADRcp.m_oByteRxPkt">
+            <summary>
+            Receive data Buffer(数据接收缓存)
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.ADRcp.m_bRcpReceivedPacket">
+            <summary>
+            Receive data Mark(数据接收标志)
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.ADRcp.m_bRcpReceivedPacketCrcError">
+            <summary>
+            Receive data error Mark(数据接收异常标志)
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.ADRcp.m_Delay">
+            <summary>
+            Receive data delay Mark(数据接收超时标志)
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.ADRcp.Address">
+            <summary>
+            Communication address(通讯地址)
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.ADRcp.Mode">
+            <summary>
+            Communication device mode(通讯设备类型)
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.ADRcp.Type">
+            <summary>
+            Communication device type(通讯设备型号)
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.ADRcp.Version">
+            <summary>
+            device version(设备版本号)
+            </summary>
+        </member>
+        <member name="P:ADSDK.Device.ADRcp.VersionNumber">
+            <summary>
+            device version Number(设备版本号)
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.ADRcp.CommMode">
+            <summary>
+            Communication Mode(通讯方式)
+            </summary>
+        </member>
+        <member name="M:ADSDK.Device.ADRcp.GetVersion">
+            <summary>
+            Get Current Version
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="F:ADSDK.Device.ADRcp.IsConnect">
+            <summary>
+            Communication status flag of card reader(与读卡器通讯成功标志)
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.ADRcp.mSio">
+            <summary>
+            Communication base class
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.ADRcp.mSioType">
+            <summary>
+            Type of the Communication 0-232,1-NET,2-USB
+            </summary>
+        </member>
+        <member name="P:ADSDK.Device.ADRcp.bConnected">
+            <summary>
+            Communication status flag 通讯连接标志,非与读卡器通讯成功标志
+            </summary>
+        </member>
+        <member name="P:ADSDK.Device.ADRcp.Sio">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:ADSDK.Device.ADRcp.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:ADSDK.Device.ADRcp.#ctor(ADSDK.Device.ADSio)">
+            <summary>
+            
+            </summary>
+            <param name="sio"></param>
+        </member>
+        <member name="M:ADSDK.Device.ADRcp.Finalize">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:ADSDK.Device.ADRcp.Connect(System.String,System.Int32,System.Int32)">
+            <summary>
+            <para>Create a communication connection</para>  
+            <para>创建一个通信连接</para>  
+            </summary>
+            <param name="hostOrPort">
+            <para>IP Address or Comport</para>  
+            <para>COM TYPE:"COM1"</para>  
+            <para>NET TYPE:"192.168.2.115"</para>  
+            <para>USB TYPE:"AD"</para>  
+            </param>
+            <param name="portOrBaud">
+            <para>IP Port or Baudrate</para> 
+            <para>COM TYPE:"9600"</para> 
+            <para>NET TYPE:"49152"</para> 
+            <para>USB TYPE:"0"</para> 
+            </param>
+            <param name="type">
+            <para>Communication Type</para> 
+            <para>0 - COM,1 - NET,2 - USB</para>  
+            <para>读卡器类型</para> 
+            <para>0 - 232通讯或者485通讯,1 - 网络通讯或者WiFi通讯,2 - HID通讯</para> 
+            </param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.ADRcp.DisConnect">
+            <summary>
+            <para>DisConnect communication connection</para>  
+            <para>断开通信</para>  
+            </summary>
+        </member>
+        <member name="M:ADSDK.Device.ADRcp.Send(System.Byte[])">
+            <summary>
+            Send Data(数据发送)
+            </summary>
+            <param name="byData">数据数组</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.ADRcp.Send(System.String)">
+            <summary>
+            Send Data(数据发送)
+            </summary>
+            <param name="strData">数据字符串</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.ADRcp.DealPacketByte(ADSDK.Device.ByteEventArg)">
+            <summary>
+            
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:ADSDK.Device.ADRcp.ReciveBytePkt(System.Byte[])">
+            <summary>
+            数据接收处理
+            </summary>
+            <param name="data"></param>
+        </member>
+        <member name="M:ADSDK.Device.ADRcp.BuildCmdPacketByte(System.Byte,System.Byte,System.Byte[])">
+            <summary>
+            packet command data (打包命令数据)
+            </summary>
+            <param name="nType">命令方式,get of set</param>
+            <param name="nCmd">命令类型</param>
+            <param name="ArgByte">数据</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.ADRcp.BuildCmdPacketByte(System.Int32,System.Byte,System.Byte,System.Byte[])">
+            <summary>
+            packet command data (打包命令数据)
+            </summary>
+            <param name="nAddr">通讯地址</param>
+            <param name="nType">命令方式,get of set</param>
+            <param name="nCmd">命令类型</param>
+            <param name="ArgByte">数据</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.ADRcp.BuildCmdPacketByte(System.Byte,System.Int32,System.Byte,System.Byte,System.Byte[])">
+            <summary>
+            packet command data (打包命令数据)
+            </summary>
+            <param name="nHead">命令头</param>
+            <param name="nAddr">通讯地址</param>
+            <param name="nType">命令方式,get of set</param>
+            <param name="nCmd">命令类型</param>
+            <param name="ArgByte">数据</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.ADRcp.BuildCmdPacketByte(System.Byte,System.Byte[])">
+            <summary>
+            packet command data (打包命令数据)
+            </summary>
+            <param name="nCmd">命令类型</param>
+            <param name="ArgByte">数据</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.ADRcp.BuildCmdPacketByte(System.Int32,System.Byte,System.Byte[])">
+            <summary>
+            packet command data (打包命令数据)
+            </summary>
+            <param name="nAddr">通讯地址</param>
+            <param name="nCmd">命令类型</param>
+            <param name="ArgByte">数据</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.ADRcp.BuildCmdPacketByte(System.Byte,System.Int32,System.Byte,System.Byte[])">
+            <summary>
+            packet command data (打包命令数据)
+            </summary>
+            <param name="nHead">命令头</param>
+            <param name="nAddr">通讯地址</param>
+            <param name="nCmd">命令类型</param>
+            <param name="ArgByte">数据</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.ADRcp.SendBytePkt(System.Byte[])">
+            <summary>
+            send packet data (发送数据包)
+            </summary>
+            <param name="pkt">packet data(数据包)</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.ADRcp.SendBytePkt(System.Byte[],System.Int32)">
+            <summary>
+            send packet data (发送数据包)
+            </summary>
+            <param name="pkt">packet data(数据包)</param>
+            <param name="delay">send to recive delay (发送转接收超时间隔ms)</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.ADRcp.SendBytePktNoMsg(System.Byte[])">
+            <summary>
+            send packet data and not recive data
+            </summary>
+            <param name="pkt">packet data(数据包)</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.ADRcp.GetErrorCodeString(System.Int32,System.Byte)">
+            <summary>
+            Get Error Code 获取错误代码释义
+            </summary>
+            <param name="language">Language(语言选择)</param>
+            <param name="code">error code(错误代码)</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.ADRcp.GetCodeString(System.Int32,System.Byte)">
+            <summary>
+            Get Code 获取代码释义
+            </summary>
+            <param name="language">Language(语言选择)</param>
+            <param name="code">code(错代码)</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.ADRcp.ParseMsgRspType(ADSDK.Device.ProtocolStruct)">
+            <summary>
+            
+            </summary>
+            <param name="pst"></param>
+        </member>
+        <member name="M:ADSDK.Device.ADRcp.RcpLog(ADSDK.Device.ProtocolStruct,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="pst"></param>
+            <param name="type"></param>
+        </member>
+        <member name="M:ADSDK.Device.ADRcp.ParseMsgRspInfo(ADSDK.Device.ProtocolStruct)">
+            <summary>
+            
+            </summary>
+            <param name="pst"></param>
+        </member>
+        <member name="M:ADSDK.Device.ADRcp.Dispose(System.Boolean)">
+            <summary>
+            
+            </summary>
+            <param name="disposing"></param>
+        </member>
+        <member name="M:ADSDK.Device.ADRcp.Dispose">
+            <summary>
+            TODO: 仅当以上 Dispose(bool disposing) 拥有用于释放未托管资源的代码时才替代终结器。
+            ~ADRcp() {
+              // 请勿更改此代码。将清理代码放入以上 Dispose(bool disposing) 中。
+              Dispose(false);
+            }
+            添加此代码以正确实现可处置模式。
+            </summary>
+        </member>
+        <member name="T:ADSDK.Device.ADSio">
+            <summary>
+            Communication Base Class(通讯基类)
+            </summary>
+        </member>
+        <member name="E:ADSDK.Device.ADSio.DataReceived">
+            <summary>
+            数据接收处理事件
+            </summary>
+        </member>
+        <member name="E:ADSDK.Device.ADSio.StatusConnected">
+            <summary>
+            通讯状态事件
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.ADSio.bConnected">
+            <summary>
+            是否连接
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.ADSio.bDevConnected">
+            <summary>
+            是否连接设备
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.ADSio.USBVerNum">
+            <summary>
+            USB接口版本
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.ADSio.DevMode">
+            <summary>
+            设备类型//0-Active,1-Passive,2-Phychips,3-Impinj,4-Conntroller
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.ADSio.DevAddress">
+            <summary>
+            设备型号
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.ADSio.DevVersion">
+            <summary>
+            设备版本
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.ADSio.DevType">
+            <summary>
+            设备型号
+            </summary>
+        </member>
+        <member name="P:ADSDK.Device.ADSio.DevInfoEn">
+            <summary>
+            设备信息
+            </summary>
+        </member>
+        <member name="P:ADSDK.Device.ADSio.DevInfoCh">
+            <summary>
+            设备信息
+            </summary>
+        </member>
+        <member name="M:ADSDK.Device.ADSio.LogOpen(System.String)">
+            <summary>
+            打开通讯日志保存
+            </summary>
+            <param name="file_name">日志保存路径</param>
+        </member>
+        <member name="M:ADSDK.Device.ADSio.LogWriteLine(System.String)">
+            <summary>
+            写入通讯日志
+            </summary>
+            <param name="msg">日志</param>
+        </member>
+        <member name="M:ADSDK.Device.ADSio.LogClose">
+            <summary>
+            关闭通讯日志
+            </summary>
+        </member>
+        <member name="P:ADSDK.Device.ADSio.StrErrMsg">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ADSDK.Device.ADSio.strConnectionStatus">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.ADSio.ReceiveQueue">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:ADSDK.Device.ADSio.ClearQueue">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:ADSDK.Device.ADSio.OnReceive(System.Collections.Queue)">
+            <summary>
+            Override this to process received bytes.
+            </summary>
+            <param name="ReceiveQueue">The byte that was received</param>
+        </member>
+        <member name="M:ADSDK.Device.ADSio.Connect(System.String,System.Int32)">
+            <summary>
+            Connect Reader (连接读卡器)
+            </summary>
+            <param name="name">
+            <para>IP Address or Comport</para>  
+            <para>COM TYPE:"COM1"</para>  
+            <para>NET TYPE:"192.168.2.115"</para>  
+            <para>USB TYPE:"AD"</para>  
+            </param>
+            <param name="port">
+            <para>IP Port or Baudrate</para> 
+            <para>COM TYPE:"9600"</para> 
+            <para>NET TYPE:"49152"</para> 
+            <para>USB TYPE:"0"</para> 
+            </param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.ADSio.Send(System.Byte[])">
+            <summary>
+            Send Data(数据发送)
+            </summary>
+            <param name="byData">数据数组</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.ADSio.Send(System.String)">
+            <summary>
+            Send Data(数据发送)
+            </summary>
+            <param name="strData">数据字符串</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.ADSio.Receive(System.Byte[]@)">
+            <summary>
+            Receive Data(数据接收)
+            </summary>
+            <param name="byData">数据数组</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.ADSio.DisConnect">
+            <summary>
+            Disconnect(断开设备)
+            </summary>
+        </member>
+        <member name="M:ADSDK.Device.ADSio.RaiseEventConnectedState(ADSDK.Device.ConnectEventArg)">
+            <summary>
+            
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:ADSDK.Device.ADSio.RaiseEventDataReceived(System.Byte[])">
+            <summary>
+            
+            </summary>
+            <param name="buf"></param>
+        </member>
+        <member name="F:ADSDK.Device.ADSio.m_bSendTime">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.ADSio.m_bSendFlag">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.ADSio.m_bSynType">
+            <summary>
+            轮询查询设备标志
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.ADSio.m_bbPacket">
+            <summary>
+            完整数据包
+            </summary>
+        </member>
+        <member name="M:ADSDK.Device.ADSio.SynStart">
+            <summary>
+            开启同步模式
+            </summary>
+        </member>
+        <member name="M:ADSDK.Device.ADSio.SynDev">
+            <summary>
+            向设备发送同步信息
+            </summary>
+        </member>
+        <member name="M:ADSDK.Device.ADSio.DealPacketByte(System.Byte[])">
+            <summary>
+            接收数据预处理
+            </summary>
+            <param name="buf"></param>
+        </member>
+        <member name="M:ADSDK.Device.ADSio.Dispose(System.Boolean)">
+            <summary>
+            
+            </summary>
+            <param name="disposing"></param>
+        </member>
+        <member name="M:ADSDK.Device.ADSio.Dispose">
+            <summary>
+            TODO: 仅当以上 Dispose(bool disposing) 拥有用于释放未托管资源的代码时才替代终结器。
+            ~ADSio() {
+              // 请勿更改此代码。将清理代码放入以上 Dispose(bool disposing) 中。
+              Dispose(false);
+            }
+            添加此代码以正确实现可处置模式。
+            </summary>
+        </member>
+        <member name="T:ADSDK.Device.ADServer">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.ADServer.oSp">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:ADSDK.Device.ADServer.Connect(System.String,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="name"></param>
+            <param name="port"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.ADServer.Send(System.Byte[])">
+            <summary>
+            
+            </summary>
+            <param name="byData"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.ADServer.Send(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="strData"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.ADServer.Receive(System.Byte[]@)">
+            <summary>
+            
+            </summary>
+            <param name="byData"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.ADServer.DisConnect">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:ADSDK.Device.ADServer.Dispose(System.Boolean)">
+            <summary>
+            
+            </summary>
+            <param name="disposing"></param>
+        </member>
+        <member name="T:ADSDK.Device.ADUsb">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:ADSDK.Device.ADUsb.VirtualKeys">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.ADUsb.VirtualKeys.VK_NUMLOCK">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.ADUsb.VirtualKeys.VK_SCROLL">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.ADUsb.VirtualKeys.VK_CAPITAL">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.ADUsb.VirtualKeys.VK_A">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:ADSDK.Device.ADUsb.ExitKeyboard">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.ADUsb.mExitConfigFlag">
+            <summary>
+            退出编程模式控制
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.ADUsb.mAutoConnectFlag">
+            <summary>
+            是否持续发送联机命令
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.ADUsb.mRcvDatalFlag">
+            <summary>
+            数据接收标志
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.ADUsb.mReadConnectlFlag">
+            <summary>
+            是否和读卡器进行联机
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.ADUsb.mAutoSendGetDataMark">
+            <summary>
+            是否需要发送获取数据命令,兼容1.0版本
+            </summary>
+        </member>
+        <member name="M:ADSDK.Device.ADUsb.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:ADSDK.Device.ADUsb.Finalize">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:ADSDK.Device.ADUsb.Connect(System.String,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="hostname"></param>
+            <param name="baudorport"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.ADUsb.Send(System.Byte[])">
+            <summary>
+            
+            </summary>
+            <param name="byData"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.ADUsb.Send(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="strData"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.ADUsb.Receive(System.Byte[]@)">
+            <summary>
+            
+            </summary>
+            <param name="byData"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.ADUsb.DisConnect">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:ADSDK.Device.ADUsb.ToString">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.ADUsb.OSp_HidReport(System.Object,ADSDK.Device.HidReportEventArgs)">
+            <summary>
+            
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:ADSDK.Device.ADUsb.Dispose(System.Boolean)">
+            <summary>
+            
+            </summary>
+            <param name="disposing"></param>
+        </member>
+        <member name="M:ADSDK.Device.ADUsb.ExitConfigMode">
+            <summary>
+            退出编程模式
+            </summary>
+        </member>
+        <member name="M:ADSDK.Device.ADUsb.GetHidDeviceList(System.Collections.Generic.List{System.String}@)">
+            <summary>
+            
+            </summary>
+            <param name="deviceList"></param>
+        </member>
+        <member name="M:ADSDK.Device.ADUsb.GetKeyBoardDeviceList(System.Collections.Generic.List{System.String}@)">
+            <summary>
+            
+            </summary>
+            <param name="deviceList"></param>
+        </member>
+        <member name="T:ADSDK.Device.ByteBuilder">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:ADSDK.Device.ByteBuilder.BytesToStruct``1(System.Byte[])">
+            <summary>
+            将byte[]类型转换成结构体类型T
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="body"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.ByteBuilder.StructToBytes``1(``0)">
+            <summary>
+            将结构体类型T转换成byte[]
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="packet"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.ByteBuilder.ByteArrayCompare(System.Byte[],System.Byte[])">
+            <summary>
+            
+            </summary>
+            <param name="a1"></param>
+            <param name="a2"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.ByteBuilder.#ctor(System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="nCap"></param>
+        </member>
+        <member name="M:ADSDK.Device.ByteBuilder.#ctor(System.Byte[])">
+            <summary>
+            
+            </summary>
+            <param name="byteArray"></param>
+        </member>
+        <member name="M:ADSDK.Device.ByteBuilder.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:ADSDK.Device.ByteBuilder.Append(System.SByte)">
+            <summary>
+            
+            </summary>
+            <param name="b"></param>
+        </member>
+        <member name="M:ADSDK.Device.ByteBuilder.Append(System.Byte)">
+            <summary>
+            
+            </summary>
+            <param name="b"></param>
+        </member>
+        <member name="M:ADSDK.Device.ByteBuilder.Append(System.Byte[])">
+            <summary>
+            
+            </summary>
+            <param name="ba"></param>
+        </member>
+        <member name="M:ADSDK.Device.ByteBuilder.Append(System.Byte[],System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="ba"></param>
+            <param name="length"></param>
+        </member>
+        <member name="M:ADSDK.Device.ByteBuilder.Append(System.Byte[],System.Int32,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="ba"></param>
+            <param name="start"></param>
+            <param name="length"></param>
+        </member>
+        <member name="M:ADSDK.Device.ByteBuilder.Append(System.UInt16)">
+            <summary>
+            
+            </summary>
+            <param name="val"></param>
+        </member>
+        <member name="M:ADSDK.Device.ByteBuilder.Append(System.UInt32)">
+            <summary>
+            
+            </summary>
+            <param name="val"></param>
+        </member>
+        <member name="P:ADSDK.Device.ByteBuilder.Length">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ADSDK.Device.ByteBuilder.Capacity">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:ADSDK.Device.ByteBuilder.Clear">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:ADSDK.Device.ByteBuilder.ToString">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.ByteBuilder.ToString(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="format"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.ByteBuilder.GetByteArray">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.ByteBuilder.GetStruct``1">
+            <summary>
+            
+            </summary>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.ByteBuilder.GetByteArray(System.Int32,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="index"></param>
+            <param name="length"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.ByteBuilder.GetAt(System.Int32)">
+            <summary>
+            Add Function (by sjpark)s
+            </summary>
+            <param name="index"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.ByteBuilder.SetAt(System.Int32,System.Byte)">
+            <summary>
+            Add Function (by sjpark)s
+            </summary>
+            <param name="index"></param>
+            <param name="ba"></param>
+        </member>
+        <member name="M:ADSDK.Device.ByteBuilder.ByteArrayToHexString(System.Byte[])">
+            <summary>
+            字节数组转换十六进制
+            </summary>
+            <param name="bytArray">字节数组</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.ByteBuilder.ByteArrayToHexString(System.Char[])">
+            <summary>
+            字节数组转换十六进制
+            </summary>
+            <param name="bytArray">字节数组</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.ByteBuilder.ByteArrayToHexString(System.Byte[],System.Int32,System.Int32)">
+            <summary>
+            字节数组转16进制字符串
+            </summary>
+            <param name="bytes"></param>
+            <param name="index"></param>
+            <param name="count"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.ByteBuilder.HexStringToByteArray(System.String)">
+            <summary>
+            字节数组转16进制字符串
+            </summary>
+            <param name="str"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.ByteBuilder.XOR(System.Byte[],System.Int32,System.Int32)">
+            <summary>
+            XOR CheckSum
+            </summary>
+            <param name="buffer">Checksum data</param>
+            <param name="start">Checksum data start</param>
+            <param name="size">Sum checksum data size</param>
+            <returns>校验码</returns>
+        </member>
+        <member name="M:ADSDK.Device.ByteBuilder.XOR(System.Collections.Generic.List{System.Byte},System.Int32,System.Int32)">
+            <summary>
+            XOR CheckSum
+            </summary>
+            <param name="buffer">Checksum data</param>
+            <param name="start">Checksum data start</param>
+            <param name="size">Sum checksum data size</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.ByteBuilder.XOR(System.Collections.Generic.List{System.Byte},System.Int32)">
+            <summary>
+            XOR CheckSum
+            </summary>
+            <param name="buffer">Checksum data arrayList</param>
+            <param name="size">Sum checksum data size</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.ByteBuilder.CRC(System.Byte[])">
+            <summary>
+            CRC Checksum
+            </summary>
+            <param name="buffer">Checksum data</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.ByteBuilder.CRC(System.Byte[],System.Int32,System.Int32)">
+            <summary>
+            CRC Checksum
+            </summary>
+            <param name="buffer">Checksum data</param>
+            <param name="start">Checksum data start</param>
+            <param name="size">Sum checksum data size</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.ByteBuilder.CRC(System.Collections.Generic.List{System.Byte})">
+            <summary>
+            CRC Checksum
+            </summary>
+            <param name="buffer">Checksum data arraylist</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.ByteBuilder.CRC(System.Collections.Generic.List{System.Byte},System.Int32,System.Int32)">
+            <summary>
+            CRC Checksum
+            </summary>
+            <param name="buffer">Checksum data arraylist</param>
+            <param name="start">Checksum data start</param>
+            <param name="size">Sum checksum data size</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.ByteBuilder.GetData(System.Collections.Generic.List{System.Byte},System.Int32,System.Int32)">
+            <summary>
+            返回数据获取过程
+            </summary>
+            <param name="bytArray">数据集 ArrayList</param>
+            <param name="start">数据起始位置</param>
+            <param name="length">数据长度</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.ByteBuilder.GetData(System.Byte[],System.Int32,System.Int32)">
+            <summary>
+            返回数据获取过程
+            </summary>
+            <param name="bytArray">数据集 ArrayList</param>
+            <param name="start">数据起始位置</param>
+            <param name="length">数据长度</param>
+            <returns></returns>
+        </member>
+        <member name="T:ADSDK.Device.PadType">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.PadType.PAD_LEFT">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.PadType.PAD_RIGHT">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:ADSDK.Device.StringHelper">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:ADSDK.Device.StringHelper.ArgByteToStringByte(System.Byte[])">
+            <summary>
+            
+            </summary>
+            <param name="byteArray"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.StringHelper.ArgStringHexToByte(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="val"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.StringHelper.ArgStringBinaryToByte(System.String,ADSDK.Device.PadType)">
+            <summary>
+            
+            </summary>
+            <param name="val"></param>
+            <param name="pad"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.StringHelper.ArgByteToStringBinary(System.Byte[],System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="val"></param>
+            <param name="BitLength"></param>
+            <returns></returns>
+        </member>
+        <member name="T:ADSDK.Device.Coder">
+            <summary>
+            通讯服务提供编码和解码服务.
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Coder._encodingMothord">
+            <summary>
+            编码方式
+            </summary>
+        </member>
+        <member name="M:ADSDK.Device.Coder.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:ADSDK.Device.Coder.#ctor(ADSDK.Device.Coder.EncodingMothord)">
+            <summary>
+            
+            </summary>
+            <param name="encodingMothord"></param>
+        </member>
+        <member name="T:ADSDK.Device.Coder.EncodingMothord">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Coder.EncodingMothord.Default">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Coder.EncodingMothord.Unicode">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Coder.EncodingMothord.UTF8">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Coder.EncodingMothord.ASCII">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Coder.EncodingMothord.HEX">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Coder.EncodingMothord.GB2312">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:ADSDK.Device.Coder.GetEncodingString(System.Byte[],System.Int32,System.Int32)">
+            <summary>
+            通讯数据解码
+            </summary>
+            <param name="dataBytes">需要解码的数据</param>
+            <param name="index"></param>
+            <param name="count"></param>
+            <returns>编码后的数据</returns>
+        </member>
+        <member name="M:ADSDK.Device.Coder.GetEncodingBytes(System.String)">
+            <summary>
+            数据编码
+            </summary>
+            <param name="datagram">需要编码的报文</param>
+            <returns>编码后的数据</returns>
+        </member>
+        <member name="M:ADSDK.Device.Coder.ByteArrayToHexString(System.Byte[])">
+            <summary>
+            字节数组转换十六进制
+            </summary>
+            <param name="bytArray">字节数组</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.Coder.ByteArrayToHexString(System.Char[])">
+            <summary>
+            字节数组转换十六进制
+            </summary>
+            <param name="bytArray">字节数组</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.Coder.ByteArrayToHexString(System.Byte[],System.Int32,System.Int32)">
+            <summary>
+            字节数组转16进制字符串
+            </summary>
+            <param name="bytes"></param>
+            <param name="index"></param>
+            <param name="count"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.Coder.HexStringToByteArray(System.String)">
+            <summary>
+            字节数组转16进制字符串
+            </summary>
+            <param name="str"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.Coder.GetData(System.Collections.Generic.List{System.Byte},System.Int32,System.Int32)">
+            <summary>
+            返回数据获取过程
+            </summary>
+            <param name="bytArray">数据集 ArrayList</param>
+            <param name="start">数据起始位置</param>
+            <param name="length">数据长度</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.Coder.GetData(System.Byte[],System.Int32,System.Int32)">
+            <summary>
+            返回数据获取过程
+            </summary>
+            <param name="bytArray">数据集 ArrayList</param>
+            <param name="start">数据起始位置</param>
+            <param name="length">数据长度</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.Coder.XOR(System.Byte[],System.Int32,System.Int32)">
+            <summary>
+            XOR CheckSum
+            </summary>
+            <param name="buffer">Checksum data</param>
+            <param name="start">Checksum data start</param>
+            <param name="size">Sum checksum data size</param>
+            <returns>校验码</returns>
+        </member>
+        <member name="M:ADSDK.Device.Coder.XOR(System.Collections.Generic.List{System.Byte},System.Int32,System.Int32)">
+            <summary>
+            XOR CheckSum
+            </summary>
+            <param name="buffer">Checksum data</param>
+            <param name="start">Checksum data start</param>
+            <param name="size">Sum checksum data size</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.Coder.XOR(ADSDK.Device.ByteBuilder,System.Int32,System.Int32)">
+            <summary>
+            XOR CheckSum
+            </summary>
+            <param name="buffer">Checksum data</param>
+            <param name="start">Checksum data start</param>
+            <param name="size">Sum checksum data size</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.Coder.XOR(System.Collections.Generic.List{System.Byte},System.Int32)">
+            <summary>
+            XOR CheckSum
+            </summary>
+            <param name="buffer">Checksum data arrayList</param>
+            <param name="size">Sum checksum data size</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.Coder.CRC(System.Byte[])">
+            <summary>
+            CRC Checksum
+            </summary>
+            <param name="buffer">Checksum data</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.Coder.CRC(System.Byte[],System.Int32,System.Int32)">
+            <summary>
+            CRC Checksum
+            </summary>
+            <param name="buffer">Checksum data</param>
+            <param name="start">Checksum data start</param>
+            <param name="size">Sum checksum data size</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.Coder.CRC(System.Collections.Generic.List{System.Byte})">
+            <summary>
+            CRC Checksum
+            </summary>
+            <param name="buffer">Checksum data arraylist</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.Coder.CRC(System.Collections.Generic.List{System.Byte},System.Int32,System.Int32)">
+            <summary>
+            CRC Checksum
+            </summary>
+            <param name="buffer">Checksum data arraylist</param>
+            <param name="start">Checksum data start</param>
+            <param name="size">Sum checksum data size</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.Coder.CRC(ADSDK.Device.ByteBuilder,System.Int32,System.Int32)">
+            <summary>
+            CRC Checksum
+            </summary>
+            <param name="buffer">Checksum data arraylist</param>
+            <param name="start">Checksum data start</param>
+            <param name="size">Sum checksum data size</param>
+            <returns></returns>
+        </member>
+        <member name="T:ADSDK.Device.CommState">
+            <summary>
+            Status of Communication Connect
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.CommState.CONNECT_OK">
+            <summary>
+            connect succeed
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.CommState.CONNECT_FAIL">
+            <summary>
+            connect fail
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.CommState.DISCONNECT_OK">
+            <summary>
+            disconnect succeed
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.CommState.DISCONNECT_FAIL">
+            <summary>
+            disconnect fail
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.CommState.DISCONNECT_EXCEPT">
+            <summary>
+            Exception to disconnect
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.CommState.CONNECTING_DEV">
+            <summary>
+            connect device...
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.CommState.CONNECT_DEV_OK">
+            <summary>
+            connect device succeed
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.CommState.OTHER">
+            <summary>
+            其他
+            </summary>
+        </member>
+        <member name="T:ADSDK.Device.CommEquip">
+            <summary>
+            Mode of the communication 
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.CommEquip.PASSIVE">
+            <summary>
+            915MHz PASSIVE READER
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.CommEquip.PHYCHIPS">
+            <summary>
+            915MHz PHYCHIPS READER
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.CommEquip.ACTIVE">
+            <summary>
+            2.4G ACTIVE READER
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.CommEquip.PARKING">
+            <summary>
+            PARKING CONTROLLER
+            </summary>
+        </member>
+        <member name="T:ADSDK.Device.CommRtn">
+            <summary>
+            Call the return value of the interface
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.CommRtn.SUCCEED">
+            <summary>
+            Succeed 0
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.CommRtn.FAIL">
+            <summary>
+            Fail 1
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.CommRtn.SUCCEED_NON">
+            <summary>
+            Succeed Non Data 10
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.CommRtn.ERROR_CARD">
+            <summary>
+            error card 100
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.CommRtn.ERROR_ACTION">
+            <summary>
+            Action Error 101
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.CommRtn.ERROR_CONNECT">
+            <summary>
+            Connect Error 201
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.CommRtn.ERROR_GET">
+            <summary>
+            Get Connect Error 202
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.CommRtn.ERROR_SET">
+            <summary>
+            Set Connect Error 203
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.CommRtn.TIMEOUT_SET">
+            <summary>
+            Set Connect TimeOut 204
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.CommRtn.ERROR_SEND">
+            <summary>
+            Send data error 205
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.CommRtn.ERROR_RECIVE">
+            <summary>
+            Recive data error 206
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.CommRtn.ERROR_DISCONNECT">
+            <summary>
+            DisConnect Error 207
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.CommRtn.TIMEOUT_SEND">
+            <summary>
+             Send data TimeOut 208
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.CommRtn.TIMEOUT_RECIVE">
+            <summary>
+            Recive data TimeOut 209
+            </summary>
+        </member>
+        <member name="T:ADSDK.Device.ByteEventArg">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:ADSDK.Device.ByteEventArg.#ctor(System.Byte[])">
+            <summary>
+            
+            </summary>
+            <param name="Rsp"></param>
+        </member>
+        <member name="P:ADSDK.Device.ByteEventArg.Data">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:ADSDK.Device.ByteEventHandler">
+            <summary>
+            表示将处理 ADSDK.Communication.Byte 事件的方法。
+            </summary>
+            <param name="sender">事件源</param>
+            <param name="e"> 包含事件数据的 ADSDK.Communication.ByteEventArg。</param>
+        </member>
+        <member name="T:ADSDK.Device.CommMode">
+            <summary>
+            Mode of the communication 
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.CommMode.COMMAND">
+            <summary>
+            Command to Recived Data
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.CommMode.ACTIVE">
+            <summary>
+            Active to Recived Data
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.CommMode.PASSIVE">
+            <summary>
+            Passive to Recived Data
+            </summary>
+        </member>
+        <member name="T:ADSDK.Device.ConnectEventArg">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:ADSDK.Device.ConnectEventArg.#ctor(ADSDK.Device.CommState,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="status"></param>
+            <param name="msg"></param>
+        </member>
+        <member name="P:ADSDK.Device.ConnectEventArg.Status">
+            <summary>
+            The connection status
+            </summary>
+        </member>
+        <member name="P:ADSDK.Device.ConnectEventArg.Msg">
+            <summary>
+            The connection message
+            </summary>
+        </member>
+        <member name="T:ADSDK.Device.ConnectEventHandler">
+            <summary>
+            表示将处理 ADSDK.Communication.Connect 事件的方法。
+            </summary>
+            <param name="sender">事件源</param>
+            <param name="e"> 包含事件数据的 ADSDK.Communication.ConnectEventArg。</param>
+        </member>
+        <member name="T:ADSDK.Device.DataReceivedEventArgs">
+            <summary>
+            为 ADSDK.Communication.DataReceived 事件提供数据。无法继承此类。
+            </summary>
+        </member>
+        <member name="P:ADSDK.Device.DataReceivedEventArgs.Data">
+            <summary>
+            获取或设置新值。
+            </summary>
+        </member>
+        <member name="M:ADSDK.Device.DataReceivedEventArgs.#ctor(System.Byte[])">
+            <summary>
+            初始化 ADSDK.Communication.DataReceivedEventArgs 类的新实例。
+            </summary>
+            <param name="value">新值</param>
+        </member>
+        <member name="T:ADSDK.Device.DataReceivedEventHandler">
+            <summary>
+            表示将处理 ADSDK.Communication.DataReceived 事件的方法。
+            </summary>
+            <param name="sender">事件源</param>
+            <param name="e"> 包含事件数据的 ADSDK.Communication.DataReceivedEventArgs。</param>
+        </member>
+        <member name="T:ADSDK.Device.ProtocolEventArg">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:ADSDK.Device.ProtocolEventArg.#ctor(System.Byte[])">
+            <summary>
+            
+            </summary>
+            <param name="Rsp"></param>
+        </member>
+        <member name="P:ADSDK.Device.ProtocolEventArg.Data">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ADSDK.Device.ProtocolEventArg.Protocol">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ADSDK.Device.ProtocolEventArg.R2000Protocol">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:ADSDK.Device.ProtocolEventArg.BytesToStruct``1(System.Byte[])">
+            <summary>
+            将byte[]类型转换成结构体类型T
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="body"></param>
+            <returns></returns>
+        </member>
+        <member name="T:ADSDK.Device.ProtocolEventHandler">
+            <summary>
+            表示将处理 ADSDK.Communication.Protocol 事件的方法。
+            </summary>
+            <param name="sender">事件源</param>
+            <param name="e"> 包含事件数据的 ADSDK.Communication.ProtocolEventArg。</param>
+        </member>
+        <member name="T:ADSDK.Device.PacketType">
+            <summary>
+            协议类型
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.PacketType.ACTIVE">
+            <summary>
+            2.45G Standard Active Reader
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.PacketType.PASSIVE">
+            <summary>
+            900M Standard Passive Reader
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.PacketType.PHYCHIPS">
+            <summary>
+            900M PHYCHIPS Passive Reader
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.PacketType.IMPINJ">
+            <summary>
+            900M IMPINJ Passive Reader
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.PacketType.CONTROLLER">
+            <summary>
+            Standard controller
+            </summary>
+        </member>
+        <member name="T:ADSDK.Device.ProtocolPacket">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.ProtocolPacket.btPreamble">
+            <summary>
+            START OF INFORMATION
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.ProtocolPacket.btAddress">
+            <summary>
+            Equip address（1～65534）,(65535 public address,0 reserve address)
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.ProtocolPacket.btCode">
+            <summary>
+            Control identification code (data type description)
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.ProtocolPacket.btType">
+            <summary>
+            control identification code (action type description)
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.ProtocolPacket.btLength">
+            <summary>
+            INFO Length
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.ProtocolPacket.btDataLength">
+            <summary>
+            INFO Data Length
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.ProtocolPacket.btPayload">
+            <summary>
+            INFO Data Packet,	( include Checksum byte)
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.ProtocolPacket.btChecksum">
+            <summary>
+            Checksum
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.ProtocolPacket.bbPacket">
+            <summary>
+            完整数据包
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.ProtocolPacket.ptPacketType">
+            <summary>
+            协议类型
+            </summary>
+        </member>
+        <member name="P:ADSDK.Device.ProtocolPacket.Packet">
+            <summary>
+            完整数据包
+            </summary>
+        </member>
+        <member name="P:ADSDK.Device.ProtocolPacket.Checksum">
+            <summary>
+            Checksum
+            </summary>
+        </member>
+        <member name="P:ADSDK.Device.ProtocolPacket.Payload">
+            <summary>
+            INFO Data Packet
+            </summary>
+        </member>
+        <member name="P:ADSDK.Device.ProtocolPacket.Length">
+            <summary>
+            INFO Data Length
+            </summary>
+        </member>
+        <member name="P:ADSDK.Device.ProtocolPacket.DataLength">
+            <summary>
+            Data Length
+            </summary>
+        </member>
+        <member name="P:ADSDK.Device.ProtocolPacket.Address">
+            <summary>
+            Equip address
+            </summary>
+        </member>
+        <member name="P:ADSDK.Device.ProtocolPacket.Code">
+            <summary>
+             Control identification code (data type description)
+            </summary>
+        </member>
+        <member name="P:ADSDK.Device.ProtocolPacket.Type">
+            <summary>
+             Control identification code (action type description)
+            </summary>
+        </member>
+        <member name="P:ADSDK.Device.ProtocolPacket.Preamble">
+            <summary>
+             START OF INFORMATION
+            </summary>
+        </member>
+        <member name="P:ADSDK.Device.ProtocolPacket.PacketType">
+            <summary>
+            Packet Type 协议类型
+            </summary>
+        </member>
+        <member name="M:ADSDK.Device.ProtocolPacket.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:ADSDK.Device.ProtocolPacket.#ctor(System.Int32,System.Byte)">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:ADSDK.Device.ProtocolPacket.#ctor(System.Int32,System.Byte,System.Byte[])">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:ADSDK.Device.ProtocolPacket.#ctor(System.Int32,System.Byte,System.Byte)">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:ADSDK.Device.ProtocolPacket.#ctor(System.Int32,System.Byte,System.Byte,System.Byte[])">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:ADSDK.Device.ProtocolPacket.CheckSum(System.Byte[],System.Int32,System.Int32)">
+            <summary>
+            CheckSum
+            </summary>
+            <param name="btAryBuffer"></param>
+            <param name="nStartPos"></param>
+            <param name="nLen"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.ProtocolPacket.Append(System.Byte[])">
+            <summary>
+            
+            </summary>
+            <param name="ba"></param>
+        </member>
+        <member name="T:ADSDK.Device.ProtocolStructImp">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.ProtocolStructImp.Preamble">
+            <summary>
+            START OF INFORMATION
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.ProtocolStructImp.Length">
+            <summary>
+            INFO Data Length
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.ProtocolStructImp.Address">
+            <summary>
+            Equip address（0～254）,(255 public address,0 reserve address)
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.ProtocolStructImp.Code">
+            <summary>
+            Control identification code (data type description)
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.ProtocolStructImp.Payload">
+            <summary>
+            INFO Data Packet,	( include Checksum byte)
+            </summary>
+        </member>
+        <member name="M:ADSDK.Device.ProtocolStructImp.ToArray">
+            <summary>
+            byte array
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:ADSDK.Device.ProtocolStruct">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.ProtocolStruct.Preamble">
+            <summary>
+            START OF INFORMATION
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.ProtocolStruct.Address">
+            <summary>
+            Equip address（1～65534）,(65535 public address,0 reserve address)
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.ProtocolStruct.Code">
+            <summary>
+            Control identification code (data type description)
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.ProtocolStruct.Type">
+            <summary>
+            control identification code (action type description)
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.ProtocolStruct.Length">
+            <summary>
+            INFO Data Length
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.ProtocolStruct.Payload">
+            <summary>
+            INFO Data Packet,	( include Checksum byte)
+            </summary>
+        </member>
+        <member name="M:ADSDK.Device.ProtocolStruct.ToArray">
+            <summary>
+            byte array
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:ADSDK.Device.StringEventArg">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:ADSDK.Device.StringEventArg.#ctor(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="str"></param>
+        </member>
+        <member name="P:ADSDK.Device.StringEventArg.Data">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:ADSDK.Device.StringEventHandler">
+            <summary>
+            表示将处理 ADSDK.Communication.String 事件的方法。
+            </summary>
+            <param name="sender">事件源</param>
+            <param name="e"> 包含事件数据的 ADSDK.Communication.StringEventArg。</param>
+        </member>
+        <member name="T:ADSDK.Device.IObjectSafety">
+            <summary>
+            Guid唯一，不可变更，否则将无法通过IE浏览器的ActiveX控件的安全认证   
+            </summary>
+        </member>
+        <member name="M:ADSDK.Device.IObjectSafety.GetInterfaceSafetyOptions(System.Guid@,System.Int32@,System.Int32@)">
+            <summary>
+            
+            </summary>
+            <param name="riid"></param>
+            <param name="pdwSupportedOptions"></param>
+            <param name="pdwEnabledOptions"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.IObjectSafety.SetInterfaceSafetyOptions(System.Guid@,System.Int32,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="riid"></param>
+            <param name="dwOptionSetMask"></param>
+            <param name="dwEnabledOptions"></param>
+            <returns></returns>
+        </member>
+        <member name="T:ADSDK.Device.HID_RETURN">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.HID_RETURN.SUCCESS">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.HID_RETURN.NO_DEVICE_CONECTED">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.HID_RETURN.DEVICE_NOT_FIND">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.HID_RETURN.DEVICE_OPENED">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.HID_RETURN.WRITE_FAILD">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.HID_RETURN.READ_FAILD">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:ADSDK.Device.HidReportEventArgs">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.HidReportEventArgs.reportID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.HidReportEventArgs.reportBuff">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:ADSDK.Device.HidReportEventArgs.#ctor(System.Byte,System.Byte[])">
+            <summary>
+            
+            </summary>
+            <param name="id"></param>
+            <param name="arrayBuff"></param>
+        </member>
+        <member name="T:ADSDK.Device.HidReportEventHandler">
+            <summary>
+            表示将处理 ADSDK.Device.HidReport 事件的方法。
+            </summary>
+            <param name="sender">事件源</param>
+            <param name="e"> 包含事件数据的 ADSDK.Device.HidReportEventArgs。</param>
+        </member>
+        <member name="T:ADSDK.Device.Hid">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Hid.VersionNumber">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ADSDK.Device.Hid.OutputReportLength">
+            <summary>
+            输出报告长度,包刮一个字节的报告ID
+            </summary>
+        </member>
+        <member name="P:ADSDK.Device.Hid.InputReportLength">
+            <summary>
+            输入报告长度,包刮一个字节的报告ID   
+            </summary>
+        </member>
+        <member name="E:ADSDK.Device.Hid.HidReport">
+            <summary>
+            事件:数据到达,处理此事件以接收输入数据
+            </summary>
+        </member>
+        <member name="E:ADSDK.Device.Hid.HidDeviceRemoved">
+            <summary>
+            事件:设备断开
+            </summary>
+        </member>
+        <member name="E:ADSDK.Device.Hid.HidDeviceArrived">
+            <summary>
+            事件：设置连接
+            </summary>
+        </member>
+        <member name="M:ADSDK.Device.Hid.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:ADSDK.Device.Hid.Finalize">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Hid.FILE_SHARE_READ">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Hid.FILE_SHARE_WRITE">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:ADSDK.Device.Hid.OpenDevice(System.UInt16,System.UInt16,System.String)">
+            <summary>
+            打开指定信息的设备
+            </summary>
+            <param name="vID">设备的vID</param>
+            <param name="pID">设备的pID</param>
+            <param name="serial">设备的serial</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.Hid.OpenDevice(System.String,System.String)">
+            <summary>
+            打开指定路径的设备
+            </summary>
+            <param name="devicePathName">设备路径</param>
+            <param name="serial"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.Hid.CloseDevice">
+            <summary>
+            关闭打开的设备
+            </summary>
+        </member>
+        <member name="M:ADSDK.Device.Hid.BeginAsyncRead">
+            <summary>
+            开始一次异步读
+            </summary>
+        </member>
+        <member name="M:ADSDK.Device.Hid.ReadCompleted(System.IAsyncResult)">
+            <summary>
+            异步读取结束,发出有数据到达事件
+            </summary>
+            <param name="iResult">这里是输入报告的数组</param>
+        </member>
+        <member name="M:ADSDK.Device.Hid.OnDataReceived(ADSDK.Device.HidReportEventArgs)">
+            <summary>
+            
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:ADSDK.Device.Hid.OnDeviceRemoved(System.EventArgs)">
+            <summary>
+            
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:ADSDK.Device.Hid.OnDeviceArrived(System.EventArgs)">
+            <summary>
+            
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:ADSDK.Device.Hid.Write(ADSDK.Device.HidReportEventArgs)">
+            <summary>
+            
+            </summary>
+            <param name="r"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.Hid.GetHidDeviceList(System.Collections.Generic.List{System.String}@,System.String[],System.String[])">
+            <summary>
+            获取所有连接的hid的设备路径
+            </summary>
+            <param name="deviceList">包含每个设备路径的字符串数组</param>
+            <param name="VID"></param>
+            <param name="PID"></param>
+        </member>
+        <member name="M:ADSDK.Device.Hid.GetHidDeviceList(System.Collections.Generic.List{System.String}@)">
+            <summary>
+            获取所有连接的hid的设备路径
+            </summary>
+            <returns>包含每个设备路径的字符串数组</returns>
+        </member>
+        <member name="M:ADSDK.Device.Hid.HidD_GetHidGuid(System.Guid@)">
+            <summary>
+            获得GUID
+            The HidD_GetHidGuid routine returns the device interface GUID for HIDClass devices.
+            </summary>
+            <param name="HidGuid">a caller-allocated GUID buffer that the routine uses to return the device interface GUID for HIDClass devices.</param>
+        </member>
+        <member name="M:ADSDK.Device.Hid.SetupDiGetClassDevs(System.Guid@,System.UInt32,System.IntPtr,ADSDK.Device.DIGCF)">
+            <summary>
+            过滤设备，获取需要的设备
+            The SetupDiGetClassDevs function returns a handle to a device information set that contains requested device information elements for a local machine. 
+            </summary>
+            <param name="ClassGuid">GUID for a device setup class or a device interface class. </param>
+            <param name="Enumerator">A pointer to a NULL-terminated string that supplies the name of a PnP enumerator or a PnP device instance identifier. </param>
+            <param name="HwndParent">A handle of the top-level window to be used for a user interface</param>
+            <param name="Flags">A variable  that specifies control options that filter the device information elements that are added to the device information set. </param>
+            <returns>a handle to a device information set </returns>
+        </member>
+        <member name="M:ADSDK.Device.Hid.SetupDiDestroyDeviceInfoList(System.IntPtr)">
+            <summary>
+            The SetupDiDestroyDeviceInfoList function deletes a device information set and frees all associated memory.
+            </summary>
+            <param name="deviceInfoSet">A handle to the device information set to delete.</param>
+            <returns>returns TRUE if it is successful. Otherwise, it returns FALSE </returns>
+        </member>
+        <member name="M:ADSDK.Device.Hid.SetupDiEnumDeviceInterfaces(System.IntPtr,System.IntPtr,System.Guid@,System.UInt32,ADSDK.Device.SP_DEVICE_INTERFACE_DATA@)">
+            <summary>
+            获取设备，true获取到
+            The SetupDiEnumDeviceInterfaces function enumerates the device interfaces that are contained in a device information set. 
+            </summary>
+            <param name="deviceInfoSet">A pointer to a device information set that contains the device interfaces for which to return information</param>
+            <param name="deviceInfoData">A pointer to an SP_DEVINFO_DATA structure that specifies a device information element in DeviceInfoSet</param>
+            <param name="interfaceClassGuid">a GUID that specifies the device interface class for the requested interface</param>
+            <param name="memberIndex">A zero-based index into the list of interfaces in the device information set</param>
+            <param name="deviceInterfaceData">a caller-allocated buffer that contains a completed SP_DEVICE_INTERFACE_DATA structure that identifies an interface that meets the search parameters</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.Hid.SetupDiGetDeviceInterfaceDetail(System.IntPtr,ADSDK.Device.SP_DEVICE_INTERFACE_DATA@,System.IntPtr,System.Int32,System.Int32@,ADSDK.Device.SP_DEVINFO_DATA@)">
+            <summary>
+            获取接口的详细信息 必须调用两次 第1次返回长度 第2次获取数据 
+            The SetupDiGetDeviceInterfaceDetail function returns details about a device interface.
+            </summary>
+            <param name="deviceInfoSet">A pointer to the device information set that contains the interface for which to retrieve details</param>
+            <param name="deviceInterfaceData">A pointer to an SP_DEVICE_INTERFACE_DATA structure that specifies the interface in DeviceInfoSet for which to retrieve details</param>
+            <param name="deviceInterfaceDetailData">A pointer to an SP_DEVICE_INTERFACE_DETAIL_DATA structure to receive information about the specified interface</param>
+            <param name="deviceInterfaceDetailDataSize">The size of the DeviceInterfaceDetailData buffer</param>
+            <param name="requiredSize">A pointer to a variable that receives the required size of the DeviceInterfaceDetailData buffer</param>
+            <param name="deviceInfoData">A pointer buffer to receive information about the device that supports the requested interface</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.Hid.HidD_GetAttributes(System.IntPtr,ADSDK.Device.HIDD_ATTRIBUTES@)">
+            <summary>
+            The HidD_GetAttributes routine returns the attributes of a specified top-level collection.
+            </summary>
+            <param name="hidDeviceObject">Specifies an open handle to a top-level collection</param>
+            <param name="attributes">a caller-allocated HIDD_ATTRIBUTES structure that returns the attributes of the collection specified by HidDeviceObject</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.Hid.HidD_GetSerialNumberString(System.IntPtr,System.IntPtr,System.Int32)">
+            <summary>
+            The HidD_GetSerialNumberString routine returns the embedded string of a top-level collection that identifies the serial number of the collection's physical device.
+            </summary>
+            <param name="hidDeviceObject">Specifies an open handle to a top-level collection</param>
+            <param name="buffer">a caller-allocated buffer that the routine uses to return the requested serial number string</param>
+            <param name="bufferLength">Specifies the length, in bytes, of a caller-allocated buffer provided at Buffer</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.Hid.HidD_GetPreparsedData(System.IntPtr,System.IntPtr@)">
+            <summary>
+            The HidD_GetPreparsedData routine returns a top-level collection's preparsed data.
+            </summary>
+            <param name="hidDeviceObject">Specifies an open handle to a top-level collection. </param>
+            <param name="PreparsedData">Pointer to the address of a routine-allocated buffer that contains a collection's preparsed data in a _HIDP_PREPARSED_DATA structure.</param>
+            <returns>HidD_GetPreparsedData returns TRUE if it succeeds; otherwise, it returns FALSE.</returns>
+        </member>
+        <member name="M:ADSDK.Device.Hid.CreateFile(System.String,System.UInt32,System.UInt32,System.UInt32,System.UInt32,System.UInt32,System.UInt32)">
+            <summary>
+            获取设备文件
+            This function creates, opens, or truncates a file, COM port, device, service, or console. 
+            </summary>
+            <param name="fileName">a null-terminated string that specifies the name of the object</param>
+            <param name="desiredAccess">Type of access to the object</param>
+            <param name="shareMode">Share mode for object</param>
+            <param name="securityAttributes">Ignored; set to NULL</param>
+            <param name="creationDisposition">Action to take on files that exist, and which action to take when files do not exist</param>
+            <param name="flagsAndAttributes">File attributes and flags for the file</param>
+            <param name="templateFile">Ignored</param>
+            <returns>An open handle to the specified file indicates success</returns>
+        </member>
+        <member name="M:ADSDK.Device.Hid.CloseHandle(System.IntPtr)">
+            <summary>
+            关闭访问设备句柄，结束进程的时候把这个加上保险点
+            This function closes an open object handle.
+            </summary>
+            <param name="hObject">Handle to an open object</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.Hid.ReadFile(System.IntPtr,System.Byte[],System.UInt32,System.UInt32@,System.IntPtr)">
+            <summary>
+            读取设备文件
+            This function reads data from a file, starting at the position indicated by the file pointer.
+            </summary>
+            <param name="file">Handle to the file to be read</param>
+            <param name="buffer">Pointer to the buffer that receives the data read from the file </param>
+            <param name="numberOfBytesToRead">Number of bytes to be read from the file</param>
+            <param name="numberOfBytesRead">Pointer to the number of bytes read</param>
+            <param name="lpOverlapped">Unsupported; set to NULL</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.Hid.WriteFile(System.IntPtr,System.Byte[],System.UInt32,System.UInt32@,System.IntPtr)">
+            <summary>
+             This function writes data to a file
+            </summary>
+            <param name="file">Handle to the file to be written to</param>
+            <param name="buffer">Pointer to the buffer containing the data to write to the file</param>
+            <param name="numberOfBytesToWrite">Number of bytes to write to the file</param>
+            <param name="numberOfBytesWritten">Pointer to the number of bytes written by this function call</param>
+            <param name="lpOverlapped">Unsupported; set to NULL</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.Hid.RegisterDeviceNotification(System.IntPtr,System.IntPtr,System.Int32)">
+            <summary>
+            Registers the device or type of device for which a window will receive notifications
+            </summary>
+            <param name="recipient">A handle to the window or service that will receive device events for the devices specified in the NotificationFilter parameter</param>
+            <param name="notificationFilter">A pointer to a block of data that specifies the type of device for which notifications should be sent</param>
+            <param name="flags">A Flags that specify the handle type</param>
+            <returns>If the function succeeds, the return value is a device notification handle</returns>
+        </member>
+        <member name="M:ADSDK.Device.Hid.UnregisterDeviceNotification(System.IntPtr)">
+            <summary>
+            Closes the specified device notification handle.
+            </summary>
+            <param name="handle">Device notification handle returned by the RegisterDeviceNotification function</param>
+            <returns></returns>
+        </member>
+        <member name="T:ADSDK.Device.SP_DEVICE_INTERFACE_DATA">
+            <summary>
+            SP_DEVICE_INTERFACE_DATA structure defines a device interface in a device information set.
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.SP_DEVICE_INTERFACE_DATA.cbSize">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.SP_DEVICE_INTERFACE_DATA.interfaceClassGuid">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.SP_DEVICE_INTERFACE_DATA.flags">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.SP_DEVICE_INTERFACE_DATA.reserved">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:ADSDK.Device.SP_DEVICE_INTERFACE_DETAIL_DATA">
+            <summary>
+            SP_DEVICE_INTERFACE_DETAIL_DATA structure contains the path for a device interface.
+            </summary>
+        </member>
+        <member name="T:ADSDK.Device.SP_DEVINFO_DATA">
+            <summary>
+            SP_DEVINFO_DATA structure defines a device instance that is a member of a device information set.
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.SP_DEVINFO_DATA.cbSize">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.SP_DEVINFO_DATA.classGuid">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.SP_DEVINFO_DATA.devInst">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.SP_DEVINFO_DATA.reserved">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:ADSDK.Device.DIGCF">
+            <summary>
+            Flags controlling what is included in the device information set built by SetupDiGetClassDevs
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.DIGCF.DIGCF_DEFAULT">
+            <summary>
+            only valid with DIGCF_DEVICEINTERFACE            
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.DIGCF.DIGCF_PRESENT">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.DIGCF.DIGCF_ALLCLASSES">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.DIGCF.DIGCF_PROFILE">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.DIGCF.DIGCF_DEVICEINTERFACE">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:ADSDK.Device.HIDD_ATTRIBUTES">
+            <summary>
+            The HIDD_ATTRIBUTES structure contains vendor information about a HIDClass device
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.HIDD_ATTRIBUTES.Size">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.HIDD_ATTRIBUTES.VendorID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.HIDD_ATTRIBUTES.ProductID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.HIDD_ATTRIBUTES.VersionNumber">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:ADSDK.Device.HIDP_CAPS">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.HIDP_CAPS.Usage">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.HIDP_CAPS.UsagePage">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.HIDP_CAPS.InputReportByteLength">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.HIDP_CAPS.OutputReportByteLength">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.HIDP_CAPS.Reserved">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.HIDP_CAPS.NumberLinkCollectionNodes">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.HIDP_CAPS.NumberInputButtonCaps">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.HIDP_CAPS.NumberInputValueCaps">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.HIDP_CAPS.NumberInputDataIndices">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.HIDP_CAPS.NumberOutputButtonCaps">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.HIDP_CAPS.NumberOutputValueCaps">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.HIDP_CAPS.NumberOutputDataIndices">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.HIDP_CAPS.NumberFeatureButtonCaps">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.HIDP_CAPS.NumberFeatureValueCaps">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.HIDP_CAPS.NumberFeatureDataIndices">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:ADSDK.Device.DESIREDACCESS">
+             <summary>
+             Type of access to the object. 
+            </summary>
+        </member>
+        <member name="T:ADSDK.Device.CREATIONDISPOSITION">
+            <summary>
+            Action to take on files that exist, and which action to take when files do not exist. 
+            </summary>
+        </member>
+        <member name="T:ADSDK.Device.FLAGSANDATTRIBUTES">
+            <summary>
+            File attributes and flags for the file. 
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.FLAGSANDATTRIBUTES.FILE_FLAG_WRITE_THROUGH">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.FLAGSANDATTRIBUTES.FILE_FLAG_OVERLAPPED">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.FLAGSANDATTRIBUTES.FILE_FLAG_NO_BUFFERING">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.FLAGSANDATTRIBUTES.FILE_FLAG_RANDOM_ACCESS">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.FLAGSANDATTRIBUTES.FILE_FLAG_SEQUENTIAL_SCAN">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.FLAGSANDATTRIBUTES.FILE_FLAG_DELETE_ON_CLOSE">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.FLAGSANDATTRIBUTES.FILE_FLAG_BACKUP_SEMANTICS">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.FLAGSANDATTRIBUTES.FILE_FLAG_POSIX_SEMANTICS">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.FLAGSANDATTRIBUTES.FILE_FLAG_OPEN_REPARSE_POINT">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.FLAGSANDATTRIBUTES.FILE_FLAG_OPEN_NO_RECALL">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.FLAGSANDATTRIBUTES.FILE_FLAG_FIRST_PIPE_INSTANCE">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:ADSDK.Device.DEV_BROADCAST_HDR">
+            <summary>
+            Serves as a standard header for information related to a device event reported through the WM_DEVICECHANGE message.
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.DEV_BROADCAST_HDR.dbcc_size">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.DEV_BROADCAST_HDR.dbcc_devicetype">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.DEV_BROADCAST_HDR.dbcc_reserved">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:ADSDK.Device.DEV_BROADCAST_DEVICEINTERFACE">
+            <summary>
+            Contains information about a class of devices
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.DEV_BROADCAST_DEVICEINTERFACE.dbcc_size">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.DEV_BROADCAST_DEVICEINTERFACE.dbcc_devicetype">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.DEV_BROADCAST_DEVICEINTERFACE.dbcc_reserved">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.DEV_BROADCAST_DEVICEINTERFACE.dbcc_classguid">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.DEV_BROADCAST_DEVICEINTERFACE.dbcc_name">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:ADSDK.Device.CanbusParameters">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ADSDK.Device.CanbusParameters.RemoteID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ADSDK.Device.CanbusParameters.LocalID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ADSDK.Device.CanbusParameters.MaskID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:ADSDK.Device.CanbusParameters.ToArray">
+            <summary>
+            将 ADSDK.RFID.CanbusParaInfo 的元素复制到新数组中。
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.CanbusParameters.AddRange(System.Byte[])">
+            <summary>
+            将指定集合的元素赋值到 ADSDK.RFID.CanbusParaInfo。
+            </summary>
+            <param name="data">一个集合，其元素应被添加到 ADSDK.RFID.CanbusParaInfo。集合自身不能为 null</param>
+        </member>
+        <member name="M:ADSDK.Device.CanbusParameters.RemoteIDToString">
+            <summary>
+            Get Remote ID
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.CanbusParameters.SetRemoteID(System.String)">
+            <summary>
+            Set Remote ID
+            </summary>
+            <param name="id">Remote ID</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.CanbusParameters.LocalIDToString">
+            <summary>
+            Get Local ID
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.CanbusParameters.SetLocalID(System.String)">
+            <summary>
+            Set Local ID
+            </summary>
+            <param name="id">Local ID</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.CanbusParameters.MaskIDToString">
+            <summary>
+             Get Mask ID
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.CanbusParameters.SetMaskID(System.String)">
+            <summary>
+            Set Mask ID
+            </summary>
+            <param name="id">Mask ID</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.CanbusParameters.ToString">
+            <summary> 
+            重载ToString()方法,返回session对象的特征 
+            </summary> 
+            <returns></returns> 
+        </member>
+        <member name="M:ADSDK.Device.CanbusParameters.#ctor">
+            <summary>
+            Constructed function
+            </summary>
+        </member>
+        <member name="M:ADSDK.Device.CanbusParameters.Clone">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:ADSDK.Device.TcpipParameters">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ADSDK.Device.TcpipParameters.IP">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ADSDK.Device.TcpipParameters.Mask">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ADSDK.Device.TcpipParameters.GateWay">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ADSDK.Device.TcpipParameters.Port">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ADSDK.Device.TcpipParameters.Mac">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ADSDK.Device.TcpipParameters.RemoteIP">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ADSDK.Device.TcpipParameters.RemotePort">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ADSDK.Device.TcpipParameters.Server">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ADSDK.Device.TcpipParameters.Protocol">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:ADSDK.Device.TcpipParameters.ToArray">
+            <summary>
+            将 ADSDK.RFID.TcpipParaInfo 的元素复制到新数组中。
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.TcpipParameters.AddRange(System.Byte[])">
+            <summary>
+            将指定集合的元素赋值到 ADSDK.RFID.TcpipParaInfo。
+            </summary>
+            <param name="data">一个集合，其元素应被添加到 ADSDK.RFID.TcpipParaInfo。集合自身不能为 null</param>
+        </member>
+        <member name="M:ADSDK.Device.TcpipParameters.IPToString">
+            <summary>
+            Get IP Address
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.TcpipParameters.SetIP(System.String)">
+            <summary>
+            Set IP Address
+            </summary>
+            <param name="ip">IP Address</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.TcpipParameters.MaskToString">
+            <summary>
+             Get Subnet Mask Address
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.TcpipParameters.SetMask(System.String)">
+            <summary>
+            Set Mask Address
+            </summary>
+            <param name="mask">Mask Address</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.TcpipParameters.GateWayToString">
+            <summary>
+            Get GateWay Address
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.TcpipParameters.SetGateWay(System.String)">
+            <summary>
+            Set GateWay Address
+            </summary>
+            <param name="gateWay">GateWay Address</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.TcpipParameters.MacToString">
+            <summary>
+            Get Mac Address
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.TcpipParameters.SetMac(System.String)">
+            <summary>
+            Set Mac Address
+            </summary>
+            <param name="mac">Mac Address</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.TcpipParameters.RemoteIPToString">
+            <summary>
+            Get Remote IP Address
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.TcpipParameters.SetRemoteIP(System.String)">
+            <summary>
+            Set RemoteIP Address
+            </summary>
+            <param name="ip">RemoteIP Address</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.TcpipParameters.ToString">
+            <summary> 
+            重载ToString()方法,返回session对象的特征 
+            </summary> 
+            <returns></returns> 
+        </member>
+        <member name="M:ADSDK.Device.TcpipParameters.#ctor">
+            <summary>
+            Constructed function
+            </summary>
+        </member>
+        <member name="M:ADSDK.Device.TcpipParameters.Clone">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:ADSDK.Device.WifiPubParameters">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ADSDK.Device.WifiPubParameters.Type">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ADSDK.Device.WifiPubParameters.Mode">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ADSDK.Device.WifiPubParameters.Hide">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ADSDK.Device.WifiPubParameters.Tcpto">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ADSDK.Device.WifiPubParameters.Maxsk">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ADSDK.Device.WifiPubParameters.Server">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ADSDK.Device.WifiPubParameters.Protocol">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ADSDK.Device.WifiPubParameters.RemotePort">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ADSDK.Device.WifiPubParameters.RemoteIP">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ADSDK.Device.WifiPubParameters.Mac">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:ADSDK.Device.WifiPubParameters.ToArray">
+            <summary>
+            将 ADSDK.RFID.TcpipParaInfo 的元素复制到新数组中。
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.WifiPubParameters.AddRange(System.Byte[])">
+            <summary>
+            将指定集合的元素赋值到 ADSDK.RFID.TcpipParaInfo。
+            </summary>
+            <param name="data">一个集合，其元素应被添加到 ADSDK.RFID.TcpipParaInfo。集合自身不能为 null</param>
+        </member>
+        <member name="M:ADSDK.Device.WifiPubParameters.ToString">
+            <summary> 
+            重载ToString()方法,返回session对象的特征 
+            </summary> 
+            <returns></returns> 
+        </member>
+        <member name="M:ADSDK.Device.WifiPubParameters.#ctor">
+            <summary>
+            Constructed function
+            </summary>
+        </member>
+        <member name="M:ADSDK.Device.WifiPubParameters.Clone">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:ADSDK.Device.WifiSsidParameters">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ADSDK.Device.WifiSsidParameters.Mode">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ADSDK.Device.WifiSsidParameters.Channel">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ADSDK.Device.WifiSsidParameters.Auth">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ADSDK.Device.WifiSsidParameters.Encry">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ADSDK.Device.WifiSsidParameters.Key">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ADSDK.Device.WifiSsidParameters.SSID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ADSDK.Device.WifiSsidParameters.DHCP">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ADSDK.Device.WifiSsidParameters.Ip">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ADSDK.Device.WifiSsidParameters.Mask">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ADSDK.Device.WifiSsidParameters.Gateway">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:ADSDK.Device.WifiSsidParameters.ToArray">
+            <summary>
+            将 ADSDK.RFID.TcpipParaInfo 的元素复制到新数组中。
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.WifiSsidParameters.AddRange(System.Byte[])">
+            <summary>
+            将指定集合的元素赋值到 ADSDK.RFID.TcpipParaInfo。
+            </summary>
+            <param name="data">一个集合，其元素应被添加到 ADSDK.RFID.TcpipParaInfo。集合自身不能为 null</param>
+        </member>
+        <member name="M:ADSDK.Device.WifiSsidParameters.ToString">
+            <summary> 
+            重载ToString()方法,返回session对象的特征 
+            </summary> 
+            <returns></returns> 
+        </member>
+        <member name="M:ADSDK.Device.WifiSsidParameters.#ctor">
+            <summary>
+            Constructed function
+            </summary>
+        </member>
+        <member name="M:ADSDK.Device.WifiSsidParameters.Clone">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

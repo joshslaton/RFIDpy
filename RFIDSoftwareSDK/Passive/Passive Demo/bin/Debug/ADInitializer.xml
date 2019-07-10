@@ -1,0 +1,1350 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ADInitializer</name>
+    </assembly>
+    <members>
+        <member name="T:ADSDK.Initializer.IniCSServer">
+            <summary>
+            服务器通讯相关数据
+            </summary>
+        </member>
+        <member name="F:ADSDK.Initializer.IniCSServer.ServerIP">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ADSDK.Initializer.IniCSServer.ServerHost">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ADSDK.Initializer.IniCSServer.MsgPort">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ADSDK.Initializer.IniCSServer.FileSynPort">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ADSDK.Initializer.IniCSServer.MobilePort">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ADSDK.Initializer.IniCSServer.ReaderPort">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ADSDK.Initializer.IniCSServer.CollectionDelay">
+            <summary>
+            数据采集存储间隔时间 *2秒
+            </summary>
+        </member>
+        <member name="F:ADSDK.Initializer.IniCSServer.LocalMsgIPE">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ADSDK.Initializer.IniCSServer.LocalFileSynIPE">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ADSDK.Initializer.IniCSServer.LocalReaderIPE">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ADSDK.Initializer.IniCSServer.LocalMobileIPE">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ADSDK.Initializer.IniCSServer.ClientName">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ADSDK.Initializer.IniCSServer.UserName">
+            <summary>
+            登录用户名
+            </summary>
+        </member>
+        <member name="F:ADSDK.Initializer.IniCSServer.UserID">
+            <summary>
+            登录用户ID
+            </summary>
+        </member>
+        <member name="F:ADSDK.Initializer.IniCSServer.RemoteIPEndPoint">
+            <summary>
+            远程网络端点
+            </summary>
+        </member>
+        <member name="M:ADSDK.Initializer.IniCSServer.IsIPv4(System.String)">
+            <summary>
+            判断输入的字符串是否是表示一个IP地址
+            </summary>
+            <param name="input">被比较的字符串</param>
+            <returns>是IP地址则为True</returns>
+        </member>
+        <member name="M:ADSDK.Initializer.IniCSServer.GetIPAddress(System.String)">
+            <summary>
+            获取指定主机IP
+            </summary>
+            <param name="hostName">主机名称</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Initializer.IniCSServer.LoadServerFile">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:ADSDK.Initializer.IniCSServer.SaveServerFile">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:ADSDK.Initializer.ResourceDll">
+            <summary>
+            Load Resource dll
+            </summary>
+        </member>
+        <member name="M:ADSDK.Initializer.ResourceDll.RegistDLL">
+            <summary> 注册资源中的dll
+            </summary>
+        </member>
+        <member name="M:ADSDK.Initializer.ResourceDll.ResigstChildDll(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="dllPath"></param>
+        </member>
+        <member name="T:ADSDK.Initializer.ImageType">
+            <summary>
+            图片保存方式
+            </summary>
+        </member>
+        <member name="F:ADSDK.Initializer.ImageType.Database">
+            <summary>
+            数据库保存
+            </summary>
+        </member>
+        <member name="F:ADSDK.Initializer.ImageType.Xml">
+            <summary>
+            xml数据流保存本地
+            </summary>
+        </member>
+        <member name="F:ADSDK.Initializer.ImageType.Photo">
+            <summary>
+            jpg格式保存本地
+            </summary>
+        </member>
+        <member name="F:ADSDK.Initializer.ImageType.Temp">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ADSDK.Initializer.ImageType.Employe">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ADSDK.Initializer.ImageType.Vehicle">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ADSDK.Initializer.ImageType.Get">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ADSDK.Initializer.ImageType.Set">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ADSDK.Initializer.ImageType.Parking">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ADSDK.Initializer.ImageType.QRCode">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:ADSDK.Initializer.IniSettings">
+            <summary>
+            Application Init Settings
+            </summary>
+            <summary>
+            AutoLogin Init Settings
+            </summary>
+            <summary>
+            Communication Init Settings
+            </summary>
+            <summary>
+            Database Init Settings
+            </summary>
+            <summary>
+            Database Init Settings
+            </summary>
+            <summary>
+            Porject Init Settings
+            </summary>
+            <summary>
+            Language Init Settings
+            </summary>
+            <summary>
+            Monitor Init Settings
+            </summary>
+            <summary>
+            Parking Init Settings
+            </summary>
+            <summary>
+            RfidReader Init Settings
+            </summary>
+        </member>
+        <member name="P:ADSDK.Initializer.IniSettings.AppsName">
+            <summary>
+            Aplication Name
+            </summary>
+        </member>
+        <member name="P:ADSDK.Initializer.IniSettings.AppsNameEN">
+            <summary>
+            Application Name of English
+            </summary>
+        </member>
+        <member name="P:ADSDK.Initializer.IniSettings.AppsNameCN">
+            <summary>
+            Application Name of Chinese 
+            </summary>
+        </member>
+        <member name="P:ADSDK.Initializer.IniSettings.AppsFont">
+            <summary>
+            Application Font
+            </summary>
+        </member>
+        <member name="P:ADSDK.Initializer.IniSettings.AppsColor">
+            <summary>
+            Application BackColor
+            </summary>
+        </member>
+        <member name="P:ADSDK.Initializer.IniSettings.SaveImageType">
+            <summary>
+            图片保存方式
+            </summary>
+        </member>
+        <member name="P:ADSDK.Initializer.IniSettings.CompanyEN">
+            <summary>
+            Company Name of Chinese 
+            </summary>
+        </member>
+        <member name="P:ADSDK.Initializer.IniSettings.CompanyCN">
+            <summary>
+            Company Name of Chinese 
+            </summary>
+        </member>
+        <member name="P:ADSDK.Initializer.IniSettings.AppsCompany">
+            <summary>
+            公司名称
+            </summary>
+        </member>
+        <member name="P:ADSDK.Initializer.IniSettings.CardType">
+            <summary>
+            卡片类型 //车牌号码 = 0,身份证 = 1,银行卡 = 2,普通卡 = 3,中文卡 = 4
+            </summary>
+        </member>
+        <member name="P:ADSDK.Initializer.IniSettings.Tips">
+            <summary>
+            提示信息
+            </summary>
+        </member>
+        <member name="P:ADSDK.Initializer.IniSettings.QRCodeSize">
+            <summary>
+            二维码尺寸
+            </summary>
+        </member>
+        <member name="P:ADSDK.Initializer.IniSettings.QRCodeVersion">
+            <summary>
+            二维码版本
+            </summary>
+        </member>
+        <member name="P:ADSDK.Initializer.IniSettings.APPsVersionHide">
+            <summary>
+            版本信息隐藏
+            </summary>
+        </member>
+        <member name="M:ADSDK.Initializer.IniSettings.SaveApplication">
+            <summary>
+            Save application information
+            </summary>
+        </member>
+        <member name="M:ADSDK.Initializer.IniSettings.LoadApplication">
+            <summary>
+            Load application information
+            </summary>
+        </member>
+        <member name="P:ADSDK.Initializer.IniSettings.FirstLogin">
+            <summary>
+            Save Login Name
+            </summary>
+        </member>
+        <member name="P:ADSDK.Initializer.IniSettings.IsSaveLoginName">
+            <summary>
+            Is Save Login Name
+            </summary>
+        </member>
+        <member name="P:ADSDK.Initializer.IniSettings.SaveLoginName">
+            <summary>
+            Save Login Name
+            </summary>
+        </member>
+        <member name="P:ADSDK.Initializer.IniSettings.IsSaveLoginPassword">
+            <summary>
+            Is Save Login Password
+            </summary>
+        </member>
+        <member name="P:ADSDK.Initializer.IniSettings.SaveLoginPassword">
+            <summary>
+            Save Login Password
+            </summary>
+        </member>
+        <member name="P:ADSDK.Initializer.IniSettings.AutoLogin">
+            <summary>
+            Auto Login
+            </summary>
+        </member>
+        <member name="P:ADSDK.Initializer.IniSettings.IsLogin">
+            <summary>
+            是否登录
+            </summary>
+        </member>
+        <member name="P:ADSDK.Initializer.IniSettings.AutoNavigation">
+            <summary>
+            自动导航栏
+            </summary>
+        </member>
+        <member name="P:ADSDK.Initializer.IniSettings.IncludeDepart">
+            <summary>
+            自动导航栏
+            </summary>
+        </member>
+        <member name="M:ADSDK.Initializer.IniSettings.Logout">
+            <summary>
+            登录信息注销
+            </summary>
+        </member>
+        <member name="P:ADSDK.Initializer.IniSettings.LoginID">
+            <summary>
+            Login ID
+            </summary>
+        </member>
+        <member name="P:ADSDK.Initializer.IniSettings.LoginUsername">
+            <summary>
+            Login Username
+            </summary>
+        </member>
+        <member name="P:ADSDK.Initializer.IniSettings.LoginPassword">
+            <summary>
+            Login Password
+            </summary>
+        </member>
+        <member name="P:ADSDK.Initializer.IniSettings.LoginLevel">
+            <summary>
+            Login Level
+            </summary>
+        </member>
+        <member name="P:ADSDK.Initializer.IniSettings.LoginPersonID">
+            <summary>
+            登录人员id
+            </summary>
+        </member>
+        <member name="P:ADSDK.Initializer.IniSettings.LoginDepartID">
+            <summary>
+            登录部门id
+            </summary>
+        </member>
+        <member name="P:ADSDK.Initializer.IniSettings.LoginDepartType">
+            <summary>
+            登录部门类别
+            </summary>
+        </member>
+        <member name="M:ADSDK.Initializer.IniSettings.SaveAutoLogin">
+            <summary>
+            Save auto login infomation
+            </summary>
+        </member>
+        <member name="M:ADSDK.Initializer.IniSettings.LoadAutoLogin">
+            <summary>
+            Load auto login information
+            </summary>
+        </member>
+        <member name="P:ADSDK.Initializer.IniSettings.Communication">
+            <summary>
+            Choose Communication 0-232,1-NET,2-USB
+            </summary>
+        </member>
+        <member name="P:ADSDK.Initializer.IniSettings.HostName">
+            <summary>
+            Host Name(PortName,IP or UsbDevPath)
+            </summary>
+        </member>
+        <member name="P:ADSDK.Initializer.IniSettings.HostPort">
+            <summary>
+            Host port(Baudrate,IPPort or UsbType)
+            </summary>
+        </member>
+        <member name="P:ADSDK.Initializer.IniSettings.USBDevPath">
+            <summary>
+            Usb Device path
+            </summary>
+        </member>
+        <member name="P:ADSDK.Initializer.IniSettings.USBType">
+            <summary>
+            USB type
+            </summary>
+        </member>
+        <member name="P:ADSDK.Initializer.IniSettings.IP">
+            <summary>
+            remote ip
+            </summary>
+        </member>
+        <member name="P:ADSDK.Initializer.IniSettings.IPPort">
+            <summary>
+            remote IP port
+            </summary>
+        </member>
+        <member name="P:ADSDK.Initializer.IniSettings.PortName">
+            <summary>
+            Serial port name
+            </summary>
+        </member>
+        <member name="P:ADSDK.Initializer.IniSettings.BaudRate">
+            <summary>
+            Serial port baudrate
+            </summary>
+        </member>
+        <member name="P:ADSDK.Initializer.IniSettings.Parity">
+            <summary>
+            Serial port baudrate
+            </summary>
+        </member>
+        <member name="P:ADSDK.Initializer.IniSettings.AddressList">
+            <summary>
+            Address list
+            </summary>
+        </member>
+        <member name="P:ADSDK.Initializer.IniSettings.TemporaryPath">
+            <summary>
+            Temporary Path
+            </summary>
+        </member>
+        <member name="M:ADSDK.Initializer.IniSettings.SaveCommunication">
+            <summary>
+            Save Communication information
+            </summary>
+        </member>
+        <member name="M:ADSDK.Initializer.IniSettings.LoadCommunication">
+            <summary>
+            Load Communication information
+            </summary>
+        </member>
+        <member name="P:ADSDK.Initializer.IniSettings.DBType">
+            <summary>
+            Get and set database type,0-sql,1-access
+            </summary>
+        </member>
+        <member name="P:ADSDK.Initializer.IniSettings.DBName">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ADSDK.Initializer.IniSettings.BackupDatabaseName">
+            <summary>
+            Backup Database Name
+            </summary>
+        </member>
+        <member name="P:ADSDK.Initializer.IniSettings.SqlConnectInit">
+            <summary>
+            Sql Connect Init
+            </summary>
+        </member>
+        <member name="P:ADSDK.Initializer.IniSettings.SqlServerFiles">
+            <summary>
+            Access ServerFiles
+            </summary>
+        </member>
+        <member name="P:ADSDK.Initializer.IniSettings.SqlConnectString">
+            <summary>
+            Sql Connect String
+            </summary>
+        </member>
+        <member name="P:ADSDK.Initializer.IniSettings.SqlServerName">
+            <summary>
+            Sql Server Name
+            </summary>
+        </member>
+        <member name="P:ADSDK.Initializer.IniSettings.SqlDBName">
+            <summary>
+            Sql Database name
+            </summary>
+        </member>
+        <member name="P:ADSDK.Initializer.IniSettings.SqlID">
+            <summary>
+            Sql connect ID
+            </summary>
+        </member>
+        <member name="P:ADSDK.Initializer.IniSettings.SqlPassword">
+            <summary>
+            Sql connect Password
+            </summary>
+        </member>
+        <member name="P:ADSDK.Initializer.IniSettings.SqlAuthentication">
+            <summary>
+            Sql connect Authentication
+            </summary>
+        </member>
+        <member name="P:ADSDK.Initializer.IniSettings.AccessServerFiles">
+            <summary>
+            Access ServerFiles
+            </summary>
+        </member>
+        <member name="P:ADSDK.Initializer.IniSettings.AccessConnectString">
+            <summary>
+            Access Connect String
+            </summary>
+        </member>
+        <member name="P:ADSDK.Initializer.IniSettings.AccessDataSource">
+            <summary>
+            Access Data Source
+            </summary>
+        </member>
+        <member name="P:ADSDK.Initializer.IniSettings.AccessDBName">
+            <summary>
+            Access Database name
+            </summary>
+        </member>
+        <member name="P:ADSDK.Initializer.IniSettings.AccessPassword">
+            <summary>
+            Access Database name
+            </summary>
+        </member>
+        <member name="M:ADSDK.Initializer.IniSettings.SaveDatabase">
+            <summary>
+            Save database information
+            </summary>
+        </member>
+        <member name="M:ADSDK.Initializer.IniSettings.LoadDatabase">
+            <summary>
+            Load database information
+            </summary>
+        </member>
+        <member name="M:ADSDK.Initializer.IniSettings.LoadSQLFileToBin">
+            <summary>
+            load data to byte array
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Initializer.IniSettings.SaveSQLFileFromBin(System.String,System.Byte[])">
+            <summary>
+            Save data to local file
+            </summary>
+            <param name="ip"></param>
+            <param name="bin"></param>
+        </member>
+        <member name="M:ADSDK.Initializer.IniSettings.DESEncrypt(System.String)">
+            <summary>
+            DES加密。
+            </summary>
+            <param name="inputString">输入字符串。</param>
+            <returns>加密后的字符串。</returns>
+        </member>
+        <member name="M:ADSDK.Initializer.IniSettings.DESDecrypt(System.String)">
+            <summary>
+            DES解密。
+            </summary>
+            <param name="inputString">输入字符串。</param>
+            <returns>解密后的字符串。</returns>
+        </member>
+        <member name="M:ADSDK.Initializer.IniSettings.DESEncrypt(System.Byte[])">
+            <summary>
+            DES加密。
+            </summary>
+            <param name="inputByte">输入字符串。</param>
+            <returns>加密后的字符串。</returns>
+        </member>
+        <member name="M:ADSDK.Initializer.IniSettings.DESDecrypt(System.Byte[])">
+            <summary>
+            DES解密。
+            </summary>
+            <param name="inputByte">输入字符串。</param>
+            <returns>解密后的字符串。</returns>
+        </member>
+        <member name="P:ADSDK.Initializer.IniSettings.CurrentPath">
+            <summary>
+            Current Project path
+            </summary>
+        </member>
+        <member name="M:ADSDK.Initializer.IniSettings.CreateFile(System.String)">
+            <summary>
+            Check and Create Folder
+            </summary>
+            <param name="filePath">the file path</param>
+        </member>
+        <member name="M:ADSDK.Initializer.IniSettings.LoadBaseFile">
+            <summary>
+            Load Settings
+            </summary>
+        </member>
+        <member name="F:ADSDK.Initializer.IniSettings.InputTime">
+            <summary>
+            登陆缓存时间
+            </summary>
+        </member>
+        <member name="F:ADSDK.Initializer.IniSettings.InputOrder">
+            <summary>
+            登录缓存出库单
+            </summary>
+        </member>
+        <member name="F:ADSDK.Initializer.IniSettings.mKeyInput">
+            <summary>
+            输入累计字符
+            </summary>
+        </member>
+        <member name="F:ADSDK.Initializer.IniSettings.mKeyCount">
+            <summary>
+            输入累计数量
+            </summary>
+        </member>
+        <member name="M:ADSDK.Initializer.IniSettings.SubstringCount(System.String,System.String)">
+            <summary>
+            计算字符串中子串出现的次数
+            </summary>
+            <param name="str">字符串</param>
+            <param name="substring">子串</param>
+            <returns>出现的次数</returns>
+        </member>
+        <member name="M:ADSDK.Initializer.IniSettings.KeyInput(System.Windows.Forms.Keys)">
+            <summary>
+            输入字符
+            </summary>
+        </member>
+        <member name="M:ADSDK.Initializer.IniSettings.KeyCount">
+            <summary>
+            输入字符
+            </summary>
+        </member>
+        <member name="M:ADSDK.Initializer.IniSettings.KeyContains(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="keyword"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Initializer.IniSettings.KeyContains(System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="count"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Initializer.IniSettings.KeyContains(System.Windows.Forms.Keys,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="keys"></param>
+            <param name="keyword"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Initializer.IniSettings.KeyContains(System.Windows.Forms.Keys,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="keys"></param>
+            <param name="count"></param>
+            <returns></returns>
+        </member>
+        <member name="P:ADSDK.Initializer.IniSettings.AppsLanguage">
+            <summary>
+            Choose Language
+            </summary>
+        </member>
+        <member name="P:ADSDK.Initializer.IniSettings.Language">
+            <summary>
+            type of language
+            </summary>
+        </member>
+        <member name="P:ADSDK.Initializer.IniSettings.LngCount">
+            <summary>
+            Language quantity
+            </summary>
+        </member>
+        <member name="M:ADSDK.Initializer.IniSettings.SaveLanguage">
+            <summary>
+            Save Language information
+            </summary>
+        </member>
+        <member name="M:ADSDK.Initializer.IniSettings.LoadLanguage">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:ADSDK.Initializer.IniSettings.GetLanguageString(System.String,System.String)">
+            <summary>
+            根据当前语言类型获取字符串
+            </summary>
+            <param name="en">英文字符串</param>
+            <param name="cn">中文字符串</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Initializer.IniSettings.LoadLanguage(System.String,System.String[],System.String[],System.String[])">
+            <summary>
+            
+            </summary>
+            <param name="fileName"></param>
+            <param name="enArray"></param>
+            <param name="cnArray"></param>
+            <param name="twArray"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Initializer.IniSettings.SaveLanguage(System.String,System.String[],System.String[],System.String[])">
+            <summary>
+            
+            </summary>
+            <param name="fileName"></param>
+            <param name="enArray"></param>
+            <param name="cnArray"></param>
+            <param name="twArray"></param>
+        </member>
+        <member name="P:ADSDK.Initializer.IniSettings.FlowType">
+            <summary>
+             默认摄像头图像尺寸//0-MJPG640X480,1-MJPG1600X1200,2-MJPG2048X1536,3-MJPG2592X1944
+            </summary>
+        </member>
+        <member name="P:ADSDK.Initializer.IniSettings.Matchers1">
+            <summary>
+             相似点值1
+            </summary>
+        </member>
+        <member name="P:ADSDK.Initializer.IniSettings.Matchers2">
+            <summary>
+             相似点值2
+            </summary>
+        </member>
+        <member name="P:ADSDK.Initializer.IniSettings.DefaultMonitor">
+            <summary>
+            默认摄像头
+            </summary>
+        </member>
+        <member name="P:ADSDK.Initializer.IniSettings.Index">
+            <summary>
+             默认摄像头位置
+            </summary>
+        </member>
+        <member name="P:ADSDK.Initializer.IniSettings.MatIndex">
+            <summary>
+             默认摄像头位置
+            </summary>
+        </member>
+        <member name="M:ADSDK.Initializer.IniSettings.SaveMonitor">
+            <summary>
+            Save Monitor information
+            </summary>
+        </member>
+        <member name="M:ADSDK.Initializer.IniSettings.LoadMonitor">
+            <summary>
+            Load Monitor information
+            </summary>
+        </member>
+        <member name="P:ADSDK.Initializer.IniSettings.Province">
+            <summary>
+            Province
+            </summary>
+        </member>
+        <member name="F:ADSDK.Initializer.IniSettings.mLockPassword">
+            <summary>
+            Lock Password
+            </summary>
+        </member>
+        <member name="P:ADSDK.Initializer.IniSettings.LockPassword">
+            <summary>
+            Lock Password
+            </summary>
+        </member>
+        <member name="F:ADSDK.Initializer.IniSettings.mControllerID">
+            <summary>
+            控制器ID
+            </summary>
+        </member>
+        <member name="P:ADSDK.Initializer.IniSettings.ControllerID">
+            <summary>
+            控制器ID
+            </summary>
+        </member>
+        <member name="F:ADSDK.Initializer.IniSettings.mAutoController">
+            <summary>
+            自动启动控制器
+            </summary>
+        </member>
+        <member name="P:ADSDK.Initializer.IniSettings.AutoController">
+            <summary>
+            自动启动控制器
+            </summary>
+        </member>
+        <member name="F:ADSDK.Initializer.IniSettings.mParkingAreaID">
+            <summary>
+            自动启动停车场ID
+            </summary>
+        </member>
+        <member name="P:ADSDK.Initializer.IniSettings.ParkingAreaID">
+            <summary>
+            停车场区域ID
+            </summary>
+        </member>
+        <member name="F:ADSDK.Initializer.IniSettings.mParkingIn2Out">
+            <summary>
+            进转出间隔
+            </summary>
+        </member>
+        <member name="P:ADSDK.Initializer.IniSettings.ParkingIn2Out">
+            <summary>
+            进转出间隔
+            </summary>
+        </member>
+        <member name="F:ADSDK.Initializer.IniSettings.mParkingOut2In">
+            <summary>
+            出转进间隔
+            </summary>
+        </member>
+        <member name="P:ADSDK.Initializer.IniSettings.ParkingOut2In">
+            <summary>
+            出转进间隔
+            </summary>
+        </member>
+        <member name="F:ADSDK.Initializer.IniSettings.mIsSingleDoor">
+            <summary>
+            是否单门控制器
+            </summary>
+        </member>
+        <member name="P:ADSDK.Initializer.IniSettings.IsSingleDoor">
+            <summary>
+            是否单门控制器
+            </summary>
+        </member>
+        <member name="F:ADSDK.Initializer.IniSettings.mIsAntiPassback">
+            <summary>
+            是否取消月卡反潜回
+            </summary>
+        </member>
+        <member name="P:ADSDK.Initializer.IniSettings.IsAntiPassback">
+            <summary>
+            是否取消月卡反潜回
+            </summary>
+        </member>
+        <member name="P:ADSDK.Initializer.IniSettings.IsDuplicateThrough">
+            <summary>
+            是否运行重复通过
+            </summary>
+        </member>
+        <member name="F:ADSDK.Initializer.IniSettings.mIsMonitorHost">
+            <summary>
+            是否是监视伺服器,true 客户端模式,false 伺服器模式
+            </summary>
+        </member>
+        <member name="P:ADSDK.Initializer.IniSettings.IsMonitorHost">
+            <summary>
+            是否是监视伺服器,true 客户端模式,false 伺服器模式
+            </summary>
+        </member>
+        <member name="F:ADSDK.Initializer.IniSettings.mShiftExchange">
+            <summary>
+            是否是监视伺服器,true 客户端模式,false 伺服器模式
+            </summary>
+        </member>
+        <member name="P:ADSDK.Initializer.IniSettings.ShiftExchange">
+            <summary>
+            是否是监视伺服器,true 客户端模式,false 伺服器模式
+            </summary>
+        </member>
+        <member name="F:ADSDK.Initializer.IniSettings.mIsRunStartMonitor">
+            <summary>
+            是否开机启动监视窗口
+            </summary>
+        </member>
+        <member name="P:ADSDK.Initializer.IniSettings.IsRunStartMonitor">
+            <summary>
+            是否开机启动监视窗口
+            </summary>
+        </member>
+        <member name="F:ADSDK.Initializer.IniSettings.mShiftTime">
+            <summary>
+            Shift exchange Time
+            </summary>
+        </member>
+        <member name="P:ADSDK.Initializer.IniSettings.ShiftTime">
+            <summary>
+            Shift exchange Time
+            </summary>
+        </member>
+        <member name="F:ADSDK.Initializer.IniSettings.mShiftStartTime">
+            <summary>
+            Shift exchange StartTime
+            </summary>
+        </member>
+        <member name="P:ADSDK.Initializer.IniSettings.ShiftStartTime">
+            <summary>
+            Shift exchange StartTime
+            </summary>
+        </member>
+        <member name="F:ADSDK.Initializer.IniSettings.mShiftStopTime">
+            <summary>
+            Shift exchange StopTime
+            </summary>
+        </member>
+        <member name="P:ADSDK.Initializer.IniSettings.ShiftStopTime">
+            <summary>
+            Shift exchange StopTime
+            </summary>
+        </member>
+        <member name="M:ADSDK.Initializer.IniSettings.SaveParking">
+            <summary>
+            Save  Parking Information
+            </summary>
+        </member>
+        <member name="M:ADSDK.Initializer.IniSettings.LoadParking">
+            <summary>
+            Load Parking Information
+            </summary>
+        </member>
+        <member name="P:ADSDK.Initializer.IniSettings.ReaderType">
+            <summary>
+            Reader Type
+            </summary>
+        </member>
+        <member name="P:ADSDK.Initializer.IniSettings.ReaderID">
+            <summary>
+            Reader ID
+            </summary>
+        </member>
+        <member name="P:ADSDK.Initializer.IniSettings.ReaderBeep">
+            <summary>
+            Reader Beep
+            </summary>
+        </member>
+        <member name="P:ADSDK.Initializer.IniSettings.WriteCard">
+            <summary>
+            Write Card
+            </summary>
+        </member>
+        <member name="P:ADSDK.Initializer.IniSettings.WriteCardA">
+            <summary>
+            Write Card A
+            </summary>
+        </member>
+        <member name="P:ADSDK.Initializer.IniSettings.WriteMode">
+            <summary>
+            Write Mode
+            </summary>
+        </member>
+        <member name="P:ADSDK.Initializer.IniSettings.WriteType">
+            <summary>
+            Write Type(WG26[3byte] or WG34[4byte])
+            </summary>
+        </member>
+        <member name="P:ADSDK.Initializer.IniSettings.WritePosition">
+            <summary>
+            Write Position
+            </summary>
+        </member>
+        <member name="P:ADSDK.Initializer.IniSettings.WriteLength">
+            <summary>
+            Write Length
+            </summary>
+        </member>
+        <member name="P:ADSDK.Initializer.IniSettings.WriteAutoAdd">
+            <summary>
+            is Auto Add
+            </summary>
+        </member>
+        <member name="M:ADSDK.Initializer.IniSettings.SaveReader">
+            <summary>
+            Save Reader Information
+            </summary>
+        </member>
+        <member name="M:ADSDK.Initializer.IniSettings.LoadReader">
+            <summary>
+            Load  Reader Information
+            </summary>
+        </member>
+        <member name="T:ADSDK.Initializer.CommType">
+            <summary>
+            Type of the communication 
+            </summary>
+        </member>
+        <member name="F:ADSDK.Initializer.CommType.SERIAL">
+            <summary>
+            Serial Port
+            </summary>
+        </member>
+        <member name="F:ADSDK.Initializer.CommType.NET">
+            <summary>
+            Tcpip
+            </summary>
+        </member>
+        <member name="F:ADSDK.Initializer.CommType.USB">
+            <summary>
+            USB
+            </summary>
+        </member>
+        <member name="T:ADSDK.Initializer.IniFile">
+            <summary> 
+            Provides methods for reading and writing to an INI file. 
+            </summary> 
+        </member>
+        <member name="F:ADSDK.Initializer.IniFile.MaxSectionSize">
+            <summary> 
+            The maximum size of a section in an ini file. 
+            </summary> 
+            <remarks> 
+            This property defines the maximum size of the buffers 
+            used to retreive data from an ini file.  This value is 
+            the maximum allowed by the win32 functions 
+            GetPrivateProfileSectionNames() or 
+            GetPrivateProfileString(). 
+            </remarks> 
+        </member>
+        <member name="T:ADSDK.Initializer.IniFile.NativeMethods">
+            <summary> 
+            A static class that provides the win32 P/Invoke signatures 
+            used by this class. 
+            </summary> 
+            <remarks> 
+            Note:  In each of the declarations below, we explicitly set CharSet to 
+            Auto.  By default in C#, CharSet is set to Ansi, which reduces 
+            performance on windows 2000 and above due to needing to convert strings 
+            from Unicode (the native format for all .Net strings) to Ansi before 
+            marshalling.  Using Auto lets the marshaller select the Unicode version of 
+            these functions when available. 
+            </remarks> 
+        </member>
+        <member name="M:ADSDK.Initializer.IniFile.#ctor(System.String)">
+            <summary> 
+            Initializes a new instance of the <see cref="T:ADSDK.Initializer.IniFile"/> class. 
+            </summary> 
+            <param name="path">The ini file to read and write from.</param> 
+        </member>
+        <member name="P:ADSDK.Initializer.IniFile.Path">
+            <summary> 
+            Gets the full path of ini file this object instance is operating on. 
+            </summary> 
+            <value>A file path.</value> 
+        </member>
+        <member name="M:ADSDK.Initializer.IniFile.GetString(System.String,System.String,System.String)">
+            <summary> 
+            Gets the value of a setting in an ini file as a <see cref="T:System.String"/>. 
+            </summary> 
+            <param name="sectionName">The name of the section to read from.</param> 
+            <param name="keyName">The name of the key in section to read.</param> 
+            <param name="defaultValue">The default value to return if the key 
+            cannot be found.</param> 
+            <returns>The value of the key, if found.  Otherwise, returns 
+            <paramref name="defaultValue"/></returns> 
+            <remarks> 
+            The retreived value must be less than 32KB in length. 
+            </remarks> 
+            <exception cref="T:System.ArgumentNullException"> 
+            <paramref name="sectionName"/> or <paramref name="keyName"/> are 
+            a null reference  (Nothing in VB) 
+            </exception> 
+        </member>
+        <member name="M:ADSDK.Initializer.IniFile.GetBoolean(System.String,System.String,System.Boolean)">
+            <summary> 
+            Gets the value of a setting in an ini file as a <see cref="T:System.Int16"/>. 
+            </summary> 
+            <param name="sectionName">The name of the section to read from.</param> 
+            <param name="keyName">The name of the key in section to read.</param> 
+            <param name="defaultValue">The default value to return if the key 
+            cannot be found.</param> 
+            <returns>The value of the key, if found.  Otherwise, returns 
+            <paramref name="defaultValue"/>.</returns> 
+            <exception cref="T:System.ArgumentNullException"> 
+            <paramref name="sectionName"/> or <paramref name="keyName"/> are 
+            a null reference  (Nothing in VB) 
+            </exception> 
+        </member>
+        <member name="M:ADSDK.Initializer.IniFile.GetInt16(System.String,System.String,System.Int16)">
+            <summary> 
+            Gets the value of a setting in an ini file as a <see cref="T:System.Int16"/>. 
+            </summary> 
+            <param name="sectionName">The name of the section to read from.</param> 
+            <param name="keyName">The name of the key in section to read.</param> 
+            <param name="defaultValue">The default value to return if the key 
+            cannot be found.</param> 
+            <returns>The value of the key, if found.  Otherwise, returns 
+            <paramref name="defaultValue"/>.</returns> 
+            <exception cref="T:System.ArgumentNullException"> 
+            <paramref name="sectionName"/> or <paramref name="keyName"/> are 
+            a null reference  (Nothing in VB) 
+            </exception> 
+        </member>
+        <member name="M:ADSDK.Initializer.IniFile.GetInt32(System.String,System.String,System.Int32)">
+            <summary> 
+            Gets the value of a setting in an ini file as a <see cref="T:System.Int32"/>. 
+            </summary> 
+            <param name="sectionName">The name of the section to read from.</param> 
+            <param name="keyName">The name of the key in section to read.</param> 
+            <param name="defaultValue">The default value to return if the key 
+            cannot be found.</param> 
+            <returns>The value of the key, if found.  Otherwise, returns 
+            <paramref name="defaultValue"/></returns> 
+            <exception cref="T:System.ArgumentNullException"> 
+            <paramref name="sectionName"/> or <paramref name="keyName"/> are 
+            a null reference  (Nothing in VB) 
+            </exception> 
+        </member>
+        <member name="M:ADSDK.Initializer.IniFile.GetDouble(System.String,System.String,System.Double)">
+            <summary> 
+            Gets the value of a setting in an ini file as a <see cref="T:System.Double"/>. 
+            </summary> 
+            <param name="sectionName">The name of the section to read from.</param> 
+            <param name="keyName">The name of the key in section to read.</param> 
+            <param name="defaultValue">The default value to return if the key 
+            cannot be found.</param> 
+            <returns>The value of the key, if found.  Otherwise, returns 
+            <paramref name="defaultValue"/></returns> 
+            <exception cref="T:System.ArgumentNullException"> 
+            <paramref name="sectionName"/> or <paramref name="keyName"/> are 
+            a null reference  (Nothing in VB) 
+            </exception> 
+        </member>
+        <member name="M:ADSDK.Initializer.IniFile.GetSectionValuesAsList(System.String)">
+            <summary> 
+            Gets all of the values in a section as a list. 
+            </summary> 
+            <param name="sectionName"> 
+            Name of the section to retrieve values from. 
+            </param> 
+            <returns> 
+            A <see cref="T:System.Collections.Generic.List`1"/> containing <see cref="T:System.Collections.Generic.KeyValuePair`2"/> objects 
+            that describe this section.  Use this verison if a section may contain 
+            multiple items with the same key value.  If you know that a section 
+            cannot contain multiple values with the same key name or you don't 
+            care about the duplicates, use the more convenient 
+            <see cref="M:ADSDK.Initializer.IniFile.GetSectionValues(System.String)"/> function. 
+            </returns> 
+            <exception cref="T:System.ArgumentNullException"> 
+            <paramref name="sectionName"/> is a null reference  (Nothing in VB) 
+            </exception> 
+        </member>
+        <member name="M:ADSDK.Initializer.IniFile.GetSectionValues(System.String)">
+            <summary> 
+            Gets all of the values in a section as a dictionary. 
+            </summary> 
+            <param name="sectionName"> 
+            Name of the section to retrieve values from. 
+            </param> 
+            <returns> 
+            A <see cref="T:System.Collections.Generic.Dictionary`2"/> containing the key/value 
+            pairs found in this section.   
+            </returns> 
+            <remarks> 
+            If a section contains more than one key with the same name, 
+            this function only returns the first instance.  If you need to 
+            get all key/value pairs within a section even when keys have the 
+            same name, use <see cref="M:ADSDK.Initializer.IniFile.GetSectionValuesAsList(System.String)"/>. 
+            </remarks> 
+            <exception cref="T:System.ArgumentNullException"> 
+            <paramref name="sectionName"/> is a null reference  (Nothing in VB) 
+            </exception> 
+        </member>
+        <member name="M:ADSDK.Initializer.IniFile.GetKeyNames(System.String)">
+            <summary> 
+            Gets the names of all keys under a specific section in the ini file. 
+            </summary> 
+            <param name="sectionName"> 
+            The name of the section to read key names from. 
+            </param> 
+            <returns>An array of key names.</returns> 
+            <remarks> 
+            The total length of all key names in the section must be 
+            less than 32KB in length. 
+            </remarks> 
+            <exception cref="T:System.ArgumentNullException"> 
+            <paramref name="sectionName"/> is a null reference  (Nothing in VB) 
+            </exception> 
+        </member>
+        <member name="M:ADSDK.Initializer.IniFile.GetSectionNames">
+            <summary> 
+            Gets the names of all sections in the ini file. 
+            </summary> 
+            <returns>An array of section names.</returns> 
+            <remarks> 
+            The total length of all section names in the section must be 
+            less than 32KB in length. 
+            </remarks> 
+        </member>
+        <member name="M:ADSDK.Initializer.IniFile.ConvertNullSeperatedStringToStringArray(System.IntPtr,System.Int32)">
+            <summary> 
+            Converts the null seperated pointer to a string into a string array. 
+            </summary> 
+            <param name="ptr">A pointer to string data.</param> 
+            <param name="valLength"> 
+            Length of the data pointed to by <paramref name="ptr"/>. 
+            </param> 
+            <returns> 
+            An array of strings; one for each null found in the array of characters pointed 
+            at by <paramref name="ptr"/>. 
+            </returns> 
+        </member>
+        <member name="M:ADSDK.Initializer.IniFile.WriteValueInternal(System.String,System.String,System.String)">
+            <summary> 
+            Writes a <see cref="T:System.String"/> value to the ini file. 
+            </summary> 
+            <param name="sectionName">The name of the section to write to .</param> 
+            <param name="keyName">The name of the key to write to.</param> 
+            <param name="value">The string value to write</param> 
+            <exception cref="T:System.ComponentModel.Win32Exception"> 
+            The write failed. 
+            </exception> 
+        </member>
+        <member name="M:ADSDK.Initializer.IniFile.WriteValue(System.String,System.String,System.String)">
+            <summary> 
+            Writes a <see cref="T:System.String"/> value to the ini file. 
+            </summary> 
+            <param name="sectionName">The name of the section to write to .</param> 
+            <param name="keyName">The name of the key to write to.</param> 
+            <param name="value">The string value to write</param> 
+            <exception cref="T:System.ComponentModel.Win32Exception"> 
+            The write failed. 
+            </exception> 
+            <exception cref="T:System.ArgumentNullException"> 
+            <paramref name="sectionName"/> or <paramref name="keyName"/> or 
+            <paramref name="value"/>  are a null reference  (Nothing in VB) 
+            </exception> 
+        </member>
+        <member name="M:ADSDK.Initializer.IniFile.WriteValue(System.String,System.String,System.Boolean)">
+            <summary> 
+            Writes an <see cref="T:System.Int16"/> value to the ini file. 
+            </summary> 
+            <param name="sectionName">The name of the section to write to .</param> 
+            <param name="keyName">The name of the key to write to.</param> 
+            <param name="value">The value to write</param> 
+            <exception cref="T:System.ComponentModel.Win32Exception"> 
+            The write failed. 
+            </exception> 
+        </member>
+        <member name="M:ADSDK.Initializer.IniFile.WriteValue(System.String,System.String,System.Int16)">
+            <summary> 
+            Writes an <see cref="T:System.Int16"/> value to the ini file. 
+            </summary> 
+            <param name="sectionName">The name of the section to write to .</param> 
+            <param name="keyName">The name of the key to write to.</param> 
+            <param name="value">The value to write</param> 
+            <exception cref="T:System.ComponentModel.Win32Exception"> 
+            The write failed. 
+            </exception> 
+        </member>
+        <member name="M:ADSDK.Initializer.IniFile.WriteValue(System.String,System.String,System.Int32)">
+            <summary> 
+            Writes an <see cref="T:System.Int32"/> value to the ini file. 
+            </summary> 
+            <param name="sectionName">The name of the section to write to .</param> 
+            <param name="keyName">The name of the key to write to.</param> 
+            <param name="value">The value to write</param> 
+            <exception cref="T:System.ComponentModel.Win32Exception"> 
+            The write failed. 
+            </exception> 
+            <exception cref="T:System.ArgumentNullException"> 
+            <paramref name="sectionName"/> or <paramref name="keyName"/> are 
+            a null reference  (Nothing in VB) 
+            </exception> 
+        </member>
+        <member name="M:ADSDK.Initializer.IniFile.WriteValue(System.String,System.String,System.Single)">
+            <summary> 
+            Writes an <see cref="T:System.Single"/> value to the ini file. 
+            </summary> 
+            <param name="sectionName">The name of the section to write to .</param> 
+            <param name="keyName">The name of the key to write to.</param> 
+            <param name="value">The value to write</param> 
+            <exception cref="T:System.ComponentModel.Win32Exception"> 
+            The write failed. 
+            </exception> 
+            <exception cref="T:System.ArgumentNullException"> 
+            <paramref name="sectionName"/> or <paramref name="keyName"/> are 
+            a null reference  (Nothing in VB) 
+            </exception> 
+        </member>
+        <member name="M:ADSDK.Initializer.IniFile.WriteValue(System.String,System.String,System.Double)">
+            <summary> 
+            Writes an <see cref="T:System.Double"/> value to the ini file. 
+            </summary> 
+            <param name="sectionName">The name of the section to write to .</param> 
+            <param name="keyName">The name of the key to write to.</param> 
+            <param name="value">The value to write</param> 
+            <exception cref="T:System.ComponentModel.Win32Exception"> 
+            The write failed. 
+            </exception> 
+            <exception cref="T:System.ArgumentNullException"> 
+            <paramref name="sectionName"/> or <paramref name="keyName"/> are 
+            a null reference  (Nothing in VB) 
+            </exception> 
+        </member>
+        <member name="M:ADSDK.Initializer.IniFile.DeleteKey(System.String,System.String)">
+            <summary> 
+            Deletes the specified key from the specified section. 
+            </summary> 
+            <param name="sectionName"> 
+            Name of the section to remove the key from. 
+            </param> 
+            <param name="keyName"> 
+            Name of the key to remove. 
+            </param> 
+            <exception cref="T:System.ArgumentNullException"> 
+            <paramref name="sectionName"/> or <paramref name="keyName"/> are 
+            a null reference  (Nothing in VB) 
+            </exception> 
+        </member>
+        <member name="M:ADSDK.Initializer.IniFile.DeleteSection(System.String)">
+            <summary> 
+            Deletes a section from the ini file. 
+            </summary> 
+            <param name="sectionName"> 
+            Name of the section to delete. 
+            </param> 
+            <exception cref="T:System.ArgumentNullException"> 
+            <paramref name="sectionName"/> is a null reference (Nothing in VB) 
+            </exception> 
+        </member>
+        <member name="T:ADSDK.Initializer.LngType">
+            <summary>
+            语言选择
+            </summary>
+        </member>
+        <member name="F:ADSDK.Initializer.LngType.ENG">
+            <summary>
+            英文 0
+            </summary>
+        </member>
+        <member name="F:ADSDK.Initializer.LngType.CHN">
+            <summary>
+            中文 1
+            </summary>
+        </member>
+        <member name="F:ADSDK.Initializer.LngType.TW">
+            <summary>
+            繁体中文 2
+            </summary>
+        </member>
+        <member name="F:ADSDK.Initializer.LngType.Other">
+            <summary>
+            其他 10
+            </summary>
+        </member>
+    </members>
+</doc>

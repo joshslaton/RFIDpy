@@ -1,0 +1,4374 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ADDeviceReader</name>
+    </assembly>
+    <members>
+        <member name="T:ADSDK.Device.Reader.RBasicParameters">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ADSDK.Device.Reader.RBasicParameters.WorkMode">
+            <summary>
+            Work Mode [0-Command,1-Active]
+            </summary>
+        </member>
+        <member name="P:ADSDK.Device.Reader.RBasicParameters.OutMode">
+            <summary>
+            Active OutPut Mode [0-RS232(USB),1-RS485(WIFI),2-TCPIP,3-Syris,4-WG26,5-WG34]
+            </summary>
+        </member>
+        <member name="P:ADSDK.Device.Reader.RBasicParameters.ByteOffset">
+            <summary>
+            WG paramters:Byte Offset
+            </summary>
+        </member>
+        <member name="P:ADSDK.Device.Reader.RBasicParameters.OutInterval">
+            <summary>
+            WG paramters:Out Interval
+            </summary>
+        </member>
+        <member name="P:ADSDK.Device.Reader.RBasicParameters.PulseWidth">
+            <summary>
+            WG paramters:Pulse Width
+            </summary>
+        </member>
+        <member name="P:ADSDK.Device.Reader.RBasicParameters.PulsePeriod">
+            <summary>
+            WG paramters:Pulse Period
+            </summary>
+        </member>
+        <member name="P:ADSDK.Device.Reader.RBasicParameters.ReadCount">
+            <summary>
+            Read Count
+            </summary>
+        </member>
+        <member name="P:ADSDK.Device.Reader.RBasicParameters.ReadInterval">
+            <summary>
+            Read Interval
+            </summary>
+        </member>
+        <member name="P:ADSDK.Device.Reader.RBasicParameters.Sameid">
+            <summary>
+            Same ID interval to auto send
+            </summary>
+        </member>
+        <member name="P:ADSDK.Device.Reader.RBasicParameters.Beep">
+            <summary>
+            Enable Buzzer [0-Disenabled,1-Enabled]
+            </summary>
+        </member>
+        <member name="P:ADSDK.Device.Reader.RBasicParameters.Trigger">
+            <summary>
+            Trigger [0-Disenabled,1-high,1-Low]
+            </summary>
+        </member>
+        <member name="P:ADSDK.Device.Reader.RBasicParameters.DAC">
+            <summary>
+            not use
+            </summary>
+        </member>
+        <member name="P:ADSDK.Device.Reader.RBasicParameters.MEnabled">
+            <summary>
+            enable additional data 
+            </summary>
+        </member>
+        <member name="P:ADSDK.Device.Reader.RBasicParameters.MBlock">
+            <summary>
+            additional data Memory Block
+            </summary>
+        </member>
+        <member name="P:ADSDK.Device.Reader.RBasicParameters.MStart">
+            <summary>
+            additional data Start Address
+            </summary>
+        </member>
+        <member name="P:ADSDK.Device.Reader.RBasicParameters.MLength">
+            <summary>
+            additional data Length
+            </summary>
+        </member>
+        <member name="P:ADSDK.Device.Reader.RBasicParameters.Key">
+            <summary>
+            KeyWord
+            </summary>
+        </member>
+        <member name="P:ADSDK.Device.Reader.RBasicParameters.Feedback">
+            <summary>
+            Feedback 
+            </summary>
+        </member>
+        <member name="P:ADSDK.Device.Reader.RBasicParameters.Rev">
+            <summary>
+            Rev
+            </summary>
+        </member>
+        <member name="M:ADSDK.Device.Reader.RBasicParameters.#ctor">
+            <summary>
+            初始化
+            </summary>
+        </member>
+        <member name="M:ADSDK.Device.Reader.RBasicParameters.AddRange(System.Byte[])">
+            <summary>
+            
+            </summary>
+            <param name="data"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.Reader.RBasicParameters.ToString">
+            <summary> 
+            重载ToString()方法,返回session对象的特征 
+            </summary> 
+            <returns></returns> 
+        </member>
+        <member name="M:ADSDK.Device.Reader.RBasicParameters.ToArray">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.Reader.RBasicParameters.Clone">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:ADSDK.Device.Reader.ROutcardParameters">
+            <summary>
+            Auto OutCard Parameters Struct
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.ROutcardParameters.Enabled">
+            <summary>
+            auto Output enable,,0-disenabled,1-enabled
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.ROutcardParameters.Type">
+            <summary>
+            Output type,0-Decimal,1-Hex,2-Wiegand,3-ASCII
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.ROutcardParameters.Length">
+            <summary>
+            Show data length,if Output data length less Show data length then auto add '0" before Output data.
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.ROutcardParameters.IsEnter">
+            <summary>
+            Additional enter symbol after output data, 0-not,1-include
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.ROutcardParameters.OutStart">
+            <summary>
+            Output data start point in read data of tag(word)
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.ROutcardParameters.OutByte">
+            <summary>
+            Output data length in read data of tag(byte)
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.ROutcardParameters.HeadLen">
+            <summary>
+            Additional data length before output data, 0`20;
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.ROutcardParameters.HeadData">
+            <summary>
+            Additional data array before output data, max length =20;
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.ROutcardParameters.EndLen">
+            <summary>
+            Additional data length after output data, 0`20;
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.ROutcardParameters.EndData">
+            <summary>
+            Additional data array after output data, max length =20;
+            </summary>
+        </member>
+        <member name="M:ADSDK.Device.Reader.ROutcardParameters.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:ADSDK.Device.Reader.ROutcardParameters.AddRange(System.Byte[])">
+            <summary>
+            
+            </summary>
+            <param name="data"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.Reader.ROutcardParameters.ToString">
+            <summary> 
+            重载ToString()方法,返回session对象的特征 
+            </summary> 
+            <returns></returns> 
+        </member>
+        <member name="M:ADSDK.Device.Reader.ROutcardParameters.ToArray">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.Reader.ROutcardParameters.Clone">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:ADSDK.Device.Reader.Active.ActiveRcp">
+            <summary>
+            Format the command data
+            </summary>
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Active.ActiveRcp.GetInformation">
+            <summary>
+            获取联机信息
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Active.ActiveRcp.GetConfig(System.Int32)">
+            <summary>
+            获取读卡器参数过程
+            </summary>
+            <param name="address">通讯地址</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Active.ActiveRcp.SetConfig(System.Int32,System.Byte[])">
+            <summary>
+            设置读卡器参数过程
+            </summary>
+            <param name="address">通讯地址</param>
+            <param name="para">参数</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Active.ActiveRcp.GetSenior(System.Int32)">
+            <summary>
+            获取读卡器高级参数过程
+            </summary>
+            <param name="address">通讯地址</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Active.ActiveRcp.GetSenior(System.Int32,System.Byte)">
+            <summary>
+            获取读卡器高级参数过程
+            </summary>
+            <param name="address">通讯地址</param>
+            <param name="key">密钥</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Active.ActiveRcp.SetSenior(System.Int32,System.Byte[])">
+            <summary>
+            设置读卡器高级参数过程
+            </summary>
+            <param name="address">通讯地址</param>
+            <param name="iPara">参数</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Active.ActiveRcp.GetTcpip(System.Int32)">
+            <summary>
+            获取TCPIP参数过程
+            </summary>
+            <param name="address">通讯地址</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Active.ActiveRcp.SetTcpip(System.Int32,System.Byte[])">
+            <summary>
+            设置TCPIP参数过程
+            </summary>
+            <param name="address">通讯地址</param>
+            <param name="para">参数</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Active.ActiveRcp.GetCanbus(System.Int32)">
+            <summary>
+            获取CANBUS参数过程
+            </summary>
+            <param name="address">通讯地址</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Active.ActiveRcp.SetCanbus(System.Int32,System.Byte[])">
+            <summary>
+            设置CANBUS参数过程
+            </summary>
+            <param name="address">通讯地址</param>
+            <param name="para">参数</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Active.ActiveRcp.GetAddress">
+            <summary>
+            获取读卡器地址过程
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Active.ActiveRcp.SetAddress(System.Int32,System.Int32)">
+            <summary>
+            设置通讯地址过程
+            </summary>
+            <param name="address">通讯地址</param>
+            <param name="paraAddr">待设置地址</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Active.ActiveRcp.SetRemote(System.Int32,System.Byte)">
+            <summary>
+            IO输出过程
+            </summary>
+            <param name="address">通讯地址</param>
+            <param name="para">参数</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Active.ActiveRcp.SetReset(System.Int32)">
+            <summary>
+            设置重启过程
+            </summary>
+            <param name="address">通讯地址</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Active.ActiveRcp.GetCardSingle(System.Int32)">
+            <summary>
+            获取标签信息过程
+            </summary>
+            <param name="address">通讯地址</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Active.ActiveRcp.GetCardMult(System.Int32,System.Int32)">
+            <summary>
+            获取多标签信息过程
+            </summary>
+            <param name="address">通讯地址</param>
+            <param name="count">标签数量</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Active.ActiveRcp.SearchCard(System.Int32,System.Byte[])">
+            <summary>
+            查询卡号过程
+            </summary>
+            <param name="address">通讯地址</param>
+            <param name="iCard">卡号</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Active.ActiveRcp.SetCardPara(System.Int32,System.Byte[])">
+            <summary>
+            设置标签信息及参数过程
+            </summary>
+            <param name="address">通讯地址</param>
+            <param name="iPara">参数</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Active.ActiveRcp.SetCardPara_Old(System.Int32,System.Int32,System.Byte[])">
+            <summary>
+            设置标签信息及参数过程(B1)
+            </summary>
+            <param name="address">通讯地址</param>
+            <param name="iCard">卡号</param>
+            <param name="iPara">参数</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Active.ActiveRcp.SetCardPara(System.Int32,System.Int32,System.Byte[])">
+            <summary>
+            设置标签信息及参数过程(B4)
+            </summary>
+            <param name="address">通讯地址</param>
+            <param name="iCard">卡号</param>
+            <param name="iPara">参数</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Active.ActiveRcp.GetCardPara(System.Int32)">
+            <summary>
+            获取标签信息及参数过程
+            </summary>
+            <param name="address">通讯地址</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Active.ActiveRcp.GetCardPara(System.Int32,System.Byte)">
+            <summary>
+            获取标签信息及参数过程
+            </summary>
+            <param name="address">通讯地址</param>
+            <param name="key">密钥</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Active.ActiveRcp.SetCardData(System.Int32,System.Byte,System.Byte,System.Byte[])">
+            <summary>
+            设置卡用户区数据过程
+            </summary>
+            <param name="address">通讯地址</param>
+            <param name="start">起始地址</param>
+            <param name="length">数据长度</param>
+            <param name="iData">数据</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Active.ActiveRcp.SetCardData(System.Int32,System.Byte[],System.Byte,System.Byte,System.Byte[])">
+            <summary>
+            设置卡用户区数据过程
+            </summary>
+            <param name="address">通讯地址</param>
+            <param name="iCard">卡号</param>
+            <param name="start">起始地址</param>
+            <param name="length">数据长度</param>
+            <param name="iData">数据</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Active.ActiveRcp.GetCardData(System.Int32,System.Byte,System.Byte)">
+            <summary>
+            获取卡用户区数据过程
+            </summary>
+            <param name="address">通讯地址</param>
+            <param name="start">起始地址</param>
+            <param name="length">数据长度</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Active.ActiveRcp.GetCardData(System.Int32,System.Byte[],System.Byte,System.Byte)">
+            <summary>
+            获取卡用户区数据过程
+            </summary>
+            <param name="address">通讯地址</param>
+            <param name="iCard">卡号</param>
+            <param name="start">起始地址</param>
+            <param name="length">数据长度</param>
+            <returns></returns>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Active.ActiveRcp.PREAMBLE">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Active.ActiveRcp.PREAMBLE_UP">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Active.ActiveRcp.INDEX_PREAMBLE">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Active.ActiveRcp.INDEX_ADDRESS">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Active.ActiveRcp.INDEX_CODE">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Active.ActiveRcp.INDEX_TYPE">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Active.ActiveRcp.INDEX_LENGTH">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Active.ActiveRcp.INDEX_PAYLOAD">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Active.ActiveRcp.LEN_ENDMARK">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Active.ActiveRcp.LEN_CHECKSUM">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Active.ActiveRcp.LEN_PROTOCOL_MIN">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Active.ActiveRcp.ADDR_PUB">
+            <summary>
+            ADDR PUB:Hex FF Decimal 255
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Active.ActiveRcp.LEN_SIX">
+            <summary>
+            LEN SIX:Hex 06 Decimal 6
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Active.ActiveRcp.LEN_SEVEN">
+            <summary>
+            LEN SEVEN:Hex 07 Decimal 7
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Active.ActiveRcp.SOI_SEND">
+            <summary>
+            SOI:Hex 7C Decimal 124
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Active.ActiveRcp.SOI_RECIVE">
+            <summary>
+            SOI:Hex CC Decimal 204
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Active.ActiveRcp.RCP_CMD_INFO">
+            <summary>
+            GET INFO Hex:0xB0
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Active.ActiveRcp.RCP_CMD_ADDRESS">
+            <summary>
+            Address Hex:0xB3
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Active.ActiveRcp.RCP_CMD_PARA">
+            <summary>
+            PARA Hex:0x80
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Active.ActiveRcp.RCP_CMD_SENIOR">
+            <summary>
+            SENIOR Hex:0xB5
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Active.ActiveRcp.RCP_CMD_CARDDATA">
+            <summary>
+            CARDDATA Hex:0xA4
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Active.ActiveRcp.RCP_CMD_CANBUS">
+            <summary>
+            CANBUS Hex:0xB8
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Active.ActiveRcp.RCP_CMD_TCPIP">
+            <summary>
+            TCPIP Hex:0xB9
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Active.ActiveRcp.RCP_CMD_SYRIS">
+            <summary>
+            Syris Hex:0xBA
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Active.ActiveRcp.RCP_CMD_REMOTE">
+            <summary>
+            REMOTE Hex:0xC0
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Active.ActiveRcp.RCP_CMD_INITSYRIS">
+            <summary>
+            Init Syris Address Hex:0x8D
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Active.ActiveRcp.RCP_CMD_SOFTRESET">
+            <summary>
+            SOFTRESET Hex:0x8F
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Active.ActiveRcp.RCP_CMD_SEARCH">
+            <summary>
+            SearchIDCode Hex:0xA2
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Active.ActiveRcp.RCP_CMD_CARDCODE">
+            <summary>
+            获取single卡号 Hex:0xB1
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Active.ActiveRcp.RCP_CMD_CARDMULT">
+            <summary>
+            获取Mult卡号 Hex:0xB2
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Active.ActiveRcp.RCP_CMD_CARDPARA">
+            <summary>
+            获取卡片参数 Hex:0xB4
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Active.ActiveRcp.RCP_CMD_WIFI_DOWNLOAD">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Active.ActiveRcp.RCP_CMD_WIFI_PUB">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Active.ActiveRcp.RCP_CMD_WIFI_STA">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Active.ActiveRcp.RCP_CMD_WIFI_AP">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Active.ActiveRcp.RCP_TYPE_AUTO_GET">
+            <summary>
+            Control identification code :get
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Active.ActiveRcp.RCP_MSG_SENIOR_SET">
+            <summary>
+            Control identification code :set
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Active.ActiveRcp.RCP_MSG_SENIOR_GET">
+            <summary>
+            Control identification code :get
+            </summary>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Active.ActiveRcp.GetErrorCodeString(System.Int32,System.Byte)">
+            <summary>
+            Get Error Code 获取错误代码释义
+            </summary>
+            <param name="language">Language(语言选择)</param>
+            <param name="code">error code(错误代码)</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Active.ActiveRcp.GetCodeString(System.Int32,System.Byte)">
+            <summary>
+            Get Code 获取代码释义
+            </summary>
+            <param name="language">Language(语言选择)</param>
+            <param name="code">code(错代码)</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Active.ActiveRcp.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Active.ActiveRcp.#ctor(ADSDK.Device.ADSio)">
+            <summary>
+            
+            </summary>
+            <param name="sio"></param>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Active.ActiveRcp.BuildCmdPacketByte(System.Int32,System.Byte,System.Byte,System.Byte[])">
+            <summary>
+            
+            </summary>
+            <param name="nAddr"></param>
+            <param name="nType"></param>
+            <param name="nCmd"></param>
+            <param name="ArgByte"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Active.ActiveRcp.DealPacketByte(ADSDK.Device.ByteEventArg)">
+            <summary>
+            
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="T:ADSDK.Device.Reader.Active.ActiveCommand">
+            <summary>
+            Passive Command (just send) 
+            </summary>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Active.ActiveCommand.GetInformation(ADSDK.Device.ADRcp)">
+            <summary>
+            获取读卡器基本信息
+            </summary>
+            <param name="adr">通讯数据基础类</param>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Active.ActiveCommand.SetConfig(ADSDK.Device.ADRcp,System.Byte[])">
+            <summary>
+            Set Basic Parameters to Reader
+            </summary>
+            <param name="adr">通讯数据基础类</param>
+            <param name="iData">parameter Info Array</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Active.ActiveCommand.GetConfig(ADSDK.Device.ADRcp)">
+            <summary>
+            Get Basic Parameters for Reader
+            </summary>
+            <param name="adr">通讯数据基础类</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Active.ActiveCommand.SetSenior(ADSDK.Device.ADRcp,System.Byte[])">
+            <summary>
+            Set Senior Parameters to Reader
+            </summary>
+            <param name="adr">通讯数据基础类</param>
+            <param name="iData">Senior parameter Info Array</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Active.ActiveCommand.GetSenior(ADSDK.Device.ADRcp)">
+            <summary>
+            Get Senior Parameters for Reader
+            </summary>
+            <param name="adr">通讯数据基础类</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Active.ActiveCommand.GetSenior(ADSDK.Device.ADRcp,System.Byte)">
+            <summary>
+            Get Senior Parameters for Reader
+            </summary>
+            <param name="adr">通讯数据基础类</param>
+            <param name="key">key</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Active.ActiveCommand.SetAddress(ADSDK.Device.ADRcp,System.Int32)">
+            <summary>
+            Set Address to Reader
+            </summary>
+            <param name="adr">通讯数据基础类</param>
+            <param name="address">Address</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Active.ActiveCommand.GetAddress(ADSDK.Device.ADRcp)">
+            <summary>
+            Get Address for Reader
+            </summary>
+            <param name="adr">通讯数据基础类</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Active.ActiveCommand.Reset(ADSDK.Device.ADRcp)">
+            <summary>
+            Reset Reader
+            </summary>
+            <param name="adr">通讯数据基础类</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Active.ActiveCommand.GetCardSingle(ADSDK.Device.ADRcp)">
+            <summary>
+            Get Single Card for Reader
+            </summary>
+            <param name="adr">通讯数据基础类</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Active.ActiveCommand.GetCardMult(ADSDK.Device.ADRcp,System.Byte)">
+            <summary>
+            Get Mult Card for Reader
+            </summary>
+            <param name="adr">通讯数据基础类</param>
+            <param name="maxcount">max count</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Active.ActiveCommand.SetCard(ADSDK.Device.ADRcp,System.Byte[],System.Byte[])">
+            <summary>
+            Write Card No and Para(Old prot)
+            </summary>
+            <param name="adr">通讯数据基础类</param>
+            <param name="iCard">card no</param>
+            <param name="iPara">para data array</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Active.ActiveCommand.SetCardPara(ADSDK.Device.ADRcp,System.Byte[])">
+            <summary>
+            Write Card No and Para
+            </summary>
+            <param name="adr">通讯数据基础类</param>
+            <param name="iPara">card no and para data array</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Active.ActiveCommand.SetCardPara(ADSDK.Device.ADRcp,System.Byte[],System.Byte[])">
+            <summary>
+            Write Card No and Para
+            </summary>
+            <param name="adr">通讯数据基础类</param>
+            <param name="iCard">card no</param>
+            <param name="iPara">para data array</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Active.ActiveCommand.GetCardPara(ADSDK.Device.ADRcp)">
+            <summary>
+            Read Card No and Para(nonstandard)
+            </summary>
+            <param name="adr">通讯数据基础类</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Active.ActiveCommand.GetCardPara(ADSDK.Device.ADRcp,System.Byte)">
+            <summary>
+            Read Card No and Para(nonstandard)
+            </summary>
+            <param name="adr">通讯数据基础类</param>
+            <param name="key">password</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Active.ActiveCommand.SearchCard(ADSDK.Device.ADRcp,System.Byte[])">
+            <summary>
+            Search Card
+            </summary>
+            <param name="adr">通讯数据基础类</param>
+            <param name="iCard">Card</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Active.ActiveCommand.SetCardData(ADSDK.Device.ADRcp,System.Byte[],System.Byte,System.Byte,System.Byte[])">
+            <summary>
+            Write User data to card(nonstandard)
+            </summary>
+            <param name="adr">通讯数据基础类</param>
+            <param name="iCard"></param>
+            <param name="start"></param>
+            <param name="length"></param>
+            <param name="iData"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Active.ActiveCommand.GetCardData(ADSDK.Device.ADRcp,System.Byte[],System.Byte,System.Byte)">
+            <summary>
+            Read User data for Card(nonstandard)
+            </summary>
+            <param name="adr">通讯数据基础类</param>
+            <param name="iCard"></param>
+            <param name="start"></param>
+            <param name="length"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Active.ActiveCommand.SetTcpip(ADSDK.Device.ADRcp,System.Byte[])">
+            <summary>
+            Set Tcpip Parameters to Reader
+            </summary>
+            <param name="adr">通讯数据基础类</param>
+            <param name="iData">Tcpip parameter Info Array</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Active.ActiveCommand.GetTcpip(ADSDK.Device.ADRcp)">
+            <summary>
+            Get Tcpip Parameters for Reader
+            </summary>
+            <param name="adr">通讯数据基础类</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Active.ActiveCommand.Remote(ADSDK.Device.ADRcp,System.Byte)">
+            <summary>
+            Set IO Out to Reader
+            </summary>
+            <param name="adr">通讯数据基础类</param>
+            <param name="action">Out Status</param>
+            <returns></returns>
+        </member>
+        <member name="T:ADSDK.Device.Reader.Active.ADataManage">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Active.ADataManage.IsAlarm">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="E:ADSDK.Device.Reader.Active.ADataManage.CommandReceived">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Active.ADataManage.mBuffer">
+            <summary>
+            Data processing cache 
+            </summary>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Active.ADataManage.InputReceived(System.Collections.Generic.List{System.Byte}@)">
+            <summary>
+            Receiving Data
+            </summary>
+            <param name="iData">Input Data Buffer</param>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Active.ADataManage.InputManage(System.Collections.Generic.List{System.Byte}@)">
+            <summary>
+            Data Manage Process
+            </summary>
+            <param name="iData">Input Data Buffer</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Active.ADataManage.InputManage(System.Collections.Generic.List{System.Byte}@,System.Collections.Generic.List{ADSDK.Device.Reader.CommandParameters}@)">
+            <summary>
+            Data Manage Process
+            </summary>
+            <param name="iData">Input Data Buffer</param>
+            <param name="oCmdInfo"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Active.ADataManage.InputManage(System.Collections.Generic.List{System.Byte}@,System.Collections.Generic.List{ADSDK.Device.Reader.CardParameters}@)">
+            <summary>
+            
+            </summary>
+            <param name="iData"></param>
+            <param name="oCardInfo"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Active.ADataManage.InputManageLowVesion(System.Collections.Generic.List{System.Byte}@,System.Collections.Generic.List{ADSDK.Device.Reader.CardParameters}@)">
+            <summary>
+            
+            </summary>
+            <param name="iData"></param>
+            <param name="oCardInfo"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Active.ADataManage.InputManage(ADSDK.Device.Reader.CommandParameters,System.Collections.Generic.List{ADSDK.Device.Reader.CardParameters}@)">
+            <summary>
+            
+            </summary>
+            <param name="iCmdInfo"></param>
+            <param name="oCardInfo"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Active.ADataManage.InputManageLowVesion(ADSDK.Device.Reader.CommandParameters,System.Collections.Generic.List{ADSDK.Device.Reader.CardParameters}@)">
+            <summary>
+            
+            </summary>
+            <param name="iCmdInfo"></param>
+            <param name="oCardInfo"></param>
+            <returns></returns>
+        </member>
+        <member name="T:ADSDK.Device.Reader.Rcp.Impinj.ImpinjCommand">
+            <summary>
+            Impinj Command Static Class(just send) 
+            </summary>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Rcp.Impinj.ImpinjCommand.ResetSystem(ADSDK.Device.ADRcpImp)">
+            <summary>
+            Reset System.
+            </summary>
+            <param name="adr">Communication Data Managed Base Class</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Rcp.Impinj.ImpinjCommand.GetFirmwareVersion(ADSDK.Device.ADRcpImp)">
+            <summary>
+            Get Firmware Version.
+            </summary>
+            <param name="adr">Communication Data Managed Base Class</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Rcp.Impinj.ImpinjCommand.GetReaderTemperature(ADSDK.Device.ADRcpImp)">
+            <summary>
+            Get Reader Temperature.
+            </summary>
+            <param name="adr">Communication Data Managed Base Class</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Rcp.Impinj.ImpinjCommand.GetReaderIdentifier(ADSDK.Device.ADRcpImp)">
+            <summary>
+            Get Reader Identifier.
+            </summary>
+            <param name="adr">Communication Data Managed Base Class</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Rcp.Impinj.ImpinjCommand.SetReaderIdentifier(ADSDK.Device.ADRcpImp,System.Byte[])">
+            <summary>
+            Set Reader Identifier.
+            </summary>
+            <param name="adr">Communication Data Managed Base Class</param>
+            <param name="iDataArray">trans to reader data array</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Rcp.Impinj.ImpinjCommand.SetReaderAddress(ADSDK.Device.ADRcpImp,System.Byte)">
+            <summary>
+            Set Reader address.
+            </summary>
+            <param name="adr">Communication Data Managed Base Class</param>
+            <param name="iData">trans to reader data</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Rcp.Impinj.ImpinjCommand.SetReaderBeeper(ADSDK.Device.ADRcpImp,System.Byte)">
+            <summary>
+            Set Reader beeper.
+            </summary>
+            <param name="adr">Communication Data Managed Base Class</param>
+            <param name="iData">trans to reader data</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Rcp.Impinj.ImpinjCommand.GetGPIOValue(ADSDK.Device.ADRcpImp)">
+            <summary>
+            Get GPIO value.
+            </summary>
+            <param name="adr">Communication Data Managed Base Class</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Rcp.Impinj.ImpinjCommand.SetGPIOValue(ADSDK.Device.ADRcpImp,System.Byte,System.Byte)">
+            <summary>
+            Set GPIO value.
+            </summary>
+            <param name="adr">Communication Data Managed Base Class</param>
+            <param name="index">Choose Gpio</param>
+            <param name="iData">GpioValue</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Rcp.Impinj.ImpinjCommand.GetWorkAntenna(ADSDK.Device.ADRcpImp)">
+            <summary>
+            Get Work Antenna
+            </summary>
+            <param name="adr">Communication Data Managed Base Class</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Rcp.Impinj.ImpinjCommand.SetWorkAntenna(ADSDK.Device.ADRcpImp,System.Byte)">
+            <summary>
+            Set Work Antenna.
+            </summary>
+            <param name="adr">Communication Data Managed Base Class</param>
+            <param name="iData">trans to reader data</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Rcp.Impinj.ImpinjCommand.GetDrmMode(ADSDK.Device.ADRcpImp)">
+            <summary>
+            Get Drm Mode
+            </summary>
+            <param name="adr">Communication Data Managed Base Class</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Rcp.Impinj.ImpinjCommand.SetDrmMode(ADSDK.Device.ADRcpImp,System.Byte)">
+            <summary>
+            Set Drm Mode
+            </summary>
+            <param name="adr">Communication Data Managed Base Class</param>
+            <param name="iData">drm Mode</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Rcp.Impinj.ImpinjCommand.GetOutputPower(ADSDK.Device.ADRcpImp)">
+            <summary>
+            Get Output Power
+            </summary>
+            <param name="adr">Communication Data Managed Base Class</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Rcp.Impinj.ImpinjCommand.SetOutputPower(ADSDK.Device.ADRcpImp,System.Byte)">
+            <summary>
+            Set Output Power
+            </summary>
+            <param name="adr">Communication Data Managed Base Class</param>
+            <param name="iData">trans to reader data</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Rcp.Impinj.ImpinjCommand.MeasureReturnLoss(ADSDK.Device.ADRcpImp,System.Byte)">
+            <summary>
+            Measure Return Loss
+            </summary>
+            <param name="adr">Communication Data Managed Base Class</param>
+            <param name="iData">ReturnLoss freq</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Rcp.Impinj.ImpinjCommand.GetAntDetector(ADSDK.Device.ADRcpImp)">
+            <summary>
+            Get Ant Detector
+            </summary>
+            <param name="adr">Communication Data Managed Base Class</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Rcp.Impinj.ImpinjCommand.SetAntDetector(ADSDK.Device.ADRcpImp,System.Byte)">
+            <summary>
+            Set Ant Detector
+            </summary>
+            <param name="adr">Communication Data Managed Base Class</param>
+            <param name="iData">trans to reader data</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Rcp.Impinj.ImpinjCommand.GetFrequencyRegion(ADSDK.Device.ADRcpImp)">
+            <summary>
+            Get Frequency Region
+            </summary>
+            <param name="adr">Communication Data Managed Base Class</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Rcp.Impinj.ImpinjCommand.SetFrequencyRegion(ADSDK.Device.ADRcpImp,System.Byte,System.Byte,System.Byte)">
+            <summary>
+            Set Frequency Region
+            </summary>
+            <param name="adr">Communication Data Managed Base Class</param>
+            <param name="region">Choose Gpio</param>
+            <param name="startfreq">GpioValue</param>
+            <param name="endfreq">GpioValue</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Rcp.Impinj.ImpinjCommand.SetUserDefineFrequency(ADSDK.Device.ADRcpImp,System.Int32,System.Byte,System.Byte)">
+            <summary>
+            Set Frequency Region
+            </summary>
+            <param name="adr">Communication Data Managed Base Class</param>
+            <param name="nStartFreq">Choose Gpio</param>
+            <param name="btFreqInterval">GpioValue</param>
+            <param name="btChannelQuantity">GpioValue</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Rcp.Impinj.ImpinjCommand.GetMonzaStatus(ADSDK.Device.ADRcpImp)">
+            <summary>
+            Get Monza Status
+            </summary>
+            <param name="adr">Communication Data Managed Base Class</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Rcp.Impinj.ImpinjCommand.SetMonzaStatus(ADSDK.Device.ADRcpImp,System.Byte)">
+            <summary>
+            Set Monza Status
+            </summary>
+            <param name="adr">Communication Data Managed Base Class</param>
+            <param name="iData">trans to reader data</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Rcp.Impinj.ImpinjCommand.SetAndSaveMonzaStatus(ADSDK.Device.ADRcpImp,System.Byte)">
+            <summary>
+            Set and save Monza Status
+            </summary>
+            <param name="adr">Communication Data Managed Base Class</param>
+            <param name="iData">trans to reader data</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Rcp.Impinj.ImpinjCommand.GetRadioProfile(ADSDK.Device.ADRcpImp)">
+            <summary>
+            Get Radio Profile
+            </summary>
+            <param name="adr">Communication Data Managed Base Class</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Rcp.Impinj.ImpinjCommand.SetRadioProfile(ADSDK.Device.ADRcpImp,System.Byte)">
+            <summary>
+            Set Radio Profile
+            </summary>
+            <param name="adr">Communication Data Managed Base Class</param>
+            <param name="iData">trans to reader data</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Rcp.Impinj.ImpinjCommand.Inventory(ADSDK.Device.ADRcpImp,System.Byte)">
+            <summary>
+            Inventory
+            </summary>
+            <param name="adr">Communication Data Managed Base Class</param>
+            <param name="repeat">trans to reader data array</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Rcp.Impinj.ImpinjCommand.InventoryReal(ADSDK.Device.ADRcpImp,System.Byte)">
+            <summary>
+            Inventory realtime
+            </summary>
+            <param name="adr">Communication Data Managed Base Class</param>
+            <param name="repeat">trans to reader data array</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Rcp.Impinj.ImpinjCommand.InventoryCustomized(ADSDK.Device.ADRcpImp,System.Byte,System.Byte,System.Byte)">
+            <summary>
+            Inventory Customized Session
+            </summary>
+            <param name="adr">Communication Data Managed Base Class</param>
+            <param name="session">trans to reader data array</param>
+            <param name="target">trans to reader data array</param>
+            <param name="repeat">trans to reader data array</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Rcp.Impinj.ImpinjCommand.FastSwitchInventory(ADSDK.Device.ADRcpImp,System.Byte[])">
+            <summary>
+            Inventory Fast Switch
+            </summary>
+            <param name="adr">Communication Data Managed Base Class</param>
+            <param name="iDataArray">trans to reader data array</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Rcp.Impinj.ImpinjCommand.SetAccessEpcMatch(ADSDK.Device.ADRcpImp,System.Byte,System.Byte,System.Byte[])">
+            <summary>
+            Set Access Epc Match for ISO18000-6c
+            </summary>
+            <param name="adr">Communication Data Managed Base Class</param>
+            <param name="btMode">trans to reader data array</param>
+            <param name="btEpcLen">trans to reader data array</param>
+            <param name="btAryEpc">trans to reader data array</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Rcp.Impinj.ImpinjCommand.CancelAccessEpcMatch(ADSDK.Device.ADRcpImp)">
+            <summary>
+             Cancel Access Epc Match for ISO18000-6c
+            </summary>
+            <param name="adr">Communication Data Managed Base Class</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Rcp.Impinj.ImpinjCommand.GetAccessEpcMatch(ADSDK.Device.ADRcpImp)">
+            <summary>
+             Get Access Epc Match for ISO18000-6c
+            </summary>
+            <param name="adr">Communication Data Managed Base Class</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Rcp.Impinj.ImpinjCommand.Read(ADSDK.Device.ADRcpImp,System.Byte,System.Byte,System.Byte)">
+            <summary>
+            Read ISO18000-6c
+            </summary>
+            <param name="adr">Communication Data Managed Base Class</param>
+            <param name="btMemBank">trans to reader data array</param>
+            <param name="btWordAdd">trans to reader data array</param>
+            <param name="btWordCnt">trans to reader data array</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Rcp.Impinj.ImpinjCommand.Write(ADSDK.Device.ADRcpImp,System.Byte[],System.Byte,System.Byte,System.Byte,System.Byte[])">
+            <summary>
+            Write ISO18000-6c
+            </summary>
+            <param name="adr">Communication Data Managed Base Class</param>
+            <param name="btAryPassWord">trans to reader data array</param>
+            <param name="btMemBank">trans to reader data array</param>
+            <param name="btWordAdd">trans to reader data array</param>
+            <param name="btWordCnt">trans to reader data array</param>
+            <param name="btAryData">trans to reader data array</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Rcp.Impinj.ImpinjCommand.Lock(ADSDK.Device.ADRcpImp,System.Byte[],System.Byte,System.Byte)">
+            <summary>
+            Lock ISO18000-6c
+            </summary>
+            <param name="adr">Communication Data Managed Base Class</param>
+            <param name="btAryPassWord">trans to reader data array</param>
+            <param name="btMemBank">trans to reader data array</param>
+            <param name="btLockType">trans to reader data array</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Rcp.Impinj.ImpinjCommand.Kill(ADSDK.Device.ADRcpImp,System.Byte[])">
+            <summary>
+            Kill ISO18000-6c
+            </summary>
+            <param name="adr">Communication Data Managed Base Class</param>
+            <param name="btAryPassWord">trans to reader data array</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Rcp.Impinj.ImpinjCommand.Inventory6B(ADSDK.Device.ADRcpImp)">
+            <summary>
+            Inventory ISO18000-6B
+            </summary>
+            <param name="adr">Communication Data Managed Base Class</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Rcp.Impinj.ImpinjCommand.Read6B(ADSDK.Device.ADRcpImp,System.Byte[],System.Byte,System.Byte)">
+            <summary>
+            Read ISO18000-6B
+            </summary>
+            <param name="adr">Communication Data Managed Base Class</param>
+            <param name="btAryUID">trans to reader data array</param>
+            <param name="btWordAdd">trans to reader data array</param>
+            <param name="btWordCnt">trans to reader data array</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Rcp.Impinj.ImpinjCommand.Write6B(ADSDK.Device.ADRcpImp,System.Byte[],System.Byte,System.Byte,System.Byte[])">
+            <summary>
+            Write ISO18000-6B
+            </summary>
+            <param name="adr">Communication Data Managed Base Class</param>
+            <param name="btAryUID">trans to reader data array</param>
+            <param name="btWordAdd">trans to reader data array</param>
+            <param name="btWordCnt">trans to reader data array</param>
+            <param name="btAryBuffer">trans to reader data array</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Rcp.Impinj.ImpinjCommand.Lock6B(ADSDK.Device.ADRcpImp,System.Byte[],System.Byte)">
+            <summary>
+            Lock ISO18000-6B
+            </summary>
+            <param name="adr">Communication Data Managed Base Class</param>
+            <param name="btAryUID">trans to reader data array</param>
+            <param name="btWordAdd">trans to reader data array</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Rcp.Impinj.ImpinjCommand.Query6B(ADSDK.Device.ADRcpImp,System.Byte[],System.Byte)">
+            <summary>
+            Query ISO18000-6B
+            </summary>
+            <param name="adr">Communication Data Managed Base Class</param>
+            <param name="btAryUID">trans to reader data array</param>
+            <param name="btWordAdd">trans to reader data array</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Rcp.Impinj.ImpinjCommand.GetInventoryBuffer(ADSDK.Device.ADRcpImp)">
+            <summary>
+            Get Inventory Buffer
+            </summary>
+            <param name="adr">Communication Data Managed Base Class</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Rcp.Impinj.ImpinjCommand.GetAndResetInventoryBuffer(ADSDK.Device.ADRcpImp)">
+            <summary>
+            Get And Reset Inventory Buffer
+            </summary>
+            <param name="adr">Communication Data Managed Base Class</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Rcp.Impinj.ImpinjCommand.GetInventoryBufferTagCount(ADSDK.Device.ADRcpImp)">
+            <summary>
+            Get Inventory Buffer Tag Count
+            </summary>
+            <param name="adr">Communication Data Managed Base Class</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Rcp.Impinj.ImpinjCommand.ResetInventoryBuffer(ADSDK.Device.ADRcpImp)">
+            <summary>
+            Reset Inventory Buffer
+            </summary>
+            <param name="adr">Communication Data Managed Base Class</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Rcp.Impinj.ImpinjCommand.GetCustomFuction(ADSDK.Device.ADRcpImp)">
+            <summary>
+            Get Custom Fuction
+            </summary>
+            <param name="adr">Communication Data Managed Base Class</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Rcp.Impinj.ImpinjCommand.SetCustomFuction(ADSDK.Device.ADRcpImp,System.Byte)">
+            <summary>
+            Set Custom Fuction
+            </summary>
+            <param name="adr">Communication Data Managed Base Class</param>
+            <param name="btMode">trans to reader data array</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Rcp.Impinj.ImpinjCommand.GetFastSwitchAntParamters(ADSDK.Device.ADRcpImp)">
+            <summary>
+            Get Fast Switch Ant Paramters
+            </summary>
+            <param name="adr">Communication Data Managed Base Class</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Rcp.Impinj.ImpinjCommand.SetFastSwitchAntParamters(ADSDK.Device.ADRcpImp,System.Byte[])">
+            <summary>
+            Set Fast Switch Ant Paramters
+            </summary>
+            <param name="adr">Communication Data Managed Base Class</param>
+            <param name="iDataArray">trans to reader data array</param>
+            <returns></returns>
+        </member>
+        <member name="T:ADSDK.Device.Reader.Rcp.Impinj.ImpinjRcp">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Rcp.Impinj.ImpinjRcp.INDEX_PREAMBLE">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Rcp.Impinj.ImpinjRcp.INDEX_LENGTH">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Rcp.Impinj.ImpinjRcp.INDEX_ADDRESS">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Rcp.Impinj.ImpinjRcp.INDEX_CODE">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Rcp.Impinj.ImpinjRcp.INDEX_PAYLOAD">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Rcp.Impinj.ImpinjRcp.LEN_BASE">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Rcp.Impinj.ImpinjRcp.LEN_CHECKSUM">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Rcp.Impinj.ImpinjRcp.LEN_PROTOCOL_MIN">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Rcp.Impinj.ImpinjRcp.PREAMBLE">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Rcp.Impinj.ImpinjRcp.TYPE_R2000">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Rcp.Impinj.ImpinjRcp.CMD_RESET">
+            <summary>
+            Reset reader.
+            复位读写器
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Rcp.Impinj.ImpinjRcp.CMD_SET_UART_BAUDRATE">
+            <summary>
+            Set baud rate of serial port.
+            设置串口通讯波特率
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Rcp.Impinj.ImpinjRcp.CMD_GET_FIRMWARE_VERSION">
+            <summary>
+            Get firmware version.
+            读取读写器固件版本
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Rcp.Impinj.ImpinjRcp.CMD_SET_READER_ADDRESS">
+            <summary>
+            Set reader’s address.
+            设置读写器地址
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Rcp.Impinj.ImpinjRcp.CMD_SET_WORK_ANTENNA">
+            <summary>
+            Set working antenna.
+            设置读写器工作天线
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Rcp.Impinj.ImpinjRcp.CMD_GET_WORK_ANTENNA">
+            <summary>
+            Query current working antenna.
+            查询当前天线工作天线
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Rcp.Impinj.ImpinjRcp.CMD_SET_OUTPUT_POWER">
+            <summary>
+            Set RF output power.
+            设置读写器射频输出功率
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Rcp.Impinj.ImpinjRcp.CMD_GET_OUTPUT_POWER">
+            <summary>
+            Query current RF output power.
+            查询读写器当前输出功率
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Rcp.Impinj.ImpinjRcp.CMD_SET_FREQUENCY_REGION">
+            <summary>
+            Set RF frequency spectrum.
+            设置读写器工作频率范围
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Rcp.Impinj.ImpinjRcp.CMD_GET_FREQUENCY_REGION">
+            <summary>
+            Query RF frequency spectrum.
+            查询读写器工作频率范围
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Rcp.Impinj.ImpinjRcp.CMD_SET_BEEPER_MODE">
+            <summary>
+            Set reader’s buzzer hehavior.
+            设置蜂鸣器状态
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Rcp.Impinj.ImpinjRcp.CMD_GET_READER_TEMPERATURE">
+            <summary>
+            Check reader’s internal temperature.
+            查询当前设备的工作温度
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Rcp.Impinj.ImpinjRcp.CMD_SET_DRM_MODE">
+            <summary>
+            Set reader’s DRM status.
+            设置DRM状态
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Rcp.Impinj.ImpinjRcp.CMD_GET_DRM_MODE">
+            <summary>
+            Query reader’s DRM status.
+            查询DRM状态
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Rcp.Impinj.ImpinjRcp.CMD_READ_GPIO_VALUE">
+            <summary>
+            Get GPIO1, GPIO2 status.
+            读取GPIO电平
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Rcp.Impinj.ImpinjRcp.CMD_WRITE_GPIO_VALUE">
+            <summary>
+            Set GPIO3, GPIO4 status.
+            设置GPIO电平
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Rcp.Impinj.ImpinjRcp.CMD_SET_ANT_CONNECTION_DETECTOR">
+            <summary>
+            Set antenna detector status.
+            设置天线连接检测器状态
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Rcp.Impinj.ImpinjRcp.CMD_GET_ANT_CONNECTION_DETECTOR">
+            <summary>
+            Get antenna detector status.
+            读取天线连接检测器状态
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Rcp.Impinj.ImpinjRcp.CMD_SET_TEMPORARY_OUTPUT_POWER">
+            <summary>
+            Set RF power without saving to flash.
+            设置读写器临时射频输出功率
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Rcp.Impinj.ImpinjRcp.CMD_SET_READER_IDENTIFIER">
+            <summary>
+            Set reader’s identification bytes.
+            设置读卡器识别码
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Rcp.Impinj.ImpinjRcp.CMD_GET_READER_IDENTIFIER">
+            <summary>
+            Get reader’s identification bytes.
+            获取读卡器识别码
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Rcp.Impinj.ImpinjRcp.CMD_SET_RF_LINK_PROFILE">
+            <summary>
+            Set RF link profile.
+            
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Rcp.Impinj.ImpinjRcp.CMD_GET_RF_LINK_PROFILE">
+            <summary>
+            Get RF link profile.
+            
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Rcp.Impinj.ImpinjRcp.CMD_GET_RF_PORT_RETURN_LOSS">
+            <summary>
+            Get current antenna port’s return loss.
+            
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Rcp.Impinj.ImpinjRcp.CMD_INVENTORY">
+            <summary>
+            Inventory EPC C1G2 tags to buffer.
+            盘存标签
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Rcp.Impinj.ImpinjRcp.CMD_READ">
+            <summary>
+            Read EPC C1G2 tag(s).
+            读标签
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Rcp.Impinj.ImpinjRcp.CMD_WRITE">
+            <summary>
+            Write EPC C1G2 tag(s).
+            写标签
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Rcp.Impinj.ImpinjRcp.CMD_LOCK">
+            <summary>
+            Lock EPC C1G2 tag(s).
+            锁定标签
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Rcp.Impinj.ImpinjRcp.CMD_KILL">
+            <summary>
+            Kill EPC C1G2 tag(s).
+            灭活标签
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Rcp.Impinj.ImpinjRcp.CMD_SET_ACCESS_EPC_MATCH">
+            <summary>
+            Set tag access filter by EPC.
+            匹配ACCESS操作的EPC号
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Rcp.Impinj.ImpinjRcp.CMD_GET_ACCESS_EPC_MATCH">
+            <summary>
+            Query access filter by EPC.
+            查询匹配的EPC状态
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Rcp.Impinj.ImpinjRcp.CMD_REAL_TIME_INVENTORY">
+            <summary>
+            Inventory tags in real time mode.
+            盘存标签(实时上传标签数据)
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Rcp.Impinj.ImpinjRcp.CMD_FAST_SWITCH_ANT_INVENTORY">
+            <summary>
+            Real time inventory with fast ant switch.
+            快速轮询多个天线盘存标签
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Rcp.Impinj.ImpinjRcp.CMD_CUSTOMIZED_SESSION_TARGET_INVENTORY">
+            <summary>
+            Inventory with  desired session and inventoried flag.
+            盘存标签(自定义session)
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Rcp.Impinj.ImpinjRcp.CMD_SET_IMPINJ_FAST_TID">
+            <summary>
+            Set impinj FastTID function.(Without saving to FLASH)
+            
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Rcp.Impinj.ImpinjRcp.CMD_SET_AND_SAVE_IMPINJ_FAST_TID">
+            <summary>
+            Set impinj FastTID function.(Save to FLASH)
+            
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Rcp.Impinj.ImpinjRcp.CMD_GET_IMPINJ_FAST_TID">
+            <summary>
+            Get current FastTID setting.
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Rcp.Impinj.ImpinjRcp.CMD_GET_FAST_SWITCH_ANT_INVENTORY">
+            <summary>
+            Real time inventory with fast ant switch.
+            获取快速轮询多个天线盘存标签
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Rcp.Impinj.ImpinjRcp.CMD_ISO18000_6B_INVENTORY">
+            <summary>
+            Inventory 18000-6B tag(s).
+            盘存18000-6B标签
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Rcp.Impinj.ImpinjRcp.CMD_ISO18000_6B_READ">
+            <summary>
+            Read 18000-6B tag.
+            读18000-6B标签
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Rcp.Impinj.ImpinjRcp.CMD_ISO18000_6B_WRITE">
+            <summary>
+            Write 18000-6B tag.
+            写18000-6B标签
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Rcp.Impinj.ImpinjRcp.CMD_ISO18000_6B_LOCK">
+            <summary>
+            Lock 18000-6B tag data byte.
+            锁定18000-6B标签
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Rcp.Impinj.ImpinjRcp.CMD_ISO18000_6B_QUERY_LOCK">
+            <summary>
+            Query lock 18000-6B tag data byte.
+            查询18000-6B标签
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Rcp.Impinj.ImpinjRcp.CMD_GET_INVENTORY_BUFFER">
+            <summary>
+            Get and clear buffered data.
+            提取标签数据并删除缓存
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Rcp.Impinj.ImpinjRcp.CMD_GET_AND_RESET_INVENTORY_BUFFER">
+            <summary>
+            Get buffered data without clearing.
+            提取标签数据保留缓存备份
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Rcp.Impinj.ImpinjRcp.CMD_GET_INVENTORY_BUFFER_TAG_COUNT">
+            <summary>
+            Query how many tags are buffered.
+            查询缓存中已读标签个数
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Rcp.Impinj.ImpinjRcp.CMD_RESET_INVENTORY_BUFFER">
+            <summary>
+            Clear buffer.
+            清空标签数据缓存
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Rcp.Impinj.ImpinjRcp.CMD_SET_BUFFER_DATA_FRAME_INTERVAL">
+            <summary>
+            Set interval for buffered data frame.
+            设置缓存数据帧之间的延时
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Rcp.Impinj.ImpinjRcp.CMD_GET_BUFFER_DATA_FRAME_INTERVAL">
+            <summary>
+            Query interval for buffered data frame.
+            查询缓存数据帧之间的延时
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Rcp.Impinj.ImpinjRcp.CMD_SET_CUSTOM_FUNCTION">
+            <summary>
+            SET Custom Function
+            设置定制功能
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Rcp.Impinj.ImpinjRcp.CMD_GET_CUSTOM_FUNCTION">
+            <summary>
+            GET Custom Function
+            设置定制功能
+            </summary>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Rcp.Impinj.ImpinjRcp.GetErrorCodeString(System.Int32,System.Byte)">
+            <summary>
+            Get Error Code 获取错误代码释义
+            </summary>
+            <param name="language">Language(语言选择)</param>
+            <param name="code">error code(错误代码)</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Rcp.Impinj.ImpinjRcp.GetCodeString(System.Int32,System.Byte)">
+            <summary>
+            
+            </summary>
+            <param name="language"></param>
+            <param name="code"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Rcp.Impinj.ImpinjRcp.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Rcp.Impinj.ImpinjRcp.#ctor(ADSDK.Device.ADSio)">
+            <summary>
+            
+            </summary>
+            <param name="sio"></param>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Rcp.Impinj.ImpinjRcp.BuildCmdPacketByte(System.Int32,System.Byte,System.Byte[])">
+            <summary>
+            packet command data (打包命令数据)
+            </summary>
+            <param name="nAddr">通讯地址</param>
+            <param name="nCmd">命令类型</param>
+            <param name="ArgByte">数据</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Rcp.Impinj.ImpinjRcp.DealPacketByte(ADSDK.Device.ByteEventArg)">
+            <summary>
+            
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="T:ADSDK.Device.Reader.Passive.PassiveRcp">
+            <summary>
+            数据封包
+            </summary>
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Passive.PassiveRcp.XorCheckSum(System.Byte[],System.Int32,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="buff"></param>
+            <param name="start"></param>
+            <param name="len"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Passive.PassiveRcp.XorCheckSum(System.Collections.Generic.List{System.Byte},System.Int32,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="buff"></param>
+            <param name="start"></param>
+            <param name="len"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Passive.PassiveRcp.GetInformation">
+            <summary>
+            获取联机信息过程
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Passive.PassiveRcp.GetConfig(System.Int32)">
+            <summary>
+            获取读卡器参数过程
+            </summary>
+            <param name="address">通讯地址</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Passive.PassiveRcp.SetConfig(System.Int32,System.Byte[])">
+            <summary>
+            设置读卡器参数过程
+            </summary>
+            <param name="address">通讯地址</param>
+            <param name="para">参数</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Passive.PassiveRcp.GetTcpip(System.Int32)">
+            <summary>
+            获取TCPIP参数过程
+            </summary>
+            <param name="address">通讯地址</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Passive.PassiveRcp.SetTcpip(System.Int32,System.Byte[])">
+            <summary>
+            设置TCPIP参数过程
+            </summary>
+            <param name="address">通讯地址</param>
+            <param name="para">参数</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Passive.PassiveRcp.GetCanbus(System.Int32)">
+            <summary>
+            获取CANBUS参数过程
+            </summary>
+            <param name="address">通讯地址</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Passive.PassiveRcp.SetCanbus(System.Int32,System.Byte[])">
+            <summary>
+            设置CANBUS参数过程
+            </summary>
+            <param name="address">通讯地址</param>
+            <param name="para">参数</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Passive.PassiveRcp.GetSyris(System.Int32)">
+            <summary>
+            获取SYRIS参数过程
+            </summary>
+            <param name="address">通讯地址</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Passive.PassiveRcp.SetSyris(System.Int32,System.Byte[])">
+            <summary>
+            设置SYRIS参数过程
+            </summary>
+            <param name="address">通讯地址</param>
+            <param name="para">参数</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Passive.PassiveRcp.Identify6C(System.Int32)">
+            <summary>
+            获取6C卡号过程
+            </summary>
+            <param name="address">通讯地址</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Passive.PassiveRcp.Read6C(System.Int32,System.Byte,System.Byte,System.Byte)">
+            <summary>
+            读取6C数据过程
+            </summary>
+            <param name="address">通讯地址</param>
+            <param name="mem">读取块(0-保留区,1-EPC区,2-TID区,3-用户区)</param>
+            <param name="state">读取位置(EPC区必须从地址2开始)</param>
+            <param name="length">读取长度</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Passive.PassiveRcp.Write6C(System.Int32,System.Byte,System.Byte,System.Byte,System.Byte[])">
+            <summary>
+            写入6C数据过程
+            </summary>
+            <param name="address">通讯地址</param>
+            <param name="mem">写入块(0-保留区,1-EPC区,2-TID区,3-用户区)</param>
+            <param name="state">写入位置(EPC区必须从地址2开始)</param>
+            <param name="length">写入长度</param>
+            <param name="data">写入数据</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Passive.PassiveRcp.Identify6CMult(System.Int32)">
+            <summary>
+            获取6C多卡卡号过程
+            </summary>
+            <param name="address">通讯地址</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Passive.PassiveRcp.Read6CAppoint(System.Int32,System.Byte,System.Byte,System.Byte,System.Byte,System.Byte[])">
+            <summary>
+            读取6C指定卡号数据过程
+            </summary>
+            <param name="address">通讯地址</param>
+            <param name="mem">读取块(0-保留区,1-EPC区,2-TID区,3-用户区)</param>
+            <param name="state">读取位置(EPC区必须从地址2开始)</param>
+            <param name="length">读取长度</param>
+            <param name="appointLen"></param>
+            <param name="appointData"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Passive.PassiveRcp.Write6CAppoint(System.Int32,System.Byte,System.Byte,System.Byte,System.Byte[],System.Byte,System.Byte[])">
+            <summary>
+            写入6C指定卡号数据过程
+            </summary>
+            <param name="address">通讯地址</param>
+            <param name="mem">写入块(0-保留区,1-EPC区,2-TID区,3-用户区)</param>
+            <param name="state">写入位置(EPC区必须从地址2开始)</param>
+            <param name="length">写入长度</param>
+            <param name="data">写入数据</param>
+            <param name="appointLen"></param>
+            <param name="appointData"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Passive.PassiveRcp.Identify6B(System.Int32)">
+            <summary>
+            获取6B卡号过程
+            </summary>
+            <param name="address">通讯地址</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Passive.PassiveRcp.Read6B(System.Int32,System.Byte,System.Byte)">
+            <summary>
+            读取6B数据过程
+            </summary>
+            <param name="address">通讯地址</param>
+            <param name="state">读取位置</param>
+            <param name="length">读取长度</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Passive.PassiveRcp.Write6B(System.Int32,System.Byte,System.Byte,System.Byte[])">
+            <summary>
+            写入6B数据过程
+            </summary>
+            <param name="address">通讯地址</param>
+            <param name="state">写入位置</param>
+            <param name="length">写入长度</param>
+            <param name="data">写入数据</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Passive.PassiveRcp.SetSecret(System.Int32)">
+            <summary>
+            设置加密过程
+            </summary>
+            <param name="address">通讯地址</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Passive.PassiveRcp.InitSyris(System.Int32,System.Byte[])">
+            <summary>
+            初始化SYRIS地址
+            </summary>
+            <param name="address">通讯地址</param>
+            <param name="para">SYRIS地址+ID</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Passive.PassiveRcp.SetReset(System.Int32)">
+            <summary>
+            设置重启过程
+            </summary>
+            <param name="address">通讯地址</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Passive.PassiveRcp.SetAddress(System.Int32,System.Int32)">
+            <summary>
+            设置通讯地址过程
+            </summary>
+            <param name="address">通讯地址</param>
+            <param name="paraAddr">待设置地址</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Passive.PassiveRcp.SetRemote(System.Int32,System.Byte,System.Byte)">
+            <summary>
+            IO输出过程
+            </summary>
+            <param name="address">通讯地址</param>
+            <param name="position">输出位置</param>
+            <param name="state">输出状态</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Passive.PassiveRcp.GetTime(System.Int32)">
+            <summary>
+            获取时间
+            </summary>
+            <param name="address">通讯地址</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Passive.PassiveRcp.SetTime(System.Int32,System.Byte[])">
+            <summary>
+            设置时间
+            </summary>
+            <param name="address">通讯地址</param>
+            <param name="para">Time 6字节 年月日时分秒</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Passive.PassiveRcp.SetUsbPower(System.Int32,System.Byte)">
+            <summary>
+            Power输出过程
+            </summary>
+            <param name="address">通讯地址</param>
+            <param name="state">输出状态</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Passive.PassiveRcp.SetUsbPara(System.Int32,System.Byte[])">
+            <summary>
+            Power输出过程
+            </summary>
+            <param name="address">通讯地址</param>
+            <param name="state">输出状态</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Passive.PassiveRcp.GetUsbPara(System.Int32,System.Byte)">
+            <summary>
+            获取输出卡号类型过程
+            </summary>
+            <param name="address">通讯地址</param>
+            <param name="index"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Passive.PassiveRcp.SetOutCard(System.Int32,System.Byte,System.Byte,System.Byte)">
+            <summary>
+            设置输出卡号类型过程
+            </summary>
+            <param name="address">通讯地址</param>
+            <param name="mode">输出类型</param>
+            <param name="size">输出长度</param>
+            <param name="rtn">回车符</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Passive.PassiveRcp.GetOutCard(System.Int32)">
+            <summary>
+            获取输出卡号类型过程
+            </summary>
+            <param name="address">通讯地址</param>
+            <returns></returns>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Passive.PassiveRcp.PREAMBLE">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Passive.PassiveRcp.PREAMBLE_UP">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Passive.PassiveRcp.INDEX_PREAMBLE">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Passive.PassiveRcp.INDEX_ADDRESS">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Passive.PassiveRcp.INDEX_CODE">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Passive.PassiveRcp.INDEX_TYPE">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Passive.PassiveRcp.INDEX_LENGTH">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Passive.PassiveRcp.INDEX_PAYLOAD">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Passive.PassiveRcp.LEN_ENDMARK">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Passive.PassiveRcp.LEN_CHECKSUM">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Passive.PassiveRcp.LEN_PROTOCOL_MIN">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Passive.PassiveRcp.ADDR_PUB">
+            <summary>
+            ADDR PUB:Hex FF Decimal 255
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Passive.PassiveRcp.LEN_SIX">
+            <summary>
+            LEN SIX:Hex 06 Decimal 6
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Passive.PassiveRcp.LEN_SEVEN">
+            <summary>
+            LEN SEVEN:Hex 07 Decimal 7
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Passive.PassiveRcp.SOI_SEND">
+            <summary>
+            SOI:Hex 7C Decimal 124
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Passive.PassiveRcp.SOI_RECIVE">
+            <summary>
+            SOI:Hex CC Decimal 204
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Passive.PassiveRcp.RCP_CMD_ISO6B_IDEN">
+            <summary>
+            ISO6B_IDEN Hex:0x01
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Passive.PassiveRcp.RCP_CMD_ISO6B_RW">
+            <summary>
+            ISO6B_RW Hex:0x02
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Passive.PassiveRcp.RCP_CMD_ISO6B_LOCK">
+            <summary>
+            ISO6B_LOCK Hex:0x04
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Passive.PassiveRcp.RCP_CMD_ISO6B_UNLOCK">
+            <summary>
+            ISO6B_UNLOCK Hex:0x05
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Passive.PassiveRcp.RCP_CMD_ISO6B_KILL">
+            <summary>
+            ISO6B_KILL Hex:0x06
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Passive.PassiveRcp.RCP_CMD_EPC_IDEN">
+            <summary>
+            EPC_IDEN Hex:0x10
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Passive.PassiveRcp.RCP_CMD_EPC_MULT">
+            <summary>
+            EPC_MULT Hex:0x11
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Passive.PassiveRcp.RCP_CMD_EPC_RW">
+            <summary>
+            EPC_RW Hex:0x12
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Passive.PassiveRcp.RCP_CMD_EPC_LOCK">
+            <summary>
+            EPC_LOCK Hex:0x14
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Passive.PassiveRcp.RCP_CMD_EPC_UNLOCK">
+            <summary>
+            EPC_UNLOCK Hex:0x15
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Passive.PassiveRcp.RCP_CMD_EPC_KILL">
+            <summary>
+            EPC_KILL Hex:0x16
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Passive.PassiveRcp.RCP_CMD_EPC_APPOINT">
+            <summary>
+            EPC_APPOINT Hex:0x22
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Passive.PassiveRcp.RCP_CMD_PARA">
+            <summary>
+            PARA Hex:0x81
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Passive.PassiveRcp.RCP_CMD_CANBUS">
+            <summary>
+            CANBUS Hex:0xB8
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Passive.PassiveRcp.RCP_CMD_TCPIP">
+            <summary>
+            TCPIP Hex:0xB9
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Passive.PassiveRcp.RCP_CMD_SYRIS">
+            <summary>
+            Syris Hex:0xBA
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Passive.PassiveRcp.RCP_CMD_REMOTE">
+            <summary>
+            Remote Hex:0xBB
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Passive.PassiveRcp.RCP_CMD_INFO">
+            <summary>
+            GET INFO Hex:0x82
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Passive.PassiveRcp.RCP_CMD_TIME">
+            <summary>
+            TIME Hex:0x83
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Passive.PassiveRcp.RCP_CMD_SECRET">
+            <summary>
+            SECRET Hex:0x30
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Passive.PassiveRcp.RCP_CMD_OUTCARD">
+            <summary>
+            SECRET Hex:0x31
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Passive.PassiveRcp.RCP_CMD_INITSYRIS">
+            <summary>
+            Init Syris Address Hex:0x8D
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Passive.PassiveRcp.RCP_CMD_SOFTRESET">
+            <summary>
+            SOFTRESET Hex:0x8F
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Passive.PassiveRcp.RCP_CMD_USBPOWER">
+            <summary>
+            SOFTRESET Hex:0xBC
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Passive.PassiveRcp.RCP_CMD_USBPARA">
+            <summary>
+            SOFTRESET Hex:0xBD
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Passive.PassiveRcp.RCP_CMD_WIFI_DOWNLOAD">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Passive.PassiveRcp.RCP_CMD_WIFI_PUB">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Passive.PassiveRcp.RCP_CMD_WIFI_STA">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Passive.PassiveRcp.RCP_CMD_WIFI_AP">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Passive.PassiveRcp.RCP_MSG_GET">
+            <summary>
+            Control identification code :get 0x32
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Passive.PassiveRcp.RCP_MSG_SET">
+            <summary>
+            Control identification code :set 0x31
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Passive.PassiveRcp.RCP_MSG_SENIOR_GET">
+            <summary>
+            Control identification code :get 0x22
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Passive.PassiveRcp.RCP_MSG_SENIOR_SET">
+            <summary>
+            Control identification code :set 0x21
+            </summary>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Passive.PassiveRcp.GetErrorCodeString(System.Int32,System.Byte)">
+            <summary>
+            Get Error Code 获取错误代码释义
+            </summary>
+            <param name="language">Language(语言选择)</param>
+            <param name="code">error code(错误代码)</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Passive.PassiveRcp.GetCodeString(System.Int32,System.Byte)">
+            <summary>
+            Get Code 获取代码释义
+            </summary>
+            <param name="language">Language(语言选择)</param>
+            <param name="code">code(错代码)</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Passive.PassiveRcp.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Passive.PassiveRcp.#ctor(ADSDK.Device.ADSio)">
+            <summary>
+            
+            </summary>
+            <param name="sio"></param>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Passive.PassiveRcp.BuildCmdPacketByte(System.Int32,System.Byte,System.Byte,System.Byte[])">
+            <summary>
+            
+            </summary>
+            <param name="nAddr"></param>
+            <param name="nType"></param>
+            <param name="nCmd"></param>
+            <param name="ArgByte"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Passive.PassiveRcp.DealPacketByte(ADSDK.Device.ByteEventArg)">
+            <summary>
+            
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="T:ADSDK.Device.Reader.Passive.PassiveCommand">
+            <summary>
+            Passive Command (just send) 
+            </summary>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Passive.PassiveCommand.GetInformation(ADSDK.Device.ADRcp)">
+            <summary>
+            Get base information - 获取基本信息
+            </summary>
+            <param name="adr">通讯数据基础类</param>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Passive.PassiveCommand.GetConfig(ADSDK.Device.ADRcp)">
+            <summary>
+            Get Basic Parameters - 获取基本参数
+            </summary>
+            <param name="adr">通讯数据基础类</param>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Passive.PassiveCommand.SetConfig(ADSDK.Device.ADRcp,System.Byte[])">
+            <summary>
+            Set Basic Parameters - 设置基本参数
+            </summary>
+            <param name="adr">通讯数据基础类</param>
+            <param name="iData"></param>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Passive.PassiveCommand.SetAddress(ADSDK.Device.ADRcp,System.Int32)">
+            <summary>
+            Set Address 设置通讯地址
+            </summary>
+            <param name="adr">通讯数据基础类</param>
+            <param name="address"></param>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Passive.PassiveCommand.Secret(ADSDK.Device.ADRcp)">
+            <summary>
+            Secret EPC tag  - 加密卡号
+            </summary>
+            <param name="adr">通讯数据基础类</param>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Passive.PassiveCommand.Reset(ADSDK.Device.ADRcp)">
+            <summary>
+            Reset Reader - 重启读卡器
+            </summary>
+            <param name="adr">通讯数据基础类</param>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Passive.PassiveCommand.InitSyris(ADSDK.Device.ADRcp,System.Byte[])">
+            <summary>
+            Init Syris SN And ID(nonstandard) - 初始化读卡器序列号和ID(非标准命令)
+            </summary>
+            <param name="adr">通讯数据基础类</param>
+            <param name="iData">
+            <para>Syris SN Info Array</para> 
+            <para>Syris 序列号和ID字节数组</para>
+            </param>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Passive.PassiveCommand.Identify6C(ADSDK.Device.ADRcp)">
+            <summary>
+            Identify card from ISO18000-6C(EPC) tag - 识别单张ISO18000-6C(EPC)标签卡号
+            </summary>
+            <param name="adr">通讯数据基础类</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Passive.PassiveCommand.Identify6CMult(ADSDK.Device.ADRcp)">
+            <summary>
+            Identify cards from mult ISO18000-6C(EPC) tag - 识别多张ISO18000-6C(EPC)标签卡号
+            </summary>
+            <param name="adr">通讯数据基础类</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Passive.PassiveCommand.Read6C(ADSDK.Device.ADRcp,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Read data from ISO18000-6C(EPC) tag - 读取ISO18000-6C(EPC)标签数据
+            </summary>
+            <param name="adr">通讯数据基础类</param>
+            <param name="iMem">Memory Bank, 0x00-RFU,0x01-EPC,0x02-TID,0x03-User 块地址</param>
+            <param name="iStartWord">Start Address(word) 块起始地址(word)</param>
+            <param name="iLengthWord">Data Length in Words(word) 数据长度(word)
+            <para>单次操作不超过16byte(8Words)</para> 
+            </param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Passive.PassiveCommand.Write6C(ADSDK.Device.ADRcp,System.Int32,System.Int32,System.Int32,System.Byte[])">
+            <summary>
+            Write Data to ISO18000-6C(EPC) tag - 写入ISO18000-6C(EPC)标签数据
+            </summary>
+            <param name="adr">通讯数据基础类</param>
+            <param name="iMem">Memory Bank, 0x00-RFU,0x01-EPC,0x02-TID,0x03-User 块地址</param>
+            <param name="iStartWord">Start Address(word) 块起始地址(word)</param>
+            <param name="iLengthWord">Data Length in Words(word) 数据长度(word)
+            <para>单次操作不超过16byte(8Words)</para> 
+            </param>
+            <param name="iData">data(byte array)(16进制数组)</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Passive.PassiveCommand.Identify6B(ADSDK.Device.ADRcp)">
+            <summary>
+            Identify card from ISO18000-6B tag - 识别ISO18000-6B标签卡号
+            </summary>
+            <param name="adr">通讯数据基础类</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Passive.PassiveCommand.Read6B(ADSDK.Device.ADRcp,System.Int32,System.Int32)">
+            <summary>
+            Read data from ISO18000-6B tag - 读取ISO18000-6B标签数据
+            </summary>
+            <param name="adr">通讯数据基础类</param>
+            <param name="iStart">Start Address(byte) 块起始地址(byte)</param>
+            <param name="iLength">Data length(byte) 数据长度(byte)</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Passive.PassiveCommand.Write6B(ADSDK.Device.ADRcp,System.Int32,System.Int32,System.Byte[])">
+            <summary>
+            Write Data to ISO18000-6B tag - 写入ISO18000-6B标签数据
+            </summary>
+            <param name="adr">通讯数据基础类</param>
+            <param name="iStart">Start Address(byte) 块起始地址(byte)</param>
+            <param name="iLength">Data length(byte) 数据长度(byte)</param>
+            <param name="iData">data(byte array)(16进制数组)</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Passive.PassiveCommand.GetTcpip(ADSDK.Device.ADRcp)">
+            <summary>
+            Get Tcpip Parameters(nonstandard) - 获取TCPIP参数(非标准命令)
+            </summary>
+            <param name="adr">通讯数据基础类</param>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Passive.PassiveCommand.SetTcpip(ADSDK.Device.ADRcp,System.Byte[])">
+            <summary>
+            Set Tcpip Parameters(nonstandard) - 设置TCPIP参数(非标准命令)
+            </summary>
+            <param name="adr">通讯数据基础类</param>
+            <param name="iData"></param>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Passive.PassiveCommand.ExitProgarm(ADSDK.Device.ADRcp)">
+            <summary>
+            Exit Progarm Mode(only usb reader) - 将USB读卡器退出编程模式(仅用于USB通讯版读卡器)
+            </summary>
+            <param name="adr">通讯数据基础类</param>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Passive.PassiveCommand.SetProgarm(ADSDK.Device.ADRcp)">
+            <summary>
+            Set Progarm Mode(only usb reader) - 设置USB读卡器为编程模式(仅用于USB通讯版读卡器)
+            </summary>
+            <param name="adr">通讯数据基础类</param>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Passive.PassiveCommand.SetKeyboard(ADSDK.Device.ADRcp)">
+            <summary>
+            Set Virtual Keyboard Mode(only usb reader) - 设置USB读卡器为虚拟键盘模式(仅用于USB通讯版读卡器)
+            </summary>
+            <param name="adr"></param>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Passive.PassiveCommand.SetOutCard(ADSDK.Device.ADRcp,System.Byte[])">
+            <summary>
+            Set USB OutCard Parameters(only usb reader) - 设置USB读卡器输出卡号参数(仅用于USB通讯版读卡器)
+            </summary>
+            <param name="adr">通讯数据基础类</param>
+            <param name="iData">OutCard Info Array</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Passive.PassiveCommand.GetOutCard(ADSDK.Device.ADRcp)">
+            <summary>
+            Get USB OutCard Parameters(only usb reader) - 获取USB读卡器输出卡号参数(仅用于USB通讯版读卡器)
+            </summary>
+            <param name="adr">通讯数据基础类</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Passive.PassiveCommand.Remote(ADSDK.Device.ADRcp,System.Byte,System.Byte)">
+            <summary>
+            Set IO Out[nonstandard] - 设置IO口输出(非标准命令)
+            </summary>
+            <param name="adr">通讯数据基础类</param>
+            <param name="position">输出位置</param>
+            <param name="state">输出状态</param>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Passive.PassiveCommand.GetTime(ADSDK.Device.ADRcp)">
+            <summary>
+            Get Datetime Parameters(nonstandard) - 获取读卡器实时时间(非标准命令)
+            </summary>
+            <param name="adr">通讯数据基础类</param>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Passive.PassiveCommand.SetTime(ADSDK.Device.ADRcp,System.Byte[])">
+            <summary>
+            Set Datetime Parameters(nonstandard) - 设置读卡器实时时间(非标准命令)
+            </summary>
+            <param name="adr">通讯数据基础类</param>
+            <param name="iData"></param>
+        </member>
+        <member name="T:ADSDK.Device.Reader.Passive.PDataManage">
+            <summary>
+            Active sending data management
+            </summary>
+        </member>
+        <member name="E:ADSDK.Device.Reader.Passive.PDataManage.CommandReceived">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Passive.PDataManage.mBuffer">
+            <summary>
+            Data processing cache 
+            </summary>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Passive.PDataManage.InputReceived(System.Collections.Generic.List{System.Byte}@)">
+            <summary>
+            Receiving Data
+            </summary>
+            <param name="iData">Input Data Buffer</param>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Passive.PDataManage.InputManage(System.Collections.Generic.List{System.Byte}@)">
+            <summary>
+            Data Manage Process
+            </summary>
+            <param name="iData">Input Data Buffer</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Passive.PDataManage.InputManage(System.Collections.Generic.List{System.Byte}@,System.Collections.Generic.List{ADSDK.Device.Reader.CommandParameters}@)">
+            <summary>
+            Data Manage Process
+            </summary>
+            <param name="iData">Input Data Buffer</param>
+            <param name="oCmdInfo"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Passive.PDataManage.InputManage(System.Collections.Generic.List{System.Byte}@,System.Collections.Generic.List{ADSDK.Device.Reader.CardParameters}@)">
+            <summary>
+            
+            </summary>
+            <param name="iData"></param>
+            <param name="oCardInfo"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Passive.PDataManage.InputManage(ADSDK.Device.Reader.CommandParameters,System.Collections.Generic.List{ADSDK.Device.Reader.CardParameters}@)">
+            <summary>
+            
+            </summary>
+            <param name="iCmdInfo"></param>
+            <param name="oCardInfo"></param>
+            <returns></returns>
+        </member>
+        <member name="T:ADSDK.Device.Reader.Phychips.PhychipsCommand">
+            <summary>
+            Phychips Command Static Class(just send) 
+            </summary>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Phychips.PhychipsCommand.CalcTagRssi(System.Byte[])">
+            <summary>
+            Calc Tag Rssi
+            </summary>
+            <param name="data">rssi data buff, just 4 byte</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Phychips.PhychipsCommand.BytesToStruct``1(System.Byte[])">
+            <summary>
+            Converts the byte[] type to the struct type T
+            </summary>
+            <typeparam name="T">struct type T</typeparam>
+            <param name="body">byte array</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Phychips.PhychipsCommand.StructToBytes``1(``0)">
+            <summary>
+            Converts the structure type T to byte[]
+            </summary>
+            <typeparam name="T">struct type T</typeparam>
+            <param name="packet">struct</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Phychips.PhychipsCommand.GetInformation(ADSDK.Device.ADRcp)">
+            <summary>
+            Get base information - 获取基本信息
+            </summary>
+            <param name="adr">Communication Data Managed Base Class</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Phychips.PhychipsCommand.GetConfig(ADSDK.Device.ADRcp)">
+            <summary>
+            Get Basic Parameters - 获取基本参数
+            </summary>
+            <param name="adr">Communication Data Managed Base Class</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Phychips.PhychipsCommand.SetConfig(ADSDK.Device.ADRcp,ADSDK.Device.Reader.RBasicParameters)">
+            <summary>
+            Set Basic Parameters - 设置基本参数
+            </summary>
+            <param name="adr">Communication Data Managed Base Class</param>
+            <param name="dt">base parameters byte array</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Phychips.PhychipsCommand.GetAddress(ADSDK.Device.ADRcp)">
+            <summary>
+            Get Device Address
+            </summary>
+            <param name="adr">Communication Data Managed Base Class</param>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Phychips.PhychipsCommand.SetAddress(ADSDK.Device.ADRcp,System.Int32)">
+            <summary>
+            Set Device Address
+            </summary>
+            <param name="adr">Communication Data Managed Base Class</param>
+            <param name="address">New Address</param>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Phychips.PhychipsCommand.GetIOOut(ADSDK.Device.ADRcp)">
+            <summary>
+            Get IOOut Status
+            </summary>
+            <param name="adr">Communication Data Managed Base Class</param>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Phychips.PhychipsCommand.SetIOOut(ADSDK.Device.ADRcp,System.Int32,System.Int32)">
+            <summary>
+            Set IOOut Status
+            </summary>
+            <param name="adr">Communication Data Managed Base Class</param>
+            <param name="type">type of IOOut</param>
+            <param name="delay">Reset delay, unit per second</param>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Phychips.PhychipsCommand.GetOutCard(ADSDK.Device.ADRcp)">
+            <summary>
+            Get Auto Output Card Parameters
+            </summary>
+            <param name="adr">Communication Data Managed Base Class</param>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Phychips.PhychipsCommand.SetOutCard(ADSDK.Device.ADRcp,ADSDK.Device.Reader.ROutcardParameters)">
+            <summary>
+            Set Auto Output Card Parameters
+            </summary>
+            <param name="adr">Communication Data Managed Base Class</param>
+            <param name="dt">Auto Output Card Parameters Struct</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Phychips.PhychipsCommand.RemoteIO(ADSDK.Device.ADRcp,System.Int32,System.Int32)">
+            <summary>
+            Remote IO
+            </summary>
+            <param name="adr">Communication Data Managed Base Class</param>
+            <param name="index">remote point 1-IO,2-BEEP</param>
+            <param name="status">remote status, 0-close,1-open</param>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Phychips.PhychipsCommand.SecretTag(ADSDK.Device.ADRcp)">
+            <summary>
+            Secret Tag.(the base paramaters must set KeyWord)
+            </summary>
+            <param name="adr">Communication Data Managed Base Class</param>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Phychips.PhychipsCommand.GetBaudrate(ADSDK.Device.ADRcp)">
+            <summary>
+            Get Uart Baudrate
+            </summary>
+            <param name="adr">Communication Data Managed Base Class</param>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Phychips.PhychipsCommand.SetBaudrate(ADSDK.Device.ADRcp,System.Int32,System.Int32)">
+            <summary>
+            Set Uart Baudrate (USB version prohibits modification.)
+            </summary>
+            <param name="adr">Communication Data Managed Base Class</param>
+            <param name="type">TYPE SEL,1-232,2-485</param>
+            <param name="baudrate">Baudrate,1-115200,2-57600,3-38400,4-9600,5-1200</param>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Phychips.PhychipsCommand.Identify6C(ADSDK.Device.ADRcp)">
+            <summary>
+            Identify card from ISO18000-6C(EPC) tag - 识别ISO18000-6C(EPC)标签卡号
+            </summary>
+            <param name="adr">Communication Data Managed Base Class</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Phychips.PhychipsCommand.Read6C(ADSDK.Device.ADRcp,System.Byte[],System.UInt16,System.Byte[],System.Byte,System.UInt16,System.UInt16)">
+            <summary>
+            Read data from ISO18000-6C(EPC) tag - 读取ISO18000-6C(EPC)标签数据
+            </summary>
+            <param name="adr">Communication Data Managed Base Class</param>
+            <param name="ap">AP (32-bit): Access Password if memory bank was password protected. Otherwise, set AP filed to 0x00000000. </param>
+            <param name="ul">UL (16-bit): Target tag’s EPC length</param>
+            <param name="epc">EPC (variable): Target tag’s EPC</param>
+            <param name="mb">MB (8-bit): Target memory bank; 0x00 RFU, 0x01 EPC, 0x02 TID, 0x03 User.</param>
+            <param name="sa">SA (16-bit): Starting Address word pointer.</param>
+            <param name="dl">DL (16-bit): Data Length (Word Count).</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Phychips.PhychipsCommand.Write6C(ADSDK.Device.ADRcp,System.Byte[],System.UInt16,System.Byte[],System.Byte,System.UInt16,System.UInt16,System.Byte[])">
+            <summary>
+            Write Data to ISO18000-6C(EPC) tag - 写入ISO18000-6C(EPC)标签数据
+            </summary>
+            <param name="adr">Communication Data Managed Base Class</param>
+            <param name="ap">AP (32-bit): Access Password if memory bank was password protected. Otherwise, set AP filed to 0x00000000. </param>
+            <param name="ul">UL (16-bit): Target tag’s EPC length</param>
+            <param name="epc">EPC (variable): Target tag’s EPC</param>
+            <param name="mb">MB (8-bit): Target memory bank; 0x00 RFU, 0x01 EPC, 0x02 TID, 0x03 User.</param>
+            <param name="sa">SA (16-bit): Starting Address word pointer.</param>
+            <param name="dl">DL (16-bit): Data Length (Word Count).</param>
+            <param name="dt">DT (variable): Data to write.</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Phychips.PhychipsCommand.Write6C(ADSDK.Device.ADRcp,System.Byte[],System.UInt16,System.Byte[],System.Byte,System.Byte[],System.UInt16,System.Byte[])">
+            <summary>
+            Write Data to ISO18000-6C(EPC) tag - 写入ISO18000-6C(EPC)标签数据
+            </summary>
+            <param name="adr">Communication Data Managed Base Class</param>
+            <param name="ap">AP (32-bit): Access Password if memory bank was password protected. Otherwise, set AP filed to 0x00000000. </param>
+            <param name="ul">UL (16-bit): Target tag’s EPC length</param>
+            <param name="epc">EPC (variable): Target tag’s EPC</param>
+            <param name="mb">MB (8-bit): Target memory bank; 0x00 RFU, 0x01 EPC, 0x02 TID, 0x03 User.</param>
+            <param name="sa">SA (16-bit): Starting Address word pointer.</param>
+            <param name="dl">DL (16-bit): Data Length (Word Count).</param>
+            <param name="dt">DT (variable): Data to write.</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Phychips.PhychipsCommand.StartAutoRead(ADSDK.Device.ADRcp,System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Start Auto Read
+            </summary>
+            <param name="adr">Communication Data Managed Base Class</param>
+            <param name="type">Reserve: type B tag (0x01), type C Tag (0x02)</param>
+            <param name="mtnu">MTNU: maximum number of tag to read</param>
+            <param name="mtime">MTIME: maximum elapsed time to tagging (sec) </param>
+            <param name="cycle">Repeat cycle (how many times reader perform inventory round)</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Phychips.PhychipsCommand.StopAutoRead(ADSDK.Device.ADRcp)">
+            <summary>
+            Stop Auto Read
+            </summary>
+            <param name="adr">Communication Data Managed Base Class</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Phychips.PhychipsCommand.BlockErase6C(ADSDK.Device.ADRcp,System.Byte[],System.UInt16,System.Byte[],System.Byte,System.UInt16,System.UInt16)">
+            <summary>
+            Block erases type C tag data.
+            </summary>
+            <param name="adr">Communication Data Managed Base Class</param>
+            <param name="ap">AP (32-bit): Access Password if memory bank was password protected. Otherwise, set AP filed to 0x00000000. </param>
+            <param name="ul">UL (16-bit): Target tag’s EPC length</param>
+            <param name="epc">EPC (variable): Target tag’s EPC</param>
+            <param name="mb">MB (8-bit): Target memory bank; 0x00 RFU, 0x01 EPC, 0x02 TID, 0x03 User.</param>
+            <param name="sa">SA (16-bit): Starting Address word pointer.</param>
+            <param name="dl">DL (16-bit): Data Length (Word Count).</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Phychips.PhychipsCommand.BlockWrite6C(ADSDK.Device.ADRcp,System.Byte[],System.UInt16,System.Byte[],System.Byte,System.UInt16,System.UInt16,System.Byte[])">
+            <summary>
+            Block write type C tag data.
+            </summary>
+            <param name="adr">Communication Data Managed Base Class</param>
+            <param name="ap">AP (32-bit): Access Password if memory bank was password protected. Otherwise, set AP filed to 0x00000000. </param>
+            <param name="ul">UL (16-bit): Target tag’s EPC length</param>
+            <param name="epc">EPC (variable): Target tag’s EPC</param>
+            <param name="mb">MB (8-bit): Target memory bank; 0x00 RFU, 0x01 EPC, 0x02 TID, 0x03 User.</param>
+            <param name="sa">SA (16-bit): Starting Address word pointer.</param>
+            <param name="dl">DL (16-bit): Data Length (Word Count).</param>
+            <param name="dt">DT (variable): Data to write.</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Phychips.PhychipsCommand.Lock6C(ADSDK.Device.ADRcp,System.Byte[],System.UInt16,System.Byte[],System.Byte[])">
+            <summary>
+            Lock an indicated memory bank in the tag.
+            </summary>
+            <param name="adr">Communication Data Managed Base Class</param>
+            <param name="ap">AP (32-bit): Access Password if memory bank was password protected. Otherwise, set AP filed to 0x00000000. </param>
+            <param name="ul">UL (16-bit): Target tag’s EPC length</param>
+            <param name="epc">EPC (variable): Target tag’s EPC</param>
+            <param name="ld">LD (24-bit): Lock mask and action flags. Pad 4-bit zeros (dummy) to the left of 20-bit lock mask and associated action flags.</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Phychips.PhychipsCommand.Kill6C(ADSDK.Device.ADRcp,System.Byte[],System.UInt16,System.Byte[],System.Byte)">
+            <summary>
+            Kill a Tag.
+            </summary>
+            <param name="adr">Communication Data Managed Base Class</param>
+            <param name="kp">KP (32-bit): Kill Password. If KP filed set to 0x00000000, ‘Kill Type C Tag’ command do not work. The target tag ignores it.</param>
+            <param name="ul">UL (16-bit): Target tag’s EPC length</param>
+            <param name="epc">EPC (variable): Target tag’s EPC</param>
+            <param name="recom">Recom (8-bit): Recommissioning bits</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Phychips.PhychipsCommand.GetFhLbt(ADSDK.Device.ADRcp)">
+            <summary>
+            Get FH and LBT Parameters
+            </summary>
+            <param name="adr">Communication Data Managed Base Class</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Phychips.PhychipsCommand.SetFhLbt(ADSDK.Device.ADRcp,System.UInt16,System.UInt16,System.UInt16,System.UInt16,System.Byte,System.Byte,System.Byte)">
+            <summary>
+            Set FH and LBT Parameters
+            </summary>
+            <param name="adr">Communication Data Managed Base Class</param>
+            <param name="rt">RT (16-bit): Read Time (1 = 1ms)</param>
+            <param name="it">IT (16-bit): Idle Time (1 = 1ms)</param>
+            <param name="cst">CST (16-bit): Carrier Sense Time (1 = 1ms)</param>
+            <param name="rfl">RFL (16-bit): Target RF power level (-dBm x 10) example:RFL -630 = 0xFD8A = -63.0 dBm</param>
+            <param name="rh">FH (8-bit): enable (0x01 or over) / disable (0x00)</param>
+            <param name="lbt">LBT (8-bit): enable (0x01 or over) / disable (0x00)</param>
+            <param name="cw">CW (8-bit): enable (0x01) / disable (0x00)</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Phychips.PhychipsCommand.GetRegion(ADSDK.Device.ADRcp)">
+            <summary>
+            Get the current region. this uses individual channel table that depends on region. List of region code follows below.
+            </summary>
+            <param name="adr">Communication Data Managed Base Class</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Phychips.PhychipsCommand.SetRegion(ADSDK.Device.ADRcp,System.Byte)">
+            <summary>
+            Set the current region. this uses individual channel table that depends on region. List of region code follows below.
+            </summary>
+            <param name="adr">Communication Data Managed Base Class</param>
+            <param name="type">
+            <para>- Korea (0x11)</para>
+            <para>- US(0x21)</para>
+            <para>- US2(0x22)</para>
+            <para>- Europe(0x31)</para>
+            <para>- Japan(0x41)</para>
+            <para>- China1(0x51)</para>
+            <para>- China2(0x52)</para>
+            </param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Phychips.PhychipsCommand.GetChannel(ADSDK.Device.ADRcp)">
+            <summary>
+            Get the current region. this uses individual channel table that depends on region. List of region code follows below.
+            </summary>
+            <param name="adr">Communication Data Managed Base Class</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Phychips.PhychipsCommand.SetChannel(ADSDK.Device.ADRcp,System.Byte,System.Byte)">
+            <summary>
+            Set the current region. this uses individual channel table that depends on region. List of region code follows below.
+            </summary>
+            <param name="adr">Communication Data Managed Base Class</param>
+            <param name="cn">CN (8-bit): Channel Number. The range of channel number depends on regional settings
+            <para>- Korea   (value 1~32)-(area 917.1~923.3,     step 0.2)</para>
+            <para>- US      (value 1~50)-(area 902.75~927.25,   step 0.5)</para>
+            <para>- US2     (value 1~50)-(area 917.10~926.9,    step 0.2)</para>
+            <para>- Europe  (value 1~15)-(area 865.1~867.9,     step 0.2)</para>
+            <para>- Japan   (value 1~38)-(area 916.0~923.4,     step 0.2)</para>
+            <para>- China1  (value 0~19)-(area 840.125~844.875, step 0.25)</para>
+            <para>- China2  (value 0~19)-(area 920.125~924.875, step 0.25)</para>
+            </param>
+            <param name="cno">CNO (8-bit): Channel number offset for miller subcarrier.default =0</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Phychips.PhychipsCommand.GetFrequencyTable(ADSDK.Device.ADRcp)">
+            <summary>
+            Get current frequency hopping table.
+            </summary>
+            <param name="adr">Communication Data Managed Base Class</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Phychips.PhychipsCommand.SetFrequencyTable(ADSDK.Device.ADRcp,System.UInt16,System.Byte[])">
+            <summary>
+            Set current frequency hopping table.
+            </summary>
+            <param name="adr">Communication Data Managed Base Class</param>
+            <param name="ts">Table Size (8-bit)</param>
+            <param name="cn">Channel Numbers (variable)</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Phychips.PhychipsCommand.GetTxPower(ADSDK.Device.ADRcp)">
+            <summary>
+            Get current Tx power level.
+            </summary>
+            <param name="adr">Communication Data Managed Base Class</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Phychips.PhychipsCommand.SetTxPower(ADSDK.Device.ADRcp,System.UInt16)">
+            <summary>
+            Set current Tx power level.
+            </summary>
+            <param name="adr">Communication Data Managed Base Class</param>
+            <param name="pwr">PWR (16-bit): Tx Power(dBm x 10) Example) PWR = 200 (20.0 dBm)</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Phychips.PhychipsCommand.GetTemperature(ADSDK.Device.ADRcp)">
+            <summary>
+            Get DeviceTemperature.
+            </summary>
+            <param name="adr">Communication Data Managed Base Class</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Phychips.PhychipsCommand.GetRssi(ADSDK.Device.ADRcp)">
+            <summary>
+            Get Rssi.
+            </summary>
+            <param name="adr">Communication Data Managed Base Class</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Phychips.PhychipsCommand.ResetSystem(ADSDK.Device.ADRcp)">
+            <summary>
+            Reset System.
+            </summary>
+            <param name="adr">Communication Data Managed Base Class</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Phychips.PhychipsCommand.UpdateRegistry(ADSDK.Device.ADRcp)">
+            <summary>
+            Sets Registry Update function.
+            </summary>
+            <param name="adr">Communication Data Managed Base Class</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Phychips.PhychipsCommand.EraseRegistry(ADSDK.Device.ADRcp)">
+            <summary>
+            Sets Registry Erase function
+            </summary>
+            <param name="adr">Communication Data Managed Base Class</param>
+            <returns></returns>
+        </member>
+        <member name="T:ADSDK.Device.Reader.Phychips.PhychipsRcp">
+            <summary>
+            
+            </summary>
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Phychips.PhychipsRcp.INDEX_PREAMBLE">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Phychips.PhychipsRcp.INDEX_ADDRESS">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Phychips.PhychipsRcp.INDEX_CODE">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Phychips.PhychipsRcp.INDEX_TYPE">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Phychips.PhychipsRcp.INDEX_LENGTH">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Phychips.PhychipsRcp.INDEX_PAYLOAD">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Phychips.PhychipsRcp.LEN_ENDMARK">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Phychips.PhychipsRcp.LEN_CHECKSUM">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Phychips.PhychipsRcp.LEN_PROTOCOL_MIN">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:ADSDK.Device.Reader.Phychips.PhychipsRcp.InfoType">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Phychips.PhychipsRcp.InfoType.RDR_MODEL">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Phychips.PhychipsRcp.InfoType.RDR_SN">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Phychips.PhychipsRcp.InfoType.RDR_MANFACT">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Phychips.PhychipsRcp.InfoType.RDR_FREQ">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Phychips.PhychipsRcp.InfoType.RDR_TAG_TYPE">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Phychips.PhychipsRcp.InfoType.RDR_FW_TIME">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Phychips.PhychipsRcp.InfoType.RDR_CHIP_VER">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Phychips.PhychipsRcp.PREAMBLE">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Phychips.PhychipsRcp.PREAMBLE_UP">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Phychips.PhychipsRcp.ENDMARK">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Phychips.PhychipsRcp.HEADER_CMD">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Phychips.PhychipsRcp.RCP_MSG_CMD">
+            <summary>
+            Command Type
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Phychips.PhychipsRcp.RCP_MSG_RSP">
+            <summary>
+            Response Type
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Phychips.PhychipsRcp.RCP_MSG_NOTI">
+            <summary>
+            Notification Type
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Phychips.PhychipsRcp.RCP_MSG_TEST">
+            <summary>
+            Test Type
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Phychips.PhychipsRcp.RCP_MSG_CAP">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Phychips.PhychipsRcp.RCP_MSG_AUTO">
+            <summary>
+             Auto Send
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Phychips.PhychipsRcp.RCP_MSG_SET">
+            <summary>
+            Set Type
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Phychips.PhychipsRcp.RCP_MSG_GET">
+            <summary>
+            Get Type
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Phychips.PhychipsRcp.RCP_CMD_INVALID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Phychips.PhychipsRcp.RCP_CMD_CTL_RD_PWR">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Phychips.PhychipsRcp.RCP_CMD_CTL_RD_CON">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Phychips.PhychipsRcp.RCP_CMD_GET_RD_INF">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Phychips.PhychipsRcp.RCP_CMD_GET_SIG_ST">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Phychips.PhychipsRcp.RCP_CMD_SET_SIG_ST">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Phychips.PhychipsRcp.RCP_CMD_GET_REGION">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Phychips.PhychipsRcp.RCP_CMD_SET_REGION">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Phychips.PhychipsRcp.RCP_CMD_CTL_RESET">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Phychips.PhychipsRcp.RCP_CMD_GET_CH">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Phychips.PhychipsRcp.RCP_CMD_SET_CH">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Phychips.PhychipsRcp.RCP_CMD_GET_FH_LBT">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Phychips.PhychipsRcp.RCP_CMD_SET_FH_LBT">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Phychips.PhychipsRcp.RCP_CMD_GET_TX_PWR">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Phychips.PhychipsRcp.RCP_CMD_SET_TX_PWR">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Phychips.PhychipsRcp.RCP_CMD_SET_CW">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Phychips.PhychipsRcp.RCP_CMD_GET_C_SEL_PARM">
+            <summary>
+            Get Type C A/I Select Parameters
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Phychips.PhychipsRcp.RCP_CMD_SET_C_SEL_PARM">
+            <summary>
+            Set Type C A/I Select Parameters
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Phychips.PhychipsRcp.RCP_CMD_GET_C_QRY_PARM">
+            <summary>
+            Get Type C A/I Query Related Parameters
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Phychips.PhychipsRcp.RCP_CMD_SET_C_QRY_PARM">
+            <summary>
+            Set Type C A/I Query Related Parameters
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Phychips.PhychipsRcp.RCP_CMD_GET_AT_RD_PARM">
+            <summary>
+            Get Automatic Read Parameters
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Phychips.PhychipsRcp.RCP_CMD_SET_AT_RD_PARM">
+            <summary>
+            Set Automatic Read Parameters
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Phychips.PhychipsRcp.RCP_CMD_SET_INV_MODE">
+            <summary>
+            Set Inventory Mode
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Phychips.PhychipsRcp.RCP_CMD_VENDOR_SPECIFIC_02">
+            <summary>
+            Set Table
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Phychips.PhychipsRcp.RCP_CMD_VENDOR_SPECIFIC_03">
+            <summary>
+            Get Table
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Phychips.PhychipsRcp.RCP_CMD_VENDOR_SPECIFIC_04">
+            <summary>
+            Set Inventory Mode
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Phychips.PhychipsRcp.RCP_CMD_VENDOR_SPECIFIC_05">
+            <summary>
+            Set Inventory Mode
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Phychips.PhychipsRcp.RCP_CMD_READ_C_UII">
+            <summary>
+            // Read Type C UII  0x22
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Phychips.PhychipsRcp.RCP_CMD_READ_C_USR_DT">
+            <summary>
+            Read Type C User Data 0x24
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Phychips.PhychipsRcp.RCP_CMD_READ_C_ENTIRE">
+            <summary>
+            Read Entire Type C Tag 0x26
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Phychips.PhychipsRcp.RCP_CMD_STRT_AUTO_READ">
+            <summary>
+            Start Automatic Read 0x27
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Phychips.PhychipsRcp.RCP_CMD_STOP_AUTO_READ">
+            <summary>
+            Stop Automatic Read  0x27
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Phychips.PhychipsRcp.RCP_CMD_READ_C_DT">
+            <summary>
+            Read Type C Data    0x29
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Phychips.PhychipsRcp.RCP_CMD_GET_HOPPING_TBL">
+            <summary>
+            Get Hopping table
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Phychips.PhychipsRcp.RCP_CMD_SET_HOPPING_TBL">
+            <summary>
+            Set Hopping table
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Phychips.PhychipsRcp.RCP_CMD_GET_MODULATION">
+            <summary>
+            Get Hopping table
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Phychips.PhychipsRcp.RCP_CMD_SET_MODULATION">
+            <summary>
+            Set Hopping table
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Phychips.PhychipsRcp.RCP_CMD_GET_ANTICOL_MODE">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Phychips.PhychipsRcp.RCP_CMD_SET_ANTICOL_MODE">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Phychips.PhychipsRcp.RCP_CMD_STRT_AUTO_READ_EX">
+            <summary>
+            Start Automatic Read 0x36
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Phychips.PhychipsRcp.RCP_CMD_STOP_AUTO_READ_EX">
+            <summary>
+            Stop Automatic Read  0x37
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Phychips.PhychipsRcp.RCP_CMD_WRIT_C_DT">
+            <summary>
+            Write Type C User Data  0x46
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Phychips.PhychipsRcp.RCP_CMD_BLOCKWRITE_C_DT">
+            <summary>
+            BlockWrite Type C User Data 0x47
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Phychips.PhychipsRcp.RCP_CMD_BLOCKERASE_C_DT">
+            <summary>
+            BlockErase Type C User Data 0x48
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Phychips.PhychipsRcp.RCP_CMD_NXP_READPROTECT">
+            <summary>
+            NXP READPROTECT
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Phychips.PhychipsRcp.RCP_CMD_NXP_RESET_READPROTECT">
+            <summary>
+            NXP_RESET_READPROTECT
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Phychips.PhychipsRcp.RCP_CMD_NXP_CHANGE_EAS">
+            <summary>
+            NXP_CHANGE_EA
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Phychips.PhychipsRcp.RCP_CMD_NXP_EAS_ALARM">
+            <summary>
+            NXP_EAS_ALARM
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Phychips.PhychipsRcp.RCP_CMD_NXP_CALIBRATE">
+            <summary>
+            NXP_CALIBRATE
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Phychips.PhychipsRcp.RCP_CMD_KILL_RECOM_C">
+            <summary>
+            Kill Type C Tag
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Phychips.PhychipsRcp.RCP_CMD_LOCK_C">
+            <summary>
+            Lock Type C Tag
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Phychips.PhychipsRcp.RCP_CMD_PERMALOCK_C">
+            <summary>
+            Block Permalock
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Phychips.PhychipsRcp.RCP_CMD_SET_DOWNLOAD">
+            <summary>
+            Set Download Mode
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Phychips.PhychipsRcp.RCP_CMD_SET_DUMP">
+            <summary>
+            Set Dump Mode
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Phychips.PhychipsRcp.RCP_CMD_SET_MODEM92_REG">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Phychips.PhychipsRcp.RCP_CMD_GET_MODEM92_REG">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Phychips.PhychipsRcp.RCP_CMD_GET_LAST_RST">
+            <summary>
+            Get Last Result
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Phychips.PhychipsRcp.RCP_CMD_STRT_TEST_MOD">
+            <summary>
+            Start Test Mode
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Phychips.PhychipsRcp.RCP_CMD_STOP_TEST_MOD">
+            <summary>
+            Stop Test Mode
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Phychips.PhychipsRcp.RCP_CMD_STRT_RX_TEST">
+            <summary>
+            Start Receive Test
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Phychips.PhychipsRcp.RCP_CMD_STOP_RX_TEST">
+            <summary>
+            Stop Receive Test
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Phychips.PhychipsRcp.RCP_CMD_SET_MODEM_REG">
+            <summary>
+            Set Modem Register
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Phychips.PhychipsRcp.RCP_CMD_SET_RF_REG">
+            <summary>
+            Set RF Register
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Phychips.PhychipsRcp.RCP_CMD_GET_MODEM_REG">
+            <summary>
+            Get Modem Register
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Phychips.PhychipsRcp.RCP_CMD_GET_RF_REG">
+            <summary>
+            Get RF Register
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Phychips.PhychipsRcp.RCP_CMD_SET_ANT_PATH">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Phychips.PhychipsRcp.RCP_GET_TEMPERATURE">
+            <summary>
+            Get Chip Temperature
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Phychips.PhychipsRcp.RCP_CMD_SET_TX_OFFSET">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Phychips.PhychipsRcp.RCP_CMD_SET_MOD_DEPTH">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Phychips.PhychipsRcp.RCP_CMD_SET_MODULE_TABLE">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Phychips.PhychipsRcp.RCP_CMD_SET_DELI">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Phychips.PhychipsRcp.RCP_CMD_SET_MOD_BLF">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Phychips.PhychipsRcp.RCP_CMD_GET_RX_GAIN">
+            <summary>
+            Get Rx Gain
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Phychips.PhychipsRcp.RCP_CMD_SET_RX_GAIN">
+            <summary>
+            Set Rx Gain
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Phychips.PhychipsRcp.RCP_CMD_GET_RSSI">
+            <summary>
+            Get RSSI
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Phychips.PhychipsRcp.RCP_CMD_SCAN_RSSI">
+            <summary>
+            Scan RSSI
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Phychips.PhychipsRcp.RCP_SET_INT_PARAM">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Phychips.PhychipsRcp.RCP_UPDATE_FLASH">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Phychips.PhychipsRcp.RCP_ERASE_FLASH">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Phychips.PhychipsRcp.RCP_GET_REGISTRY_ITEM">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Phychips.PhychipsRcp.RCP_SET_REGISTRY_ITEM">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Phychips.PhychipsRcp.RCP_GET_MSG_BUF_CNT">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Phychips.PhychipsRcp.RCP_SET_LT">
+            <summary>
+            
+            </summary>       		
+        </member>
+        <member name="F:ADSDK.Device.Reader.Phychips.PhychipsRcp.RCP_CMD_MODEM_SINGLEREAD">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Phychips.PhychipsRcp.RCP_CMD_NACK">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Phychips.PhychipsRcp.RCP_TEST_MODEM_RX">
+            <summary>
+            Test Modem Rx
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Phychips.PhychipsRcp.RCP_TEST_SEL_REP">
+            <summary>
+            Test Modem Select Repeat Start
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Phychips.PhychipsRcp.RCP_TEST_MODEM_SEL_REP_E">
+            <summary>
+            Test Modem Select Repeat End
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Phychips.PhychipsRcp.RCP_TEST_QRY_REP">
+            <summary>
+            Test Select Query Repeat
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Phychips.PhychipsRcp.RCP_TEST_QRYREP_REP">
+            <summary>
+            Test Select QueryReq Repeat
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Phychips.PhychipsRcp.RCP_TEST_EPC_SEL">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Phychips.PhychipsRcp.RCP_TEST_EPC_SELQRY">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Phychips.PhychipsRcp.RCP_TEST_EPC_QRYACK">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Phychips.PhychipsRcp.RCP_TEST_EPC_QRYQRYREP">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Phychips.PhychipsRcp.RCP_TEST_PKT_CAPTURE">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Phychips.PhychipsRcp.RCP_TEST_PKT_CAP_ACK">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Phychips.PhychipsRcp.RCP_TEST_PKT_CAP_UII">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Phychips.PhychipsRcp.RCP_CMD_SECRET">
+            <summary>
+            Secret tag Hex:0x30
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Phychips.PhychipsRcp.RCP_CMD_INFO">
+            <summary>
+            Base Information
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Phychips.PhychipsRcp.RCP_CMD_AD_REMOTE">
+            <summary>
+            Remote IO
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Phychips.PhychipsRcp.RCP_CMD_AD_CUSTOM">
+            <summary>
+            Base Paramters
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Phychips.PhychipsRcp.RCP_CMD_AD_ADDR">
+            <summary>
+            Device Address
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Phychips.PhychipsRcp.RCP_CMD_AD_OUTCARD">
+            <summary>
+            Auto Out Data Paramters
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Phychips.PhychipsRcp.RCP_CMD_AD_IOOUT">
+            <summary>
+            IO Out Mode Paramters
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Phychips.PhychipsRcp.RCP_CMD_AD_DATA">
+            <summary>
+            Limit Data Parameters
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Phychips.PhychipsRcp.RCP_CMD_AD_UART">
+            <summary>
+            Change 232 and 485 Buadrate
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Phychips.PhychipsRcp.RCP_CMD_WIFI_DOWNLOAD">
+            <summary>
+            Enable Wifi Model Parameters Download 
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Phychips.PhychipsRcp.RCP_CMD_WIFI_PUB">
+            <summary>
+            Wifi Model Public Parameters
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Phychips.PhychipsRcp.RCP_CMD_WIFI_STA">
+            <summary>
+            Wifi Model Sta Parameters
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Phychips.PhychipsRcp.RCP_CMD_WIFI_AP">
+            <summary>
+            Wifi Model AP Parameters
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Phychips.PhychipsRcp.RCP_CMD_SET_LED">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Phychips.PhychipsRcp.GetErrorCodeString(System.Int32,System.Byte)">
+            <summary>
+            Get Error Code 获取错误代码释义
+            </summary>
+            <param name="language">Language(语言选择)</param>
+            <param name="code">error code(错误代码)</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Phychips.PhychipsRcp.GetCodeString(System.Int32,System.Byte)">
+            <summary>
+            Get Code 获取代码释义
+            </summary>
+            <param name="language">Language(语言选择)</param>
+            <param name="code">code(错代码)</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Phychips.PhychipsRcp.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Phychips.PhychipsRcp.#ctor(ADSDK.Device.ADSio)">
+            <summary>
+            
+            </summary>
+            <param name="sio"></param>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Phychips.PhychipsRcp.BuildCmdPacketByte(System.Int32,System.Byte,System.Byte,System.Byte[])">
+            <summary>
+            
+            </summary>
+            <param name="nAddr"></param>
+            <param name="nType"></param>
+            <param name="nCmd"></param>
+            <param name="ArgByte"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Phychips.PhychipsRcp.DealPacketByte(ADSDK.Device.ByteEventArg)">
+            <summary>
+            
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="T:ADSDK.Device.Reader.Phychips.RDataManage">
+            <summary>
+            Active sending data management
+            </summary>
+        </member>
+        <member name="E:ADSDK.Device.Reader.Phychips.RDataManage.CommandReceived">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ADSDK.Device.Reader.Phychips.RDataManage.mBuffer">
+            <summary>
+            Data processing cache 
+            </summary>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Phychips.RDataManage.InputReceived(System.Collections.Generic.List{System.Byte}@)">
+            <summary>
+            Receiving Data
+            </summary>
+            <param name="iData">Input Data Buffer</param>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Phychips.RDataManage.InputManage(System.Collections.Generic.List{System.Byte}@)">
+            <summary>
+            Data Manage Process
+            </summary>
+            <param name="iData">Input Data Buffer</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Phychips.RDataManage.InputManage(System.Collections.Generic.List{System.Byte}@,System.Collections.Generic.List{ADSDK.Device.Reader.CommandParameters}@)">
+            <summary>
+            Data Manage Process
+            </summary>
+            <param name="iData">Input Data Buffer</param>
+            <param name="oCmdInfo"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Phychips.RDataManage.InputManage(System.Collections.Generic.List{System.Byte}@,System.Collections.Generic.List{ADSDK.Device.Reader.CardParameters}@)">
+            <summary>
+            
+            </summary>
+            <param name="iData"></param>
+            <param name="oCardInfo"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.Reader.Phychips.RDataManage.InputManage(ADSDK.Device.Reader.CommandParameters,System.Collections.Generic.List{ADSDK.Device.Reader.CardParameters}@)">
+            <summary>
+            
+            </summary>
+            <param name="iCmdInfo"></param>
+            <param name="oCardInfo"></param>
+            <returns></returns>
+        </member>
+        <member name="T:ADSDK.Device.Reader.ARadioParameters">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ADSDK.Device.Reader.ARadioParameters.IDLength">
+            <summary>
+            <para>1.卡号长度</para>
+            <para>2.限定识别字符长度,(默认值为4,接收的卡号不能等于ID,当值为2时候,ID后两位不能相同,前两位必须相同)</para>
+            </summary>
+        </member>
+        <member name="P:ADSDK.Device.Reader.ARadioParameters.ID">
+            <summary>
+            <para>1.卡号</para>
+            <para>2.本机ID</para>
+            </summary>
+        </member>
+        <member name="P:ADSDK.Device.Reader.ARadioParameters.WorkMode">
+            <summary>
+            <para>工作模式, 0发送模式, 1 接受模式, 2 发送查询模式</para>
+            </summary>
+        </member>
+        <member name="P:ADSDK.Device.Reader.ARadioParameters.HopEnable">
+            <summary>
+            跳频使能值,(暂无此功能,默认值0)
+            </summary>
+        </member>
+        <member name="P:ADSDK.Device.Reader.ARadioParameters.HopValue">
+            <summary>
+            跳频值, 默认使用第一个频率值,默认值115
+            </summary>
+        </member>
+        <member name="P:ADSDK.Device.Reader.ARadioParameters.Rate">
+            <summary>
+            传输速率, 0x00-250K  0x01-1M  0x02-2M
+            </summary>
+        </member>
+        <member name="P:ADSDK.Device.Reader.ARadioParameters.Power">
+            <summary>
+            功率大小, 0-(-18dB), 1-(-12dB), 2-(-6dB), 3-(0dB)  
+            </summary>
+        </member>
+        <member name="P:ADSDK.Device.Reader.ARadioParameters.ReadFre">
+            <summary>
+            读卡间隔频率,
+            </summary>
+        </member>
+        <member name="P:ADSDK.Device.Reader.ARadioParameters.Alarm">
+            <summary>
+            报警电压, 0-(non), 1-(2.1V), 2-(2.3V), 3-(2.5V), 4-(2.7V)  
+            </summary>
+        </member>
+        <member name="P:ADSDK.Device.Reader.ARadioParameters.Password">
+            <summary>
+            用户自行加密密码 4字节
+            </summary>
+        </member>
+        <member name="P:ADSDK.Device.Reader.ARadioParameters.ShockBurst">
+            <summary>
+            ShockBurst 使能
+            </summary>
+        </member>
+        <member name="P:ADSDK.Device.Reader.ARadioParameters.Rev">
+            <summary>
+            保留字段 2字节 (暂不能设置) 默认值 0x0000
+            </summary>
+        </member>
+        <member name="P:ADSDK.Device.Reader.ARadioParameters.RemoteID">
+            <summary>
+            主机ID
+            </summary>
+        </member>
+        <member name="P:ADSDK.Device.Reader.ARadioParameters.OutputType">
+            <summary>
+            数据输出类型, 0-ID, 1-USER, 2-ID+USER
+            </summary>
+        </member>
+        <member name="P:ADSDK.Device.Reader.ARadioParameters.UserStart">
+            <summary>
+            数据起始位置, 0~63
+            </summary>
+        </member>
+        <member name="P:ADSDK.Device.Reader.ARadioParameters.UserLength">
+            <summary>
+            数据输出长度, 1~24
+            </summary>
+        </member>
+        <member name="M:ADSDK.Device.Reader.ARadioParameters.ToArray">
+            <summary>
+            将 ADSDK.RFID.BasicParametersPnfo 的元素复制到新数组中。
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.Reader.ARadioParameters.AddRange(System.Byte[])">
+            <summary>
+            将指定集合的元素赋值到 ADSDK.RFID.BasicParametersPnfo。
+            </summary>
+            <param name="data">一个集合，其元素应被添加到 ADSDK.RFID.BasicParametersPnfo。集合自身不能为 null</param>
+        </member>
+        <member name="M:ADSDK.Device.Reader.ARadioParameters.ToString">
+            <summary> 
+            重载ToString()方法,返回session对象的特征 
+            </summary> 
+            <returns></returns> 
+        </member>
+        <member name="M:ADSDK.Device.Reader.ARadioParameters.#ctor">
+            <summary>
+            Constructed function
+            </summary>
+        </member>
+        <member name="M:ADSDK.Device.Reader.ARadioParameters.Clone">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:ADSDK.Device.Reader.PBasicParameters">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ADSDK.Device.Reader.PBasicParameters.PowerSize">
+            <summary>
+            功率大小,可调节读卡器距离
+            </summary>
+        </member>
+        <member name="P:ADSDK.Device.Reader.PBasicParameters.HoppingEnable">
+            <summary>
+            跳频使能
+            </summary>
+        </member>
+        <member name="P:ADSDK.Device.Reader.PBasicParameters.FixedFreq">
+            <summary>
+            定频值
+            </summary>
+        </member>
+        <member name="P:ADSDK.Device.Reader.PBasicParameters.Hopping1">
+            <summary>
+            跳频值1
+            </summary>
+        </member>
+        <member name="P:ADSDK.Device.Reader.PBasicParameters.Hopping2">
+            <summary>
+            跳频值2
+            </summary>
+        </member>
+        <member name="P:ADSDK.Device.Reader.PBasicParameters.Hopping3">
+            <summary>
+            跳频值3
+            </summary>
+        </member>
+        <member name="P:ADSDK.Device.Reader.PBasicParameters.Hopping4">
+            <summary>
+            跳频值4
+            </summary>
+        </member>
+        <member name="P:ADSDK.Device.Reader.PBasicParameters.Hopping5">
+            <summary>
+            跳频值5
+            </summary>
+        </member>
+        <member name="P:ADSDK.Device.Reader.PBasicParameters.Hopping6">
+            <summary>
+            跳频值6
+            </summary>
+        </member>
+        <member name="P:ADSDK.Device.Reader.PBasicParameters.WorkMode">
+            <summary>
+            工作模式,1-应答,2-主动,3-被动
+            </summary>
+        </member>
+        <member name="P:ADSDK.Device.Reader.PBasicParameters.ReadInterval">
+            <summary>
+            读卡周期ms,5~255
+            </summary>
+        </member>
+        <member name="P:ADSDK.Device.Reader.PBasicParameters.Trigger">
+            <summary>
+            触发模式,0-关闭,2-低电平触发
+            </summary>
+        </member>
+        <member name="P:ADSDK.Device.Reader.PBasicParameters.OutputMode">
+            <summary>
+            输出类型,1-232,2-485,3-TCPIP,4-CANBUS,5-SYRIS,6-WG26,7-WG34
+            </summary>
+        </member>
+        <member name="P:ADSDK.Device.Reader.PBasicParameters.ByteOffset">
+            <summary>
+            数据偏移(韦根参数)
+            </summary>
+        </member>
+        <member name="P:ADSDK.Device.Reader.PBasicParameters.OutInterval">
+            <summary>
+            输出周期(韦根参数)
+            </summary>
+        </member>
+        <member name="P:ADSDK.Device.Reader.PBasicParameters.PulseWidth">
+            <summary>
+            脉冲宽度(韦根参数)
+            </summary>
+        </member>
+        <member name="P:ADSDK.Device.Reader.PBasicParameters.PulsePeriod">
+            <summary>
+            脉冲周期(韦根参数)
+            </summary>
+        </member>
+        <member name="P:ADSDK.Device.Reader.PBasicParameters.Antenna">
+            <summary>
+            天线
+            </summary>
+        </member>
+        <member name="P:ADSDK.Device.Reader.PBasicParameters.CardType">
+            <summary>
+            读卡类别,1-[6B单卡],16-[6C单卡],17-[6B+6C],32-[6C多卡],64-[6C+其他区域]
+            </summary>
+        </member>
+        <member name="P:ADSDK.Device.Reader.PBasicParameters.SameIDinterval">
+            <summary>
+            相同ID输出间隔
+            </summary>
+        </member>
+        <member name="P:ADSDK.Device.Reader.PBasicParameters.Buzzer">
+            <summary>
+            嗡鸣器使能
+            </summary>
+        </member>
+        <member name="P:ADSDK.Device.Reader.PBasicParameters.Area">
+            <summary>
+            其他区域选择
+            </summary>
+        </member>
+        <member name="P:ADSDK.Device.Reader.PBasicParameters.StartWord">
+            <summary>
+            其他区域起始位置
+            </summary>
+        </member>
+        <member name="P:ADSDK.Device.Reader.PBasicParameters.Length">
+            <summary>
+            其他区域数据长度
+            </summary>
+        </member>
+        <member name="P:ADSDK.Device.Reader.PBasicParameters.Encrypt">
+            <summary>
+            加密使能
+            </summary>
+        </member>
+        <member name="P:ADSDK.Device.Reader.PBasicParameters.Password">
+            <summary>
+            加密密码
+            </summary>
+        </member>
+        <member name="P:ADSDK.Device.Reader.PBasicParameters.MaxTag">
+            <summary>
+            多卡最大值
+            </summary>
+        </member>
+        <member name="M:ADSDK.Device.Reader.PBasicParameters.ToArray">
+            <summary>
+            将 ADSDK.RFID.BasicParametersPnfo 的元素复制到新数组中。
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.Reader.PBasicParameters.AddRange(System.Byte[])">
+            <summary>
+            将指定集合的元素赋值到 ADSDK.RFID.BasicParametersPnfo。
+            </summary>
+            <param name="data">一个集合，其元素应被添加到 ADSDK.RFID.BasicParametersPnfo。集合自身不能为 null</param>
+        </member>
+        <member name="M:ADSDK.Device.Reader.PBasicParameters.ToString">
+            <summary> 
+            重载ToString()方法,返回session对象的特征 
+            </summary> 
+            <returns></returns> 
+        </member>
+        <member name="M:ADSDK.Device.Reader.PBasicParameters.#ctor">
+            <summary>
+            Constructed function
+            </summary>
+        </member>
+        <member name="M:ADSDK.Device.Reader.PBasicParameters.Clone">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:ADSDK.Device.Reader.CardParameters">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ADSDK.Device.Reader.CardParameters.ID">
+            <summary>
+            Return Communication Name
+            </summary>
+        </member>
+        <member name="P:ADSDK.Device.Reader.CardParameters.Name">
+            <summary>
+            Return Communication Name
+            </summary>
+        </member>
+        <member name="P:ADSDK.Device.Reader.CardParameters.DateTime">
+            <summary>
+            Return Communication DateTime
+            </summary>
+        </member>
+        <member name="P:ADSDK.Device.Reader.CardParameters.Antenna">
+            <summary>
+            接收卡号天线位置
+            </summary>
+        </member>
+        <member name="P:ADSDK.Device.Reader.CardParameters.Address">
+            <summary>
+            Access Address
+            </summary>
+        </member>
+        <member name="P:ADSDK.Device.Reader.CardParameters.Type">
+            <summary>
+            Card Type
+            </summary>
+        </member>
+        <member name="P:ADSDK.Device.Reader.CardParameters.Alarm">
+            <summary>
+            Card Type
+            </summary>
+        </member>
+        <member name="P:ADSDK.Device.Reader.CardParameters.Count">
+            <summary>
+            卡号数量
+            </summary>
+        </member>
+        <member name="P:ADSDK.Device.Reader.CardParameters.Length">
+            <summary>
+            卡号长度
+            </summary>
+        </member>
+        <member name="P:ADSDK.Device.Reader.CardParameters.DataBytes">
+            <summary>
+            16进制卡号数据
+            </summary>
+        </member>
+        <member name="P:ADSDK.Device.Reader.CardParameters.DataString">
+            <summary>
+            ASCII显示16进制卡号数据
+            </summary>
+        </member>
+        <member name="M:ADSDK.Device.Reader.CardParameters.ToString">
+            <summary> 
+            重载ToString()方法,返回session对象的特征 
+            </summary> 
+            <returns></returns> 
+        </member>
+        <member name="M:ADSDK.Device.Reader.CardParameters.#ctor">
+            <summary>
+            Constructed function
+            </summary>
+        </member>
+        <member name="M:ADSDK.Device.Reader.CardParameters.#ctor(System.String)">
+            <summary>
+            Constructed function
+            </summary>
+            <param name="name">Communication Name [Explain:Socket Mode :IP Address(Example:"192.168.1.1")SerialPort Mode :Port Num(Example:"COM2")]</param>
+        </member>
+        <member name="M:ADSDK.Device.Reader.CardParameters.Clone">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:ADSDK.Device.Reader.CardReceivedEventArgs">
+            <summary>
+            为 ADSDK.RFID.CardReceived 事件提供数据。无法继承此类。
+            </summary>
+        </member>
+        <member name="P:ADSDK.Device.Reader.CardReceivedEventArgs.IsArray">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ADSDK.Device.Reader.CardReceivedEventArgs.Card">
+            <summary>
+            获取或设置新值。
+            </summary>
+        </member>
+        <member name="P:ADSDK.Device.Reader.CardReceivedEventArgs.Cards">
+            <summary>
+            获取或设置新值。
+            </summary>
+        </member>
+        <member name="M:ADSDK.Device.Reader.CardReceivedEventArgs.#ctor(ADSDK.Device.Reader.CardParameters)">
+            <summary>
+            初始化 ADSDK.RFID.CardReceivedEventArgs 类的新实例。
+            </summary>
+            <param name="value">新值</param>
+        </member>
+        <member name="M:ADSDK.Device.Reader.CardReceivedEventArgs.#ctor(System.Collections.Generic.List{ADSDK.Device.Reader.CardParameters})">
+            <summary>
+            初始化 ADSDK.RFID.CardReceivedEventArgs 类的新实例。
+            </summary>
+            <param name="value">新值</param>
+        </member>
+        <member name="T:ADSDK.Device.Reader.CardReceivedEventHandler">
+            <summary>
+            表示将处理 ADSDK.Device.Reader.CardReceived 事件的方法。
+            </summary>
+            <param name="sender">事件源</param>
+            <param name="e"> 包含事件数据的 ADSDK.Device.Reader.CardReceivedEventArgs。</param>
+        </member>
+        <member name="T:ADSDK.Device.Reader.CardsReceivedEventHandler">
+            <summary>
+            表示将处理 ADSDK.Device.Reader.CardsReceived 事件的方法。
+            </summary>
+            <param name="sender">事件源</param>
+            <param name="e"> 包含事件数据的 ADSDK.Device.Reader.CardReceivedEventArgs。</param>
+        </member>
+        <member name="T:ADSDK.Device.Reader.CommandParameters">
+            <summary>
+            Communication Information
+            </summary>
+        </member>
+        <member name="P:ADSDK.Device.Reader.CommandParameters.Name">
+            <summary>
+            Return Communication Name
+            </summary>
+        </member>
+        <member name="P:ADSDK.Device.Reader.CommandParameters.Address">
+            <summary>
+            Access Address
+            </summary>
+        </member>
+        <member name="P:ADSDK.Device.Reader.CommandParameters.CID">
+            <summary>
+            Access Command mark Sum
+            </summary>
+        </member>
+        <member name="P:ADSDK.Device.Reader.CommandParameters.CID1">
+            <summary>
+            Access Command mark 1
+            </summary>
+        </member>
+        <member name="P:ADSDK.Device.Reader.CommandParameters.CID2">
+            <summary>
+            Access Command mark 2
+            </summary>
+        </member>
+        <member name="P:ADSDK.Device.Reader.CommandParameters.RTN">
+            <summary>
+            Access Return mark
+            </summary>
+        </member>
+        <member name="P:ADSDK.Device.Reader.CommandParameters.Count">
+            <summary>
+            Access Data Count
+            </summary>
+        </member>
+        <member name="P:ADSDK.Device.Reader.CommandParameters.Length">
+            <summary>
+            Access Data Length
+            </summary>
+        </member>
+        <member name="P:ADSDK.Device.Reader.CommandParameters.DataLength">
+            <summary>
+            Access Data Sum Length
+            </summary>
+        </member>
+        <member name="P:ADSDK.Device.Reader.CommandParameters.DataBytes">
+            <summary>
+            Access byte data
+            </summary>
+        </member>
+        <member name="P:ADSDK.Device.Reader.CommandParameters.DataString">
+            <summary>
+            Access string data
+            </summary>
+        </member>
+        <member name="M:ADSDK.Device.Reader.CommandParameters.ToString">
+            <summary> 
+            重载ToString()方法,返回session对象的特征 
+            </summary> 
+            <returns></returns> 
+        </member>
+        <member name="M:ADSDK.Device.Reader.CommandParameters.#ctor">
+            <summary>
+            Constructed function
+            </summary>
+        </member>
+        <member name="M:ADSDK.Device.Reader.CommandParameters.#ctor(System.String)">
+            <summary>
+            Constructed function
+            </summary>
+            <param name="name">Communication Name [Explain:Socket Mode :IP Address(Example:"192.168.1.1")SerialPort Mode :Port Num(Example:"COM2")]</param>
+        </member>
+        <member name="M:ADSDK.Device.Reader.CommandParameters.Clone">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:ADSDK.Device.Reader.CommandReceivedEventArgs">
+            <summary>
+            为 ADSDK.Device.Reader.CommandReceived 事件提供数据。无法继承此类。
+            </summary>
+        </member>
+        <member name="P:ADSDK.Device.Reader.CommandReceivedEventArgs.Command">
+            <summary>
+            获取或设置新值。
+            </summary>
+        </member>
+        <member name="M:ADSDK.Device.Reader.CommandReceivedEventArgs.#ctor(ADSDK.Device.Reader.CommandParameters)">
+            <summary>
+            初始化 ADSDK.RFID.CommandReceivedEventArgs 类的新实例。
+            </summary>
+            <param name="value">新值</param>
+        </member>
+        <member name="T:ADSDK.Device.Reader.CommandReceivedEventHandler">
+            <summary>
+            表示将处理 ADSDK.RFID.CommandReceived 事件的方法。
+            </summary>
+            <param name="sender">事件源</param>
+            <param name="e"> 包含事件数据的 ADSDK.RFID.CommandReceivedEventArgs。</param>
+        </member>
+        <member name="T:ADSDK.Device.Reader.DeviceParameters">
+            <summary>
+             Reader information
+            </summary>
+        </member>
+        <member name="P:ADSDK.Device.Reader.DeviceParameters.Version">
+            <summary>
+            <para>Reader Version</para>
+            </summary>
+        </member>
+        <member name="P:ADSDK.Device.Reader.DeviceParameters.Address">
+            <summary>
+            Reader Address
+            </summary>
+        </member>
+        <member name="P:ADSDK.Device.Reader.DeviceParameters.Ver">
+            <summary>
+            Reader Ver
+            </summary>
+        </member>
+        <member name="P:ADSDK.Device.Reader.DeviceParameters.Type">
+            <summary>
+            Reader Type
+            </summary>
+        </member>
+        <member name="P:ADSDK.Device.Reader.DeviceParameters.Update">
+            <summary>
+            Reader Update
+            </summary>
+        </member>
+        <member name="M:ADSDK.Device.Reader.DeviceParameters.ToString">
+            <summary> 
+            重载ToString()方法,返回session对象的特征 
+            </summary> 
+            <returns></returns> 
+        </member>
+        <member name="M:ADSDK.Device.Reader.DeviceParameters.#ctor">
+            <summary>
+            Constructed function
+            </summary>
+        </member>
+        <member name="M:ADSDK.Device.Reader.DeviceParameters.#ctor(System.Int32)">
+            <summary>
+            Constructed function
+            </summary>
+            <param name="address"></param>
+        </member>
+        <member name="M:ADSDK.Device.Reader.DeviceParameters.Clone">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:ADSDK.Device.Reader.ABasicParameters">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ADSDK.Device.Reader.ABasicParameters.PowerSize">
+            <summary>
+            功率大小
+            </summary>
+        </member>
+        <member name="P:ADSDK.Device.Reader.ABasicParameters.Reserve">
+            <summary>
+            保留字段 (暂不能设置) 默认值0x01
+            </summary>
+        </member>
+        <member name="P:ADSDK.Device.Reader.ABasicParameters.SameIDinterval">
+            <summary>
+            上传ID号频率
+            </summary>
+        </member>
+        <member name="P:ADSDK.Device.Reader.ABasicParameters.WorkMode">
+            <summary>
+            工作模式
+            </summary>
+        </member>
+        <member name="P:ADSDK.Device.Reader.ABasicParameters.OutputMode">
+            <summary>
+            通讯方式
+            </summary>
+        </member>
+        <member name="P:ADSDK.Device.Reader.ABasicParameters.ByteOffset">
+            <summary>
+            Wiegand参数数据偏移(暂不能设置)默认值 0x00
+            </summary>
+        </member>
+        <member name="P:ADSDK.Device.Reader.ABasicParameters.OutInterval">
+            <summary>
+            Wiegand参数输出周期
+            </summary>
+        </member>
+        <member name="P:ADSDK.Device.Reader.ABasicParameters.PulseWidth">
+            <summary>
+            Wiegand参数脉冲宽度
+            </summary>
+        </member>
+        <member name="P:ADSDK.Device.Reader.ABasicParameters.PulsePeriod">
+            <summary>
+            Wiegand参数脉冲周期
+            </summary>
+        </member>
+        <member name="P:ADSDK.Device.Reader.ABasicParameters.RcvIDLength">
+            <summary>
+            接收ID号长度(暂不能设置) 默认值 0x01
+            </summary>
+        </member>
+        <member name="P:ADSDK.Device.Reader.ABasicParameters.Password">
+            <summary>
+            用户自行加密密码 5字节 (暂不能设置)
+            </summary>
+        </member>
+        <member name="P:ADSDK.Device.Reader.ABasicParameters.Buzzer">
+            <summary>
+            蜂鸣器开关
+            </summary>
+        </member>
+        <member name="P:ADSDK.Device.Reader.ABasicParameters.Reserve2">
+            <summary>
+            保留字段 2字节 (暂不能设置) 默认值 0x0100
+            </summary>
+        </member>
+        <member name="M:ADSDK.Device.Reader.ABasicParameters.ToArray">
+            <summary>
+            将 ADSDK.RFID.BasicParametersPnfo 的元素复制到新数组中。
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.Device.Reader.ABasicParameters.AddRange(System.Byte[])">
+            <summary>
+            将指定集合的元素赋值到 ADSDK.RFID.BasicParametersPnfo。
+            </summary>
+            <param name="data">一个集合，其元素应被添加到 ADSDK.RFID.BasicParametersPnfo。集合自身不能为 null</param>
+        </member>
+        <member name="M:ADSDK.Device.Reader.ABasicParameters.ToString">
+            <summary> 
+            重载ToString()方法,返回session对象的特征 
+            </summary> 
+            <returns></returns> 
+        </member>
+        <member name="M:ADSDK.Device.Reader.ABasicParameters.#ctor">
+            <summary>
+            Constructed function
+            </summary>
+        </member>
+        <member name="M:ADSDK.Device.Reader.ABasicParameters.Clone">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

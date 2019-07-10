@@ -1,0 +1,1137 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ADActiveX</name>
+    </assembly>
+    <members>
+        <member name="T:ADSDK.ActiveXACOM">
+            <summary>
+            <para>2.4GHz RFID Reader(Standard) - COM Communication Class</para> 
+            <para>2.4GHz 标准版读卡器 - 串行通信类</para> 
+            </summary>
+        </member>
+        <member name="M:ADSDK.ActiveXACOM.#ctor">
+            <summary>
+            COM Communication Class
+            </summary>
+        </member>
+        <member name="M:ADSDK.ActiveXACOM.Connect(System.String,System.Int32)">
+            <summary>
+            <para>Create a communication connection</para>  
+            <para>创建一个通信连接</para>  
+            </summary>
+            <param name="portname">SerailPort Name,"COM1"</param>
+            <param name="baudrate">BaudRate</param>
+            <returns></returns>
+        </member>
+        <member name="T:ADSDK.ActiveXANET">
+            <summary>
+            <para>2.4GHz RFID Reader(Standard) - NET Communication Class</para> 
+            <para>2.4GHz 标准版读卡器 - 网络通信类</para> 
+            </summary>
+        </member>
+        <member name="M:ADSDK.ActiveXANET.#ctor">
+            <summary>
+            NET Communication Class
+            </summary>
+        </member>
+        <member name="M:ADSDK.ActiveXANET.Connect(System.String,System.Int32)">
+            <summary>
+            <para>Create a communication connection</para>  
+            <para>创建一个通信连接</para>  
+            </summary>
+            <param name="ip">remote ip</param>
+            <param name="ipport">Remote Port</param>
+            <returns></returns>
+        </member>
+        <member name="T:ADSDK.ActiveXAUSB">
+            <summary>
+            <para>2.4GHz RFID Reader(Standard) - HID Communication Class</para> 
+            <para>2.4GHz 标准版读卡器 - HID通信类</para> 
+            </summary>
+        </member>
+        <member name="M:ADSDK.ActiveXAUSB.#ctor">
+            <summary>
+            USB Communication Class
+            </summary>
+        </member>
+        <member name="M:ADSDK.ActiveXAUSB.Connect(System.String,System.Int32)">
+            <summary>
+            <para>Create a communication connection</para>  
+            <para>创建一个通信连接</para>  
+            </summary>
+            <param name="name">Device name ,default = AD</param>
+            <param name="id">Device id,default = 0</param>
+            <returns></returns>
+        </member>
+        <member name="T:ADSDK.ADActiveX">
+            <summary>
+            <para>2.4GHz RFID Reader(Standard) Communication Class</para> 
+            <para>2.4GHz 标准版读卡器 通信类</para> 
+            </summary>
+            <summary>
+            <para>900MHz RFID Reader(Phychips) Communication Class</para> 
+            <para>900MHz Phychips版读卡器 通信类</para> 
+            </summary>
+            <summary>
+            <para>900MHz RFID Reader(Standard) Communication Class</para> 
+            <para>900MHz 标准版读卡器 通信类</para> 
+            </summary>
+            <summary>
+            <para>RFID Reader Communication Class - ALL</para> 
+            <para>读卡器通信类 - 合集自动区分</para> 
+            </summary>
+        </member>
+        <member name="M:ADSDK.ADActiveX.aSend(System.Byte[])">
+            <summary>
+            Send Data
+            </summary>
+            <param name="iData"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.ADActiveX.aSetConfig(System.Byte[])">
+            <summary>
+            Set Basic Parameters to Reader
+            </summary>
+            <param name="iData">parameter Info Array</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.ADActiveX.aGetConfig(System.Byte[]@)">
+            <summary>
+            Get Basic Parameters for Reader
+            </summary>
+            <param name="oData">return data</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.ADActiveX.aSetSenior(System.Byte[])">
+            <summary>
+            Set Senior Parameters to Reader
+            </summary>
+            <param name="iData">Senior parameter Info Array</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.ADActiveX.aGetSenior(System.Byte[]@)">
+            <summary>
+            Get Senior Parameters for Reader
+            </summary>
+            <param name="oData">return data</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.ADActiveX.aSetAddress(System.Int32)">
+            <summary>
+            Set Address to Reader
+            </summary>
+            <param name="iData">Address</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.ADActiveX.aGetAddress(System.Int32@)">
+            <summary>
+            Get Address for Reader
+            </summary>
+            <param name="oData">return data</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.ADActiveX.aReset">
+            <summary>
+            Reset Reader
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.ADActiveX.aGetCardSingle(System.Byte[]@)">
+            <summary>
+            Get Single Card for Reader
+            </summary>
+            <param name="oData">return data</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.ADActiveX.aGetCardMult(System.Byte,System.Byte[]@)">
+            <summary>
+            Get Mult Card for Reader
+            </summary>
+            <param name="iMaxCount">max count</param>
+            <param name="oData">return data</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.ADActiveX.aSetCard(System.Byte[],System.Byte[])">
+            <summary>
+            Write Card No and Para(Old prot)
+            </summary>
+            <param name="iCard">card no</param>
+            <param name="iPara">para data array</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.ADActiveX.aSetCardPara(System.Byte[])">
+            <summary>
+            Write Card No and Para
+            </summary>
+            <param name="iPara">card no and para data array</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.ADActiveX.aSetCardPara(System.Byte[],System.Byte[])">
+            <summary>
+            Write Card No and Para
+            </summary>
+            <param name="iCard">card no</param>
+            <param name="iPara">para data array</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.ADActiveX.aGetCardPara(System.Byte[]@)">
+            <summary>
+            Read Card No and Para(nonstandard)
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.ADActiveX.aGetCardPara(System.Byte,System.Byte[]@)">
+            <summary>
+            Read Card No and Para(nonstandard)
+            </summary>
+            <param name="iData">password</param>
+            <param name="oData">return data</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.ADActiveX.aSearchCard(System.Byte[])">
+            <summary>
+            Search Card
+            </summary>
+            <param name="iCard">Card</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.ADActiveX.aSetCardData(System.Byte[],System.Byte,System.Byte,System.Byte[])">
+            <summary>
+            Write User data to card(nonstandard)
+            </summary>
+            <param name="iCard"></param>
+            <param name="iStart"></param>
+            <param name="iLength"></param>
+            <param name="iData"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.ADActiveX.aGetCardData(System.Byte[],System.Byte,System.Byte,System.Byte[]@)">
+            <summary>
+            Read User data for Card(nonstandard)
+            </summary>
+            <param name="iCard"></param>
+            <param name="iStart"></param>
+            <param name="iLength"></param>
+            <param name="oData">return data</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.ADActiveX.aSetTcpip(System.Byte[])">
+            <summary>
+            Set Tcpip Parameters to Reader
+            </summary>
+            <param name="iData">Tcpip parameter Info Array</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.ADActiveX.aGetTcpip(System.Byte[]@)">
+            <summary>
+            Get Tcpip Parameters for Reader
+            </summary>
+            <param name="oData">return data</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.ADActiveX.aRemote(System.Byte)">
+            <summary>
+            Set IO Out to Reader
+            </summary>
+            <param name="iData">Out Status</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.ADActiveX.jsaInformation">
+            <summary>
+            <para>Get base information</para>  
+            <para>获取基本信息</para>  
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.ADActiveX.rSend(System.Byte[])">
+            <summary>
+            <para>Send Data</para> 
+            <para>发送数据</para> 
+            </summary>
+            <param name="iData"></param>
+            <returns></returns>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.ADActiveX.rSetConfig(System.Byte[])">
+            <summary>
+            <para>Set Basic Parameters</para> 
+            <para>设置基本参数</para> 
+            </summary>
+            <param name="iData">
+            <para>parameter Info Array</para> 
+            <para>基本参数字节数组</para> 
+            </param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.ADActiveX.rGetConfig(System.Byte[]@)">
+            <summary>
+            <para>Get Basic Parameters</para> 
+            <para>获取基本参数</para>
+            </summary>
+            <param name="oData">
+            <para>return parameter Info Array</para> 
+            <para>返回基本参数字节数组</para>
+            </param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.ADActiveX.rRemote(System.Byte[])">
+            <summary>
+            <para>Set IO Out[nonstandard]</para> 
+            <para>设置IO口输出(非标准命令)</para> 
+            </summary>
+            <param name="iData">
+            <para>parameter Info Array</para> 
+            <para>参数字节数组</para> 
+            </param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.ADActiveX.rIdentify6C(System.Byte[]@)">
+            <summary>
+            <para>Identify card from ISO18000-6C(EPC) tag</para> 
+            <para>识别ISO18000-6C(EPC)标签卡号</para> 
+            </summary>
+            <param name="oData">return data</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.ADActiveX.rRead6C(System.Byte[],System.UInt16,System.Byte[],System.Byte,System.UInt16,System.UInt16,System.Byte[]@)">
+            <summary>
+            Read data from ISO18000-6C(EPC) tag - 读取ISO18000-6C(EPC)标签数据
+            </summary>
+            <param name="ap">AP (32-bit): Access Password if memory bank was password protected. Otherwise, set AP filed to 0x00000000. </param>
+            <param name="ul">UL (16-bit): Target tag’s EPC length</param>
+            <param name="epc">EPC (variable): Target tag’s EPC</param>
+            <param name="mb">MB (8-bit): Target memory bank; 0x00 RFU, 0x01 EPC, 0x02 TID, 0x03 User.</param>
+            <param name="sa">SA (16-bit): Starting Address word pointer.</param>
+            <param name="dl">DL (16-bit): Data Length (Word Count).</param>
+            <param name="oData">return data</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.ADActiveX.rWrite6C(System.Byte[],System.UInt16,System.Byte[],System.Byte,System.UInt16,System.UInt16,System.Byte[])">
+            <summary>
+            Write Data to ISO18000-6C(EPC) tag - 写入ISO18000-6C(EPC)标签数据
+            </summary>
+            <param name="ap">AP (32-bit): Access Password if memory bank was password protected. Otherwise, set AP filed to 0x00000000. </param>
+            <param name="ul">UL (16-bit): Target tag’s EPC length</param>
+            <param name="epc">EPC (variable): Target tag’s EPC</param>
+            <param name="mb">MB (8-bit): Target memory bank; 0x00 RFU, 0x01 EPC, 0x02 TID, 0x03 User.</param>
+            <param name="sa">SA (16-bit): Starting Address word pointer.</param>
+            <param name="dl">DL (16-bit): Data Length (Word Count).</param>
+            <param name="dt">DT (variable): Data to write.</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.ADActiveX.jsrInformation">
+            <summary>
+            <para>Get base information</para>  
+            <para>获取基本信息</para>  
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.ADActiveX.jsrSetConfig(System.String)">
+            <summary>
+            <para>Set Basic Parameters</para> 
+            <para>设置基本参数</para> 
+            </summary>
+            <param name="iData">data(hexString)(16进制字符串)</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.ADActiveX.jsrGetConfig">
+            <summary>
+            <para>Get Basic Parameters</para> 
+            <para>获取基本参数</para>
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.ADActiveX.jsrIdentify6C">
+            <summary>
+            <para>Identify card from ISO18000-6C(EPC) tag</para> 
+            <para>识别ISO18000-6C(EPC)标签卡号</para> 
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.ADActiveX.jsrRead6C(System.String,System.UInt16,System.String,System.Byte,System.UInt16,System.UInt16)">
+            <summary>
+            Read data from ISO18000-6C(EPC) tag - 读取ISO18000-6C(EPC)标签数据
+            </summary>
+            <param name="ap">AP (32-bit): Access Password if memory bank was password protected. Otherwise, set AP filed to 0x00000000. </param>
+            <param name="ul">UL (16-bit): Target tag’s EPC length</param>
+            <param name="epc">EPC (variable): Target tag’s EPC</param>
+            <param name="mb">MB (8-bit): Target memory bank; 0x00 RFU, 0x01 EPC, 0x02 TID, 0x03 User.</param>
+            <param name="sa">SA (16-bit): Starting Address word pointer.</param>
+            <param name="dl">DL (16-bit): Data Length (Word Count).</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.ADActiveX.jsrWrite6C(System.String,System.UInt16,System.String,System.Byte,System.UInt16,System.UInt16,System.String)">
+            <summary>
+            Write Data to ISO18000-6C(EPC) tag - 写入ISO18000-6C(EPC)标签数据
+            </summary>
+            <param name="ap">AP (32-bit): Access Password if memory bank was password protected. Otherwise, set AP filed to 0x00000000. </param>
+            <param name="ul">UL (16-bit): Target tag’s EPC length</param>
+            <param name="epc">EPC (variable): Target tag’s EPC</param>
+            <param name="mb">MB (8-bit): Target memory bank; 0x00 RFU, 0x01 EPC, 0x02 TID, 0x03 User.</param>
+            <param name="sa">SA (16-bit): Starting Address word pointer.</param>
+            <param name="dl">DL (16-bit): Data Length (Word Count).</param>
+            <param name="dt">DT (variable): Data to write.</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.ADActiveX.__pParseRsp(ADSDK.Device.ProtocolStruct)">
+            <summary>
+            
+            </summary>
+            <param name="iData"></param>
+        </member>
+        <member name="M:ADSDK.ADActiveX.pSend(System.Byte[])">
+            <summary>
+            <para>Send Data</para> 
+            <para>发送数据</para> 
+            </summary>
+            <param name="iData"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.ADActiveX.pSetConfig(System.Byte[])">
+            <summary>
+            <para>Set Basic Parameters</para> 
+            <para>设置基本参数</para> 
+            </summary>
+            <param name="iData">
+            <para>parameter Info Array</para> 
+            <para>基本参数字节数组(内容见通讯协议)</para> 
+            </param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.ADActiveX.pGetConfig(System.Byte[]@)">
+            <summary>
+            <para>Get Basic Parameters</para> 
+            <para>获取基本参数</para>
+            </summary>
+            <param name="oData">
+            <para>return parameter Info Array</para> 
+            <para>返回基本参数字节数组(内容见通讯协议)</para>
+            </param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.ADActiveX.pSetAddress(System.Int32)">
+            <summary>
+            <para>Set Address</para> 
+            <para>设置读卡器通信地址</para> 
+            </summary>
+            <param name="iData">
+            <para>Address [1~65535]</para> 
+            <para>通讯地址[取值1~65535]</para>
+            </param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.ADActiveX.pReset">
+            <summary>
+            <para>Reset Reader</para> 
+            <para>重启读卡器</para> 
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.ADActiveX.pInitSyris(System.Byte[])">
+            <summary>
+            <para>Init Syris SN And ID(nonstandard)</para> 
+            <para>初始化读卡器序列号和ID(非标准命令)</para> 
+            </summary>
+            <param name="iData">
+            <para>Syris SN Info Array</para> 
+            <para>Syris 序列号和ID字节数组</para>
+            </param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.ADActiveX.pIdentify6C(System.Byte[]@)">
+            <summary>
+            <para>Identify card from ISO18000-6C(EPC) tag</para> 
+            <para>识别单张ISO18000-6C(EPC)标签卡号</para> 
+            </summary>
+            <param name="oData">return data</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.ADActiveX.pIdentify6CMult(System.Byte[]@)">
+            <summary>
+            <para>Identify cards from mult ISO18000-6C(EPC) tag</para> 
+            <para>识别多张ISO18000-6C(EPC)标签卡号</para>
+            </summary>
+            <param name="oData">return data</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.ADActiveX.pRead6C(System.Int32,System.Int32,System.Int32,System.Byte[]@)">
+            <summary>
+            <para>Read data from ISO18000-6C(EPC) tag</para> 
+            <para>读取ISO18000-6C(EPC)标签数据</para> 
+            </summary>
+            <param name="iMem">Memory Bank, 0x00-RFU,0x01-EPC,0x02-TID,0x03-User 块地址</param>
+            <param name="iStartWord">Start Address(word) 块起始地址(word)</param>
+            <param name="iLengthWord">Data Length in Words(word) 数据长度(word)
+            <para>单次操作不超过16byte(8Words)</para> 
+            </param>
+            <param name="oData">return data array</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.ADActiveX.pWrite6C(System.Int32,System.Int32,System.Int32,System.String)">
+            <summary>
+            <para>写入ISO18000-6C(EPC)标签数据</para> 
+            <para>Write Data to ISO18000-6C(EPC) tag</para> 
+            </summary>
+            <param name="iMem">Memory Bank, 0x00-RFU,0x01-EPC,0x02-TID,0x03-User 块地址</param>
+            <param name="iStartWord">Start Address(word) 块起始地址(word)</param>
+            <param name="iLengthWord">Data Length in Words(word) 数据长度(word)
+            <para>单次操作不超过16byte(8Words)</para> 
+            </param>
+            <param name="iData">data(hexString)(16进制字符串)</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.ADActiveX.pWrite6C(System.Int32,System.Int32,System.Int32,System.Byte[])">
+            <summary>
+            <para>Write Data to ISO18000-6C(EPC) tag</para> 
+            <para>写入ISO18000-6C(EPC)标签数据</para> 
+            </summary>
+            <param name="iMem">Memory Bank, 0x00-RFU,0x01-EPC,0x02-TID,0x03-User 块地址</param>
+            <param name="iStartWord">Start Address(word) 块起始地址(word)</param>
+            <param name="iLengthWord">Data Length in Words(word) 数据长度(word)
+            <para>单次操作不超过16byte(8Words)</para> 
+            </param>
+            <param name="iData">data(byte array)(16进制数组)</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.ADActiveX.pIdentify6B(System.Byte[]@)">
+            <summary>
+            <para>Identify card from ISO18000-6B tag</para> 
+            <para>识别ISO18000-6B标签卡号</para> 
+            </summary>
+            <param name="oData">return data</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.ADActiveX.pRead6B(System.Int32,System.Int32,System.Byte[]@)">
+            <summary>
+            <para>Read data from ISO18000-6B tag</para> 
+            <para>读取ISO18000-6B标签数据</para> 
+            </summary>
+            <param name="iStart">Start Address(byte) 块起始地址(byte)</param>
+            <param name="iLength">Data length(byte) 数据长度(byte)</param>
+            <param name="oData">return data</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.ADActiveX.pWrite6B(System.Int32,System.Int32,System.String)">
+            <summary>
+            <para>Write Data to ISO18000-6B tag</para> 
+            <para>写入ISO18000-6B标签数据</para> 
+            </summary>
+            <param name="iStart">Start Address(byte) 块起始地址(byte)</param>
+            <param name="iLength">Data Length(byte) 数据长度(byte)</param>
+            <param name="iData">data(hexString)(16进制字符串)</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.ADActiveX.pWrite6B(System.Int32,System.Int32,System.Byte[])">
+            <summary>
+            <para>Write Data to ISO18000-6B tag</para> 
+            <para>写入ISO18000-6B标签数据</para> 
+            </summary>
+            <param name="iStart">Start Address(byte) 块起始地址(byte)</param>
+            <param name="iLength">Data Length(byte) 数据长度(byte)</param>
+            <param name="iData">data(byte array)(16进制数组)</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.ADActiveX.pGetTcpip(System.Byte[]@)">
+            <summary>
+            <para>Get TCPIP Parameters(nonstandard)</para> 
+            <para>获取TCPIP参数(非标准命令)</para> 
+            </summary>
+            <param name="oData">
+            <para> Return TCPIP parameter Info Array</para> 
+            <para>返回TCPIP参数字节数组</para>
+            </param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.ADActiveX.pSetTcpip(System.Byte[])">
+            <summary>
+            <para>Set TCPIP Parameters(nonstandard)</para> 
+            <para>设置TCPIP参数(非标准命令)</para> 
+            </summary>
+            <param name="iData">
+            <para>TCPIP parameter Info Array</para> 
+            <para>TCPIP参数字节数组</para> 
+            </param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.ADActiveX.pExitProgarm">
+            <summary>
+            <para>Exit Progarm Mode(only usb reader)</para> 
+            <para>将USB读卡器退出编程模式(仅用于USB通信版读卡器)</para> 
+            </summary>
+        </member>
+        <member name="M:ADSDK.ADActiveX.pSetProgarm">
+            <summary>
+            <para>Set Progarm Mode(only usb reader)</para> 
+            <para>设置USB读卡器为编程模式(仅用于USB通信版读卡器)</para> 
+            </summary>
+        </member>
+        <member name="M:ADSDK.ADActiveX.pSetKeyboard">
+            <summary>
+            <para>Set Virtual Keyboard Mode(only usb reader)</para> 
+            <para>设置USB读卡器为虚拟键盘模式(仅用于USB通信版读卡器)</para> 
+            </summary>
+        </member>
+        <member name="M:ADSDK.ADActiveX.pSetOutCard(System.Byte[])">
+            <summary>
+            <para>Set USB OutCard Parameters(only usb reader)</para> 
+            <para>设置USB读卡器输出卡号参数(仅用于USB通信版读卡器)</para> 
+            </summary>
+            <param name="iData">
+            <para>OutCard Info Array</para> 
+            <para></para> 
+            </param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.ADActiveX.pGetOutCard(System.Byte[]@)">
+            <summary>
+            <para>Get USB OutCard Parameters(only usb reader)</para> 
+            <para>获取USB读卡器输出卡号参数(仅用于USB通信版读卡器)</para> 
+            </summary>
+            <param name="oData">
+            <para>return data array</para> 
+            <para></para> 
+            </param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.ADActiveX.pRemote(System.Byte,System.Byte)">
+            <summary>
+            <para>Set IO Out[nonstandard]</para> 
+            <para>设置IO口输出(非标准命令)</para> 
+            </summary>
+            <param name="iPosition">
+            <para> Out position [1~2]</para> 
+            <para>输出位置[值域1~2]</para>
+            </param>
+            <param name="iAction">
+            <para> Out Status [0 or 1]</para> 
+            <para>输出状态[1-使能或者动作,0-禁止或者恢复]</para>
+            </param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.ADActiveX.pGetTime(System.Byte[]@)">
+            <summary>
+            <para>Get Datetime Parameters(nonstandard)</para> 
+            <para>获取读卡器实时时间(非标准命令)</para> 
+            </summary>
+            <param name="oData">
+            <para>return data array[Year,Month,Day,DayOfWeek,Hour,Minute,Second]</para> 
+            <para>返回时间字节数组[年,月,日,周,时,分,秒]</para> 
+            </param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.ADActiveX.pSetTime(System.Byte[])">
+            <summary>
+            <para>Set Datetime Parameters(nonstandard)</para> 
+            <para>设置读卡器实时时间(非标准命令)</para> 
+            </summary>
+            <param name="iData">
+            <para>Datetime Info Array [Year,Month,Day,DayOfWeek,Hour,Minute,Second]</para> 
+            <para>时间字节数组[年,月,日,周,时,分,秒]</para> 
+            </param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.ADActiveX.jspInformation">
+            <summary>
+            <para>Get base information</para>  
+            <para>获取基本信息</para>  
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.ADActiveX.jspSetConfig(System.String)">
+            <summary>
+            <para>Set Basic Parameters</para> 
+            <para>设置基本参数</para> 
+            </summary>
+            <param name="iData">
+            <para>parameter Info Array</para> 
+            <para>基本参数字节数组(内容见通讯协议)</para> 
+            </param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.ADActiveX.jspGetConfig">
+            <summary>
+            <para>Get Basic Parameters</para> 
+            <para>获取基本参数</para>
+            </summary>
+            <para>return parameter Info Array</para> 
+            <para>返回基本参数字节数组(内容见通讯协议)</para>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.ADActiveX.jspIdentify6C">
+            <summary>
+            <para>Identify card from ISO18000-6C(EPC) tag</para> 
+            <para>识别单张ISO18000-6C(EPC)标签卡号</para> 
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.ADActiveX.pIdentify6CMult">
+            <summary>
+            <para>Identify cards from mult ISO18000-6C(EPC) tag</para> 
+            <para>识别多张ISO18000-6C(EPC)标签卡号</para>
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.ADActiveX.jspRead6C(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            <para>Read data from ISO18000-6C(EPC) tag</para> 
+            <para>读取ISO18000-6C(EPC)标签数据</para> 
+            </summary>
+            <param name="iMem">Memory Bank, 0x00-RFU,0x01-EPC,0x02-TID,0x03-User 块地址</param>
+            <param name="iStartWord">Start Address(word) 块起始地址(word)</param>
+            <param name="iLengthWord">Data Length in Words(word) 数据长度(word)
+            <para>单次操作不超过16byte(8Words)</para> 
+            </param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.ADActiveX.jspWrite6C(System.Int32,System.Int32,System.Int32,System.String)">
+            <summary>
+            <para>写入ISO18000-6C(EPC)标签数据</para> 
+            <para>Write Data to ISO18000-6C(EPC) tag</para> 
+            </summary>
+            <param name="iMem">Memory Bank, 0x00-RFU,0x01-EPC,0x02-TID,0x03-User 块地址</param>
+            <param name="iStartWord">Start Address(word) 块起始地址(word)</param>
+            <param name="iLengthWord">Data Length in Words(word) 数据长度(word)
+            <para>单次操作不超过16byte(8Words)</para> 
+            </param>
+            <param name="iData">data(hexString)(16进制字符串)</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.ADActiveX.jspIdentify6B">
+            <summary>
+            <para>Identify card from ISO18000-6B tag</para> 
+            <para>识别ISO18000-6B标签卡号</para> 
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.ADActiveX.jspRead6B(System.Int32,System.Int32)">
+            <summary>
+            <para>Read data from ISO18000-6B tag</para> 
+            <para>读取ISO18000-6B标签数据</para> 
+            </summary>
+            <param name="iStart">Start Address(byte) 块起始地址(byte)</param>
+            <param name="iLength">Data length(byte) 数据长度(byte)</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.ADActiveX.jspWrite6B(System.Int32,System.Int32,System.String)">
+            <summary>
+            <para>Write Data to ISO18000-6B tag</para> 
+            <para>写入ISO18000-6B标签数据</para> 
+            </summary>
+            <param name="iStart">Start Address(byte) 块起始地址(byte)</param>
+            <param name="iLength">Data Length(byte) 数据长度(byte)</param>
+            <param name="iData">data(hexString)(16进制字符串)</param>
+            <returns></returns>
+        </member>
+        <member name="F:ADSDK.ADActiveX.ADSio">
+            <summary>
+             Communcation class
+            </summary>
+        </member>
+        <member name="F:ADSDK.ADActiveX.pRcp">
+            <summary>
+            915MHz RFID Reader Communcation class
+            </summary>
+        </member>
+        <member name="F:ADSDK.ADActiveX.aRcp">
+            <summary>
+            2.4GHz RFID Reader Communcation class
+            </summary>
+        </member>
+        <member name="F:ADSDK.ADActiveX.rRcp">
+            <summary>
+            915MHz RFID Reader Communcation class (Phychips)
+            </summary>
+        </member>
+        <member name="E:ADSDK.ADActiveX.StatusConnected">
+            <summary>
+            <para>Connected Status</para>  
+            <para>通信连接状态</para>  
+            </summary>
+        </member>
+        <member name="E:ADSDK.ADActiveX.RxRspParsed">
+            <summary>
+            <para>Asynchronous data reception</para>  
+            <para>异步数据接收</para> 
+            </summary>
+        </member>
+        <member name="F:ADSDK.ADActiveX.mHostOrCom">
+            <summary>
+            通信地址或端口
+            </summary>
+        </member>
+        <member name="F:ADSDK.ADActiveX.mBaudOrPort">
+            <summary>
+            通信端口或波特率
+            </summary>
+        </member>
+        <member name="F:ADSDK.ADActiveX.mCommRtn">
+            <summary>
+            通信状态
+            </summary>
+        </member>
+        <member name="F:ADSDK.ADActiveX.mDelay">
+            <summary>
+            通信超时时间
+            </summary>
+        </member>
+        <member name="P:ADSDK.ADActiveX.IsConnected">
+            <summary>
+            <para>IsConnected</para>  
+            <para>获取当前通信连接状态</para> 
+            </summary>
+        </member>
+        <member name="F:ADSDK.ADActiveX.FCount">
+            <summary>
+            <para>Return Status</para>  
+            <para>当前返回状态代码</para> 
+            </summary>
+        </member>
+        <member name="P:ADSDK.ADActiveX.RecvBytes">
+            <summary>
+            <para>The array of received data</para>  
+            <para>接收到数据数组</para> 
+            </summary>
+        </member>
+        <member name="F:ADSDK.ADActiveX.RecvString">
+            <summary>
+            <para>The string of received data</para>  
+            <para>接收到数据字符串</para> 
+            </summary>
+        </member>
+        <member name="F:ADSDK.ADActiveX.Address">
+            <summary>
+            <para>Communication Address of Reader</para>  
+            <para>设置将进行数据下发的读卡器通信地址</para> 
+            
+            </summary>
+        </member>
+        <member name="F:ADSDK.ADActiveX.Version">
+            <summary>
+            <para>Firmware version</para>  
+            <para>获取自动识别到的读卡器固件版本</para>
+            </summary>
+        </member>
+        <member name="F:ADSDK.ADActiveX.ReaderMode">
+            <summary>
+            <para>Reader Mode</para>  
+            <para>获取自动识别到的读卡器类型</para> 
+            </summary>
+        </member>
+        <member name="P:ADSDK.ADActiveX.DelayTime">
+            <summary>
+            <para>Communication Max Delay Time *10ms (default max:20*10ms)</para>  
+            <para>通信超时时间,单位10ms,默认值20*10ms</para> 
+            </summary>
+        </member>
+        <member name="P:ADSDK.ADActiveX.Type">
+            <summary>
+            <para>Reader Type</para> 
+            <para>0 - 915MHz RFID Reader(Standard),1 - 915MHz RFID Reader(Phychips),2 - 2.4GHz RFID Reader(Standard)</para>  
+            <para>读卡器类型</para> 
+            <para>0 - 915MHz 标准版读卡器,1 - 915MHz Phychips版读卡器,2 - 2.4GHz 标准版读卡器</para> 
+            </summary>
+        </member>
+        <member name="P:ADSDK.ADActiveX.Mode">
+            <summary>
+            <para>Reader Communication Mode</para> 
+            <para>0 - COM,1 - NET,2 - USB</para>  
+            <para>读卡器通信类型</para> 
+            <para>0 - RS232/RS485通信,1 - TCPIP/WIFI通信,2 - USB通信</para>  
+            </summary>
+        </member>
+        <member name="M:ADSDK.ADActiveX.#ctor">
+            <summary>
+            <para>Construction general class</para>  
+            <para>构造通用类</para> 
+            </summary>
+        </member>
+        <member name="M:ADSDK.ADActiveX.GetRecvData(System.Byte[],System.Int32,System.Int32)">
+            <summary>
+            <para>Get returned data</para>  
+            <para>获取返回数据</para> 
+            </summary>
+            <param name="iData">
+            <para>Data array</para>  
+            <para>数据数组</para> 
+            </param>
+            <param name="index">
+            <para>Data Index</para>  
+            <para>数据起始位置</para> 
+            </param>
+            <param name="length">
+            <para>Data length</para>  
+            <para>数据长度</para> 
+            </param>
+        </member>
+        <member name="M:ADSDK.ADActiveX.AppandRecvData(System.Byte[],System.Int32,System.Int32)">
+            <summary>
+            Appand Return Data
+            </summary>
+            <param name="iData"></param>
+            <param name="index"></param>
+            <param name="length"></param>
+        </member>
+        <member name="M:ADSDK.ADActiveX.GetCommRtn">
+            <summary>
+            获取返回代码
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.ADActiveX.mStatusConnected(System.Object,ADSDK.Device.ConnectEventArg)">
+            <summary>
+            
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:ADSDK.ADActiveX.CheckConnect">
+            <summary>
+            检测通信
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.ADActiveX.GetReturnCode(System.Int32)">
+            <summary>
+            <para>Get the description of the returned code</para>  
+            <para>获取返回代码描述</para> 
+            </summary>
+            <param name="state">
+            <para>Return code</para>  
+            <para>返回代码</para> </param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.ADActiveX.GetReturnCode">
+            <summary>
+            <para>Get the description of the returned code</para>  
+            <para>获取返回代码描述</para> 
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.ADActiveX.IsIPv4(System.String)">
+            <summary>
+            <para>Determines whether the input string represents an IP address</para>  
+            <para>判断输入的字符串是否是表示一个IP地址</para> 
+            </summary>
+            <param name="input">
+            <para>Input string</para>  
+            <para>被比较的字符串</para> 
+            </param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.ADActiveX.Connect(System.String,System.Int32,System.Int32)">
+            <summary>
+            <para>Create a communication connection 创建一个通信连接</para>  
+            </summary>
+            <param name="hostOrCom">
+            <para>IP Address or Comport 读卡器IP地址或者读卡器串行端口</para>
+            <para>COM TYPE:"COM1"</para>  
+            <para>NET TYPE:"192.168.2.115"</para>  
+            <para>USB TYPE:"AD"</para>  
+            </param>
+            <param name="baudOrPort">
+            <para>IP Port or Baudrate 读卡器IP端口或者读卡器串行速率</para> 
+            <para>COM TYPE:"9600"</para> 
+            <para>NET TYPE:"49152"</para> 
+            <para>USB TYPE:"0"</para> 
+            </param>
+            <param name="type">
+            <para>Reader Type 读卡器类型</para> 
+            <para>0 - 915MHz RFID Reader(Standard),1 - 915MHz RFID Reader(Phychips),2 - 2.4GHz RFID Reader(Standard)</para>  
+            <para>读卡器类型</para> 
+            <para>0 - 915MHz 标准版读卡器,1 - 915MHz Phychips版读卡器,2 - 2.4GHz 标准版端口期</para> 
+            </param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.ADActiveX.ConnectLocal">
+            <summary>
+            <para>Create a communication connection</para>  
+            <para>创建一个通信请求</para>  
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.ADActiveX.DisConnect">
+            <summary>
+            <para>DisConnect communication connection</para>  
+            <para>断开通信</para>  
+            </summary>
+        </member>
+        <member name="M:ADSDK.ADActiveX.Information(System.Int32@,System.String@,System.String@)">
+            <summary>
+            
+            <para>Get base information</para>  
+            <para>获取基本信息</para>  
+            </summary>
+            <param name="oAddress">
+            <para>return comm address</para>  
+            <para>返回通信地址</para>  
+            </param>
+            <param name="oVer">
+            <para>return fireware version</para>  
+            <para>返回固件版本</para>  
+            </param>
+            <param name="oMode">
+            <para>return mode</para>  
+            <para>返回设备类型</para>  
+            </param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.ADActiveX.Information">
+            <summary>
+            <para>Get base information</para>  
+            <para>获取基本信息</para>  
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.ADActiveX.jsConnect(System.String,System.Int32)">
+            <summary>
+            <para>Create a communication connection 创建一个通信连接</para>  
+            </summary>
+            <param name="hostOrCom">
+            <para>IP Address or Comport 读卡器IP地址或者读卡器串行端口</para>
+            <para>COM TYPE:"COM1"</para>  
+            <para>NET TYPE:"192.168.2.115"</para>  
+            <para>USB TYPE:"AD"</para>  
+            </param>
+            <param name="baudOrPort">
+            <para>IP Port or Baudrate 读卡器IP端口或者读卡器串行速率</para> 
+            <para>COM TYPE:"9600"</para> 
+            <para>NET TYPE:"49152"</para> 
+            <para>USB TYPE:"0"</para> 
+            </param>
+            <returns></returns>
+        </member>
+        <member name="M:ADSDK.ADActiveX.jsDisConnect">
+            <summary>
+            <para>DisConnect communication connection</para>  
+            <para>断开通信</para>  
+            </summary>
+        </member>
+        <member name="M:ADSDK.ADActiveX.LogRun(System.String)">
+            <summary>
+            Output Log
+            </summary>
+            <param name="log">Log</param>
+        </member>
+        <member name="T:ADSDK.ActiveXPCOM">
+            <summary>
+            <para>900MHz RFID Reader(Standard) - COM Communication Class</para> 
+            <para>900MHz 标准版读卡器 - 串口通信类</para> 
+            </summary>
+        </member>
+        <member name="M:ADSDK.ActiveXPCOM.#ctor">
+            <summary>
+            COM Communication Class
+            </summary>
+        </member>
+        <member name="M:ADSDK.ActiveXPCOM.Connect(System.String,System.Int32)">
+            <summary>
+            <para>Create a communication connection</para>  
+            <para>创建一个通信连接</para>  
+            </summary>
+            <param name="portname">SerailPort Name,"COM1"</param>
+            <param name="baudrate">BaudRate</param>
+            <returns></returns>
+        </member>
+        <member name="T:ADSDK.ActiveXPNET">
+            <summary>
+            <para>900MHz RFID Reader(Standard) - NET Communication Class</para> 
+            <para>900MHz 标准版读卡器 - 网络通信类</para> 
+            </summary>
+        </member>
+        <member name="M:ADSDK.ActiveXPNET.#ctor">
+            <summary>
+            NET Communication Class
+            </summary>
+        </member>
+        <member name="M:ADSDK.ActiveXPNET.Connect(System.String,System.Int32)">
+            <summary>
+            <para>Create a communication connection</para>  
+            <para>创建一个通信连接</para>  
+            </summary>
+            <param name="ip">remote ip</param>
+            <param name="ipport">Remote Port</param>
+            <returns></returns>
+        </member>
+        <member name="T:ADSDK.ActiveXPUSB">
+            <summary>
+            <para>900MHz RFID Reader(Standard) - HID Communication Class</para> 
+            <para>900MHz 标准版读卡器 - HID通信类</para> 
+            </summary>
+        </member>
+        <member name="M:ADSDK.ActiveXPUSB.#ctor">
+            <summary>
+            USB Communication Class
+            </summary>
+        </member>
+        <member name="M:ADSDK.ActiveXPUSB.Connect(System.String,System.Int32)">
+            <summary>
+            <para>Create a communication connection</para>  
+            <para>创建一个通信连接</para>  
+            </summary>
+            <param name="name">Device name ,default = AD</param>
+            <param name="id">Device id,default = 0</param>
+            <returns></returns>
+        </member>
+        <member name="T:ADSDK.ActiveXRCOM">
+            <summary>
+            <para>900MHz RFID Reader(Phychips) - COM Communication Class</para> 
+            <para>900MHz Phychips版读卡器 - 串口通信类</para> 
+            </summary>
+        </member>
+        <member name="M:ADSDK.ActiveXRCOM.#ctor">
+            <summary>
+            COM Communication Class
+            </summary>
+        </member>
+        <member name="M:ADSDK.ActiveXRCOM.Connect(System.String,System.Int32)">
+            <summary>
+            <para>Create a communication connection</para>  
+            <para>创建一个通信连接</para>  
+            </summary>
+            <param name="portname">SerailPort Name,"COM1"</param>
+            <param name="baudrate">BaudRate</param>
+            <returns></returns>
+        </member>
+        <member name="T:ADSDK.ActiveXRNET">
+            <summary>
+            <para>900MHz RFID Reader(Phychips) - NET Communication Class</para> 
+            <para>900MHz Phychips版读卡器 - 网络通信类</para> 
+            </summary>
+        </member>
+        <member name="M:ADSDK.ActiveXRNET.#ctor">
+            <summary>
+            NET Communication Class
+            </summary>
+        </member>
+        <member name="M:ADSDK.ActiveXRNET.Connect(System.String,System.Int32)">
+            <summary>
+            <para>Create a communication connection</para>  
+            <para>创建一个通信连接</para>  
+            </summary>
+            <param name="ip">Remote IP Address</param>
+            <param name="ipport">Remote Port</param>
+            <returns></returns>
+        </member>
+        <member name="T:ADSDK.ActiveXRUSB">
+            <summary>
+            <para>900MHz RFID Reader(Phychips) - HID Communication Class</para> 
+            <para>900MHz Phychips版读卡器 - HID通信类</para> 
+            </summary>
+        </member>
+        <member name="M:ADSDK.ActiveXRUSB.#ctor">
+            <summary>
+            USB Communication Class
+            </summary>
+        </member>
+        <member name="M:ADSDK.ActiveXRUSB.Connect(System.String,System.Int32)">
+            <summary>
+            <para>Create a communication connection</para>  
+            <para>创建一个通信连接</para>  
+            </summary>
+            <param name="name">Device name ,default = AD</param>
+            <param name="id">Device id,default = 0</param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>
