@@ -2,7 +2,7 @@
 Communication=0
 IP=192.168.2.115
 IPPort=49152
-PortName=COM3
+PortName=COM5
 BaudRate=9600
 USBDevPath=
 USBType=0
