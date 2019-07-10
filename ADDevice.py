@@ -5,7 +5,7 @@ import time
 
 os.system("clear")
 # sys.path.append("C:\\Users\\User\\Desktop\\IronPython\\900MHz UHF Reader SDK(Standard)\\GUI\VS\dll")
-sys.path.append("C:\\Users\\Technical\\Desktop\\IronPython\\900MHz UHF Reader SDK(Standard)\\GUI\\VS\\dll")
+sys.path.append("C:\\Users\\Technical\\Desktop\RFIDpy\\RFIDSoftwareSDK\\dll")
 clr.AddReference("ADActiveX.dll")
 clr.AddReference("ADBases.dll")
 clr.AddReference("ADDevice.dll")
@@ -13,6 +13,8 @@ clr.AddReference("ADDeviceReader.dll")
 clr.AddReference("ADInitializer.dll")
 clr.AddReference("ADWifi.dll")
 
+# Get parameters
+# Get work mode
 import ADSDK
 
 adx = ADSDK.ADActiveX()
